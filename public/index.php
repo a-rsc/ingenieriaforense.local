@@ -16,6 +16,4 @@ require BASE_PATH . '/src/core/page-dispatcher.php';
 
 // Renderizar el layout
 require BASE_PATH . '/src/templates/layout.php';
-
-// Renderizar el layout
 ?>
