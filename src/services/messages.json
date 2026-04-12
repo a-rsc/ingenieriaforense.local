@@ -1,0 +1,6 @@
+{
+  "200": "¡Gracias! Tu mensaje ha sido enviado.",
+  "400": "Por favor, completa el formulario e inténtalo de nuevo.",
+  "403": "Hubo un problema con tu envío, por favor inténtalo de nuevo.",
+  "500": "¡Ups! Algo salió mal, no pudimos enviar tu mensaje."
+}
