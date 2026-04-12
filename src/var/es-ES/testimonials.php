@@ -90,10 +90,7 @@ $testimonials = [
 ];
 
 // Solo testimonials activos
-$testimonials = array_filter(
-    $testimonials,
-    static fn(array $testimonial): bool => ($testimonial['status'] ?? null) === Status::ACTIVE
-);
+$testimonials = filterActiveMembers($testimonials);
 
 foreach ($testimonials as &$testimonial) {
     $testimonial['title'] = $testimonial['name'];

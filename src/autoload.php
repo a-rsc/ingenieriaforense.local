@@ -19,4 +19,6 @@ require BASE_PATH . "/src/var/{$lang}/permits.php"; // Licencia
 require BASE_PATH . "/src/var/{$lang}/projects.php"; // Proyecto
 require BASE_PATH . "/src/var/{$lang}/reports.php"; // Ingeniería forense
 require BASE_PATH . "/src/var/{$lang}/testimonials.php"; // Testimonio
+
+exit;
 ?>

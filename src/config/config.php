@@ -3,7 +3,7 @@
 
 // Aplicación
 define('APP_NAME', 'IF360');
-define('DOMAIN', 'ingenieriaforense.es');
+define('DOMAIN', 'ingenieriaforense.local');
 define('BASE_URL', 'https://' . DOMAIN);
 define('APP_VERSION', '1.0.0');
 

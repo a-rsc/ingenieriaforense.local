@@ -114,10 +114,7 @@ $permits = [
 ];
 
 // Solo permits activos
-$permits = array_filter(
-    $permits,
-    static fn(array $permit): bool => ($permit['status'] ?? null) === Status::ACTIVE
-);
+$permits = filterActiveMembers($permits);
 
 foreach ($permits as &$permit) {
     $permit['title'] = $permit['name'];

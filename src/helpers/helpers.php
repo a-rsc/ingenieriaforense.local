@@ -2,18 +2,40 @@
 declare(strict_types=1);
 
 /**
- * Escape HTML (XSS protection)
+ * Find the key of a web page by its URL
  */
+function findKeyByUrl(array $array, string $url): string|int|null {
+    $key = array_search(
+        $url,
+        array_map(fn($page) => $page['url'], $array),
+        true
+    );
+
+    return $key === false ? null : $key;
+}
+
+/**
+ * Escape HTML (XSS protection)
+*/
 function e(string $url): string {
     return htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
+}
+
+/**
+ * Generate a full URL based on the base URL and the given path
+*/
+function filterActiveMembers(array $members): array {
+    return array_filter(
+        $members,
+        static fn(array $member): bool => ($member['status'] ?? null) === Status::ACTIVE
+    );
 }
 
 /**
  * Converts a title into a URL-friendly slug.
  * Example: "Memoria técnica" becomes "/memoria-tecnica".
  */
-function titleToUrl(string $title): string
-{
+function titleToUrl(string $title): string {
     $title = mb_strtolower($title, 'UTF-8');
 
     $replacements = [
@@ -38,19 +60,6 @@ function titleToUrl(string $title): string
  */
 function isHome(?string $url): bool {
     return $url === 'Home';
-}
-
-/**
- * Find the key of a web page by its URL
- */
-function findKeyByUrl(array $array, string $url): string|int|null {
-    $key = array_search(
-        $url,
-        array_map(fn($page) => $page['url'], $array),
-        true
-    );
-
-    return $key === false ? null : $key;
 }
 
 /**

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-global $currentPage, $pageByUrl, $lang;
+global $lang, $currentPage, $pageByUrl;
 
 $lang = APP_LANG ?? 'es-ES';
 ?>

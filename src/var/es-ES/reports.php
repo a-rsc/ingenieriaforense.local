@@ -168,10 +168,7 @@ $reports = [
 ];
 
 // Solo reports activos
-$reports = array_filter(
-    $reports,
-    static fn(array $report): bool => ($report['status'] ?? null) === Status::ACTIVE
-);
+$reports = filterActiveMembers($reports);
 
 foreach ($reports as &$report) {
     $report['title'] = $report['name'];

@@ -87,10 +87,7 @@ $projects = [
 ];
 
 // Solo projects activos
-$projects = array_filter(
-    $projects,
-    static fn(array $project): bool => ($project['status'] ?? null) === Status::ACTIVE
-);
+$projects = filterActiveMembers($projects);
 
 foreach ($projects as &$project) {
     $project['title'] = $project['name'];

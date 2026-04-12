@@ -210,10 +210,7 @@ $pages = [
 ];
 
 // Solo pages activos
-$pages = array_filter(
-    $pages,
-    static fn(array $page): bool => ($page['status'] ?? null) === Status::ACTIVE
-);
+$pages = filterActiveMembers($pages);
 
 foreach ($pages as &$page) {
     $page['alt'] = 'Imagen de ' . $page['name'];

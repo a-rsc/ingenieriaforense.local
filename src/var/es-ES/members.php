@@ -62,10 +62,7 @@ $members = [
 ];
 
 // Solo members activos
-$members = array_filter(
-    $members,
-    static fn(array $member): bool => ($member['status'] ?? null) === Status::ACTIVE
-);
+$members = filterActiveMembers($members);
 
 foreach ($members as &$member) {
     $member['title'] = $member['name'];
