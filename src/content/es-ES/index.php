@@ -15,45 +15,65 @@ $services = getRandomItems($serviceCollections['Reports'], 3);
 ob_start();
 ?>
         <section class="py-4">
-<?php require BASE_PATH . '/src/components/carousel.php'; ?>
+<?php
+    require BASE_PATH . "/src/components/$lang/carousel.php";
+?>
         </section>
         <!-- Home -->
         <section id="home" class="home">
             <div class="container py-4">
-                <h1><?= COMPANY_NAME ?></h1>
+                <!-- Title -->
+                <header>
+                    <h1><?= COMPANY_NAME ?></h1>
+                </header>
+                <!-- End Title -->
+                <!-- Section content -->
                 <div class="row g-4">
-<?php foreach ($randomItems ?? [] as $key => $item): ?>
+<?php
+foreach ($randomItems ?? [] as $key => $item):
+?>
                     <div class="col-md-4">
                         <div class="card h-100 position-relative shadow-lg">
                             <div class="card-body">
                                 <h3 class="card-title"><?= $item['name'] ?></h3>
                                 <p><?= $item['description'] ?></p>
+                                <span class="card-link mt-auto" title="<?= $item['title'] ?>">Saber más →</span>
                             </div>
                             <a href="<?= $item['url'] ?>" class="stretched-link"></a>
                         </div>
                     </div>
-<?php endforeach; ?>
+<?php
+    endforeach;
+?>
                 </div>
+                <!-- End Section content -->
             </div>
         </section>
         <!-- End Home -->
-<?php require BASE_PATH . '/src/components/testimonials.php'; ?>
+<?php
+    require BASE_PATH . "/src/components/$lang/testimonials.php";
+?>
         <section>
             <div class="container py-4">
                 <div class="row">
                     <div class="col">
-                        <!-- Título -->
-                        <h1><?= $pages['Reports']['title'] ?></h1>
-                        <p class="lead text-secondary"><?= $pages['Reports']['description'] ?></p>
-                        <!-- End Título -->
+                        <!-- Title -->
+                         <header>
+                             <h1><?= $pages['Reports']['title'] ?></h1>
+                             <p class="lead text-secondary"><?= $pages['Reports']['description'] ?></p>
+                         </header>
+                        <!-- End Title -->
                     </div>
                 </div>
-                <!-- Contenido de la sección -->
+                <!-- Section content -->
                 <div class="row">
-<?php foreach ($services ?? [] as $key => $item): ?>
+<?php
+    foreach ($services ?? [] as $key => $item):
+        $image = getRandomElement($item['images']);
+?>
                     <div class="col-md-4 d-flex">
                         <div class="card w-100 mb-4 shadow-lg">
-                            <img src="<?= getRandomElement($item['images']) ?>" class="card-img-top" alt="<?= $item['alt'] ?>" title="<?= $item['title'] ?>" width="286" height="180" decoding="async">
+                            <img src="<?= $image['src'] ?>" class="card-img-top" alt="<?= $image['alt'] ?>" title="<?= $item['title'] ?>" width="286" height="180" decoding="async">
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title"><?= $item['title'] ?></h5>
                                 <p class="card-text"><?= $item['description'] ?></p>
@@ -62,10 +82,14 @@ ob_start();
                             <a href="<?= $item['url'] ?>" class="stretched-link" title="<?= $item['title'] ?>"></a>
                         </div>
                     </div>
-<?php endforeach; ?>
+<?php
+    endforeach;
+?>
                 </div>
             </div>
         </section>
-        <!-- End Contenido de la sección -->
-<?php require BASE_PATH . '/src/components/partners.php'; ?>
-<?php $main = ob_get_clean(); ?>
+        <!-- End Section content -->
+<?php
+    require BASE_PATH . "/src/components/$lang/partners.php";
+    $main = ob_get_clean();
+?>

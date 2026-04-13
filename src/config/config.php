@@ -13,6 +13,7 @@ define('APP_ENV', 'development'); // Entornos: development, testing, staging y p
 // Idioma y localización
 define('APP_LOCALE', 'es_ES'); // Entorno de programación
 define('APP_LANG', 'es-ES'); // Estándar IETF BCP 47
+define('APP_LANGUAGE', 'Spanish'); // Language name in English
 
 // Zona horaria
 date_default_timezone_set('Europe/Madrid');

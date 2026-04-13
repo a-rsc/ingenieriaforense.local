@@ -16,7 +16,7 @@ declare(strict_types=1);
                     <div class="col">
                         <div class="card bg-dark shadow-lg">
                             <div class="d-flex justify-content-center">
-                                <img src="<?= $member['images'][0] ?>" class="card-img-top rounded" alt="<?= $member['alt'] ?>" width="80" height="80" loading="lazy" decoding="async">
+                                <img src="<?= $member['images'][0]['src'] ?>" class="card-img-top rounded" alt="<?= $member['images'][0]['alt'] ?>" width="80" height="80" loading="lazy" decoding="async">
                             </div>
                             <div class="card-body">
                                 <p class="card-title text-center text-white"><?= $member['name'] ?></p>
@@ -24,7 +24,9 @@ declare(strict_types=1);
                             <a href="<?= $member['url'] ?>" target="_blank" class="stretched-link" rel="noopener noreferrer" title="<?= $member['name'] ?>"></a>
                         </div>
                     </div>
-<?php endforeach; ?>
+<?php
+    endforeach;
+?>
                 </div>
             </div>
         </aside>

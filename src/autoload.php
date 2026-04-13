@@ -16,9 +16,7 @@ require BASE_PATH . "/src/var/{$lang}/enums.php"; // Enums
 require BASE_PATH . "/src/var/{$lang}/pages.php"; // Página y SEO del sitio
 require BASE_PATH . "/src/var/{$lang}/members.php"; // Miembro del equipo, cliente o colaborador
 require BASE_PATH . "/src/var/{$lang}/permits.php"; // Licencia
-require BASE_PATH . "/src/var/{$lang}/projects.php"; // Proyecto
+require BASE_PATH . "/src/var/{$lang}/industrial-fires.php"; // Incendios industriales
 require BASE_PATH . "/src/var/{$lang}/reports.php"; // Ingeniería forense
 require BASE_PATH . "/src/var/{$lang}/testimonials.php"; // Testimonio
-
-exit;
 ?>

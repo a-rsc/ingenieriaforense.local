@@ -11,30 +11,39 @@ ob_start();
         <div class="row">
             <div class="col">
                 <article>
-                    <!-- Título -->
+                    <!-- Title -->
                     <header>
                         <h1><?= $pages[$pageByUrl]['title'] ?></h1>
                         <p class="lead text-secondary"><?= $pages[$pageByUrl]['description'] ?></p>
                     </header>
-                    <!-- End Título -->
-                    <?php require BASE_PATH . '/src/components/services-nav.php'; ?>
-                    <!-- Contenido de la sección -->
+                    <!-- End Title -->
+<?php
+    require BASE_PATH . "/src/components/$lang/services-nav.php";
+?>
+                    <!-- Section content -->
                     <section>
                         <h2><?= $service['title'] ?></h2>
                         <p class="lead text-secondary"><?= $service['description'] ?></p>
                         <?= $service['text'] ?>
-                        <?php foreach ($service['list'] ?? [] as $key => $value): ?>
+<?php
+    foreach ($service['list'] ?? [] as $key => $value):
+?>
                             <ul>
                                 <li><?= $value ?></li>
                             </ul>
-                        <?php endforeach; ?>
-                        <?php require BASE_PATH . '/src/components/gallery.php'; ?>
+<?php
+    endforeach;
+    require BASE_PATH . "/src/components/$lang/gallery.php";
+?>
                     </section>
+                    <!-- End Section content -->
                 </article>
             </div>
         </div>
     </div>
 </section>
 <!-- End Services Page -->
-<?php require BASE_PATH . '/src/components/partners.php'; ?>
-<?php $main = ob_get_clean(); ?>
+<?php
+    require BASE_PATH . "/src/components/$lang/partners.php";
+    $main = ob_get_clean();
+?>

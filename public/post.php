@@ -10,3 +10,4 @@ require BASE_PATH . '/src/autoload.php';
 
 // Cargar el servicio específico
 require BASE_PATH . '/src/services/mail.php';
+?>

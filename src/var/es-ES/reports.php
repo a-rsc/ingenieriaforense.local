@@ -20,12 +20,11 @@ $reports = [
             'Enfoque claro, riguroso y orientado a <strong>decisiones prácticas</strong>.'
         ],
         'images' => [
-            e('/images/reports/Defectos-constructivos.webp'),
-            e('/images/reports/Danos-estructurales.webp'),
-            e('/images/reports/Causas-de-humedad.webp'),
-            e('/images/reports/Incumplimiento-contrato-obra.webp'),
+            ['src' => e('/images/permits/Defectos-constructivos.webp'), 'alt' => 'Imagen de defectos constructivos'],
+            ['src' => e('/images/permits/Danos-estructurales.webp'), 'alt' => 'Imagen de daños estructurales'],
+            ['src' => e('/images/permits/Causas-de-humedad.webp'), 'alt' => 'Imagen de causas de humedad'],
+            ['src' => e('/images/permits/Incumplimiento-contrato-obra.webp'), 'alt' => 'Imagen de incumplimiento de contrato de obra'],
         ],
-        'slide' => Status::ACTIVE,
         'slide-image' => e('/images/reports/Defectos-constructivos.webp'),
         'status' => Status::ACTIVE,
         'keywords' => 'perito de humedades, perito humedades, diagnóstico humedades, filtraciones, condensación, peritaje humedades, causa de humedades, informe técnico humedades',
@@ -47,12 +46,11 @@ $reports = [
             'Redacción clara, precisa y <strong>técnicamente defendible</strong>.'
         ],
         'images' => [
-            e('/images/reports/Defectos-constructivos.webp'),
-            e('/images/reports/Danos-estructurales.webp'),
-            e('/images/reports/Causas-de-humedad.webp'),
-            e('/images/reports/Incumplimiento-contrato-obra.webp'),
+            ['src' => e('/images/permits/Defectos-constructivos.webp'), 'alt' => 'Imagen de defectos constructivos'],
+            ['src' => e('/images/permits/Danos-estructurales.webp'), 'alt' => 'Imagen de daños estructurales'],
+            ['src' => e('/images/permits/Causas-de-humedad.webp'), 'alt' => 'Imagen de causas de humedad'],
+            ['src' => e('/images/permits/Incumplimiento-contrato-obra.webp'), 'alt' => 'Imagen de incumplimiento de contrato de obra'],
         ],
-        'slide' => Status::ACTIVE,
         'slide-image' => e('/images/reports/Danos-estructurales.webp'),
         'status' => Status::ACTIVE,
         'keywords' => 'informe pericial de humedades, informe pericial humedades, peritaje humedades, informe técnico humedades, reclamación humedades, informe para juicio humedades, perito humedades',
@@ -74,12 +72,11 @@ $reports = [
             'Posibilidad de servir de base para un <strong>informe pericial</strong> más amplio.'
         ],
         'images' => [
-            e('/images/reports/Defectos-constructivos.webp'),
-            e('/images/reports/Danos-estructurales.webp'),
-            e('/images/reports/Causas-de-humedad.webp'),
-            e('/images/reports/Incumplimiento-contrato-obra.webp'),
+            ['src' => e('/images/permits/Defectos-constructivos.webp'), 'alt' => 'Imagen de defectos constructivos'],
+            ['src' => e('/images/permits/Danos-estructurales.webp'), 'alt' => 'Imagen de daños estructurales'],
+            ['src' => e('/images/permits/Causas-de-humedad.webp'), 'alt' => 'Imagen de causas de humedad'],
+            ['src' => e('/images/permits/Incumplimiento-contrato-obra.webp'), 'alt' => 'Imagen de incumplimiento de contrato de obra'],
         ],
-        'slide' => Status::ACTIVE,
         'slide-image' => e('/images/reports/Causas-de-humedad.webp'),
         'status' => Status::ACTIVE,
         'keywords' => 'defectos constructivos, perito defectos constructivos, vicios ocultos, obra defectuosa, informe defectos constructivos, fallos de ejecución, patologías constructivas',
@@ -101,12 +98,11 @@ $reports = [
             'Enfoque <strong>independiente y fundamentado</strong>.'
         ],
         'images' => [
-            e('/images/reports/Defectos-constructivos.webp'),
-            e('/images/reports/Danos-estructurales.webp'),
-            e('/images/reports/Causas-de-humedad.webp'),
-            e('/images/reports/Incumplimiento-contrato-obra.webp'),
+            ['src' => e('/images/permits/Defectos-constructivos.webp'), 'alt' => 'Imagen de defectos constructivos'],
+            ['src' => e('/images/permits/Danos-estructurales.webp'), 'alt' => 'Imagen de daños estructurales'],
+            ['src' => e('/images/permits/Causas-de-humedad.webp'), 'alt' => 'Imagen de causas de humedad'],
+            ['src' => e('/images/permits/Incumplimiento-contrato-obra.webp'), 'alt' => 'Imagen de incumplimiento de contrato de obra'],
         ],
-        'slide' => Status::ACTIVE,
         'slide-image' => e('/images/reports/Incumplimiento-contrato-obra.webp'),
         'status' => Status::ACTIVE,
         'keywords' => 'daños estructurales, perito daños estructurales, informe daños estructurales, grietas estructurales, estabilidad edificio, daño en cimentación, peritaje estructural',
@@ -128,12 +124,11 @@ $reports = [
             'Soporte técnico para <strong>conflictos de obra</strong> con recorrido legal o extrajudicial.'
         ],
         'images' => [
-            e('/images/reports/Defectos-constructivos.webp'),
-            e('/images/reports/Danos-estructurales.webp'),
-            e('/images/reports/Causas-de-humedad.webp'),
-            e('/images/reports/Incumplimiento-contrato-obra.webp'),
+            ['src' => e('/images/permits/Defectos-constructivos.webp'), 'alt' => 'Imagen de defectos constructivos'],
+            ['src' => e('/images/permits/Danos-estructurales.webp'), 'alt' => 'Imagen de daños estructurales'],
+            ['src' => e('/images/permits/Causas-de-humedad.webp'), 'alt' => 'Imagen de causas de humedad'],
+            ['src' => e('/images/permits/Incumplimiento-contrato-obra.webp'), 'alt' => 'Imagen de incumplimiento de contrato de obra'],
         ],
-        'slide' => Status::INACTIVE,
         'slide-image' => e('/images/reports/Incumplimiento-contrato-obra.webp'),
         'status' => Status::ACTIVE,
         'keywords' => 'incumplimiento de obra, informe pericial incumplimiento obra, perito obra, conflicto de obra, reclamación obra, desviaciones de obra, perito construcción',
@@ -155,12 +150,11 @@ $reports = [
             'Adaptación a supuestos civiles, mercantiles o <strong>patrimoniales complejos</strong>.'
         ],
         'images' => [
-            e('/images/reports/Defectos-constructivos.webp'),
-            e('/images/reports/Danos-estructurales.webp'),
-            e('/images/reports/Causas-de-humedad.webp'),
-            e('/images/reports/Incumplimiento-contrato-obra.webp'),
+            ['src' => e('/images/permits/Defectos-constructivos.webp'), 'alt' => 'Imagen de defectos constructivos'],
+            ['src' => e('/images/permits/Danos-estructurales.webp'), 'alt' => 'Imagen de daños estructurales'],
+            ['src' => e('/images/permits/Causas-de-humedad.webp'), 'alt' => 'Imagen de causas de humedad'],
+            ['src' => e('/images/permits/Incumplimiento-contrato-obra.webp'), 'alt' => 'Imagen de incumplimiento de contrato de obra'],
         ],
-        'slide' => Status::INACTIVE,
         'slide-image' => e('/images/reports/Incumplimiento-contrato-obra.webp'),
         'status' => Status::ACTIVE,
         'keywords' => 'tasación judicial, tasación judicial inmueble, perito tasador judicial, valoración inmueble litigio, informe de tasación judicial, tasación pericial, valoración patrimonial',
@@ -172,9 +166,9 @@ $reports = filterActiveMembers($reports);
 
 foreach ($reports as &$report) {
     $report['title'] = $report['name'];
-    $report['alt'] = 'Imagen de ' . $report['name'];
     $report['url'] = $pages['Reports']['url'] . titleToUrl($report['name']);
-    $report['slide-text'] = $report['description'];
+    $report['slide-alt'] = 'Imagen de ' . $report['name'];
+    $report['name-schema'] = 'Página de ' . $report['name'];
 }
 unset($report);
 ?>

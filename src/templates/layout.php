@@ -12,7 +12,7 @@ declare(strict_types=1);
     <!-- SEO Meta Tags -->
     <meta name="robots" content="index, follow">
     <meta name="author" content="<?= COMPANY_NAME ?>">
-    <title><?= "{$pages[$pageByUrl]['title']} · " . COMPANY_NAME ?></title>
+    <title><?= "{$pages[$pageByUrl]['title']} | " . COMPANY_NAME ?></title>
     <meta name="description" content="<?= $pages[$pageByUrl]['description'] ?>">
     <link rel="canonical" href="<?= BASE_URL . $currentPage ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@ declare(strict_types=1);
     <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap"></noscript>
     <meta property="og:type" content="website">
-    <meta property="og:title" content="<?= "{$pages[$pageByUrl]['title']} · " . COMPANY_NAME ?>">
+    <meta property="og:title" content="<?= "{$pages[$pageByUrl]['title']} | " . COMPANY_NAME ?>">
     <meta property="og:description" content="<?= $pages[$pageByUrl]['description'] ?>">
     <meta property="og:url" content="<?= BASE_URL . $currentPage ?>">
     <meta property="og:image" content="<?= COMPANY_OG_LOGO ?>">
@@ -30,7 +30,7 @@ declare(strict_types=1);
     <meta property="og:image:alt" content="Logo de <?= COMPANY_NAME ?>">
     <meta property="og:locale" content="<?= APP_LOCALE ?>">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<?= "{$pages[$pageByUrl]['title']} · " . COMPANY_NAME ?>">
+    <meta name="twitter:title" content="<?= "{$pages[$pageByUrl]['title']} | " . COMPANY_NAME ?>">
     <meta name="twitter:description" content="<?= $pages[$pageByUrl]['description'] ?>">
     <meta name="twitter:image" content="<?= COMPANY_OG_LOGO ?>">
     <!-- End SEO Meta Tags -->
@@ -42,25 +42,27 @@ declare(strict_types=1);
 </head>
 <body>
 <?php
-    require BASE_PATH . '/src/components/accessibility-preloader-lines.php';
-    require BASE_PATH . '/src/components/header.php';
+    require BASE_PATH . "/src/components/$lang/accessibility-preloader-lines.php";
+    require BASE_PATH . "/src/components/$lang/header.php";
 ?>
     <!-- Main Content -->
     <main id="main-content">
 <?php
     if (!isHome($pageByUrl)) {
-        require BASE_PATH . '/src/components/breadcrumb.php';
+        require BASE_PATH . "/src/components/$lang/breadcrumb.php";
     }
     echo $main ?? '';
 ?>
     </main>
     <!-- End Main Content -->
-<?php require BASE_PATH . '/src/components/footer.php'; ?>
+<?php
+    require BASE_PATH . "/src/components/$lang/footer.php";
+?>
     <!-- JS -->
     <script src="/js/bootstrap.bundle.min.js" defer></script>
     <script src="/js/script.js" defer></script>
     <!-- JSON-LD: LocalBusiness -->
-<?php require BASE_PATH . '/src/components/schema.php'; ?>
+<?php require BASE_PATH . "/src/components/$lang/schema.php"; ?>
     <!-- End JSON-LD -->
     <!-- End JS -->
 </body>

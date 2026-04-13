@@ -11,9 +11,8 @@ $testimonials = [
         'list' => [],
         'url' => '',
         'images' => [
-            e(''),
+            ['src' => e(''), 'alt' => 'Imagen de Carlos Martínez'],
         ],
-        'slide' => Status::INACTIVE,
         'slide-image' => '',
         'status' => Status::ACTIVE,
     ],
@@ -25,9 +24,8 @@ $testimonials = [
         'text' => 'Gran atención al detalle y comunicación constante. Muy recomendables.',
         'url' => '',
         'images' => [
-            e(''),
+            ['src' => e(''), 'alt' => 'Imagen de Laura Gómez'],
         ],
-        'slide' => Status::INACTIVE,
         'slide-image' => '',
         'status' => Status::ACTIVE,
     ],
@@ -39,9 +37,8 @@ $testimonials = [
         'text' => 'Un equipo muy eficiente que entrega resultados de alta calidad.',
         'url' => '',
         'images' => [
-            e(''),
+            ['src' => e(''), 'alt' => 'Imagen de Javier López'],
         ],
-        'slide' => Status::INACTIVE,
         'slide-image' => '',
         'status' => Status::ACTIVE,
     ],
@@ -53,9 +50,8 @@ $testimonials = [
         'text' => 'Estamos encantados con el resultado. Todo el proceso fue muy sencillo.',
         'url' => '',
         'images' => [
-            e(''),
+            ['src' => e(''), 'alt' => 'Imagen de Marta Sánchez'],
         ],
-        'slide' => Status::INACTIVE,
         'slide-image' => '',
         'status' => Status::ACTIVE,
     ],
@@ -67,9 +63,8 @@ $testimonials = [
         'text' => 'Profesionales, cercanos y muy comprometidos con el proyecto.',
         'url' => '',
         'images' => [
-            e(''),
+            ['src' => e(''), 'alt' => 'Imagen de David Fernández'],
         ],
-        'slide' => Status::INACTIVE,
         'slide-image' => '',
         'status' => Status::ACTIVE,
     ],
@@ -81,9 +76,8 @@ $testimonials = [
         'text' => 'Nos ayudaron a mejorar nuestro proyecto con resultados excelentes.',
         'url' => '',
         'images' => [
-            e(''),
+            ['src' => e(''), 'alt' => 'Imagen de Ana Ruiz'],
         ],
-        'slide' => Status::INACTIVE,
         'slide-image' => '',
         'status' => Status::ACTIVE,
     ],
@@ -94,9 +88,9 @@ $testimonials = filterActiveMembers($testimonials);
 
 foreach ($testimonials as &$testimonial) {
     $testimonial['title'] = $testimonial['name'];
-    $testimonial['alt'] = 'Imagen de ' . $testimonial['name'];
-    // $testimonial['url'] = titleToUrl($testimonial['name']);
-    $testimonial['slide-text'] = $testimonial['description'];
+    $testimonial['url'] = titleToUrl($testimonial['name']);
+    $testimonial['slide-alt'] = 'Imagen de ' . $testimonial['name'];
+    $testimonial['name-schema'] = 'Página de ' . $testimonial['name'];
 }
 unset($testimonial);
 ?>

@@ -9,12 +9,14 @@ declare(strict_types=1);
 $currentPage = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
 $currentPage = $currentPage !== '' ? $currentPage : 'index';
 
+// $currentPage = '/ingenieria-forense/perito-de-humedades';
+
 $pageByUrl = $currentPage === 'index'
     ? 'Home'
     : findKeyByUrl($pages, $currentPage);
 
 $serviceCollections = [
-    'Projects' => $projects,
+    'Industrial Fires' => $industrialFires,
     'Permits' => $permits,
     'Reports' => $reports,
 ];

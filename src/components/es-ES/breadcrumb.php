@@ -10,11 +10,15 @@ declare(strict_types=1);
                     <?= $pages['Home']['name'] ?>
                 </a>
             </li>
-            <?php if ($service === null): ?>
+<?php
+    if ($service === null):
+?>
                 <li class="breadcrumb-item active" aria-current="page">
                     <?= $pages[$pageByUrl]['name'] ?>
                 </li>
-            <?php else: ?>
+<?php
+    else:
+?>
                 <li class="breadcrumb-item">
                     <a href="<?= $pages[$pageByUrl]['url'] ?>">
                         <?= $pages[$pageByUrl]['name'] ?>
@@ -23,7 +27,9 @@ declare(strict_types=1);
                 <li class="breadcrumb-item active" aria-current="page">
                     <?= $service['name'] ?>
                 </li>
-            <?php endif; ?>
+<?php
+    endif;
+?>
         </ol>
     </div>
 </nav>

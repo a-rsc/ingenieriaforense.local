@@ -3,25 +3,6 @@ declare(strict_types=1);
 
 $members = [
     [
-        'name' => 'Universitat Politècnica de Catalunya',
-        'category' => Category::MEMBER,
-        'subcategory' => MemberCategory::PARTNER,
-        'description' => 'Universitat pública catalana especialitzada en enginyeria, arquitectura, ciència i tecnologia.',
-        'text' => '',
-        'list' => [
-            'Colaboración en proyectos de investigación y desarrollo tecnológico.',
-            'Participación en programas de formación y capacitación para estudiantes y profesionales.',
-            'Intercambio de conocimientos y recursos para fomentar la innovación en el sector de la construcción.',
-        ],
-        'url' => 'https://www.upc.edu/ca',
-        'images' => [
-            e('/images/members/UPC.png'),
-        ],
-        'slide' => Status::INACTIVE,
-        'slide-image' => '',
-        'status' => Status::ACTIVE,
-    ],
-    [
         'name' => 'Enginyers Industrials de Catalunya',
         'category' => Category::MEMBER,
         'subcategory' => MemberCategory::PARTNER,
@@ -34,9 +15,26 @@ $members = [
         ],
         'url' => 'https://www.eic.cat/',
         'images' => [
-            e('/images/members/Enginyers-Industrials-Catalunya.jpg'),
+            ['src' => e('/images/members/Enginyers-Industrials-Catalunya.jpg'), 'alt' => 'Imagen de Enginyers Industrials de Catalunya'],
         ],
-        'slide' => Status::INACTIVE,
+        'slide-image' => '',
+        'status' => Status::ACTIVE,
+    ],
+    [
+        'name' => 'Universitat Politècnica de Catalunya',
+        'category' => Category::MEMBER,
+        'subcategory' => MemberCategory::PARTNER,
+        'description' => 'Universitat pública catalana especialitzada en enginyeria, arquitectura, ciència i tecnologia.',
+        'text' => '',
+        'list' => [
+            'Colaboración en proyectos de investigación y desarrollo tecnológico.',
+            'Participación en programas de formación y capacitación para estudiantes y profesionales.',
+            'Intercambio de conocimientos y recursos para fomentar la innovación en el sector de la construcción.',
+        ],
+        'url' => 'https://www.upc.edu/ca',
+        'images' => [
+            ['src' => e('/images/members/UPC.png'), 'alt' => 'Imagen de Universitat Politècnica de Catalunya'],
+        ],
         'slide-image' => '',
         'status' => Status::ACTIVE,
     ],
@@ -53,9 +51,8 @@ $members = [
         ],
         'url' => 'https://www.bcndroneproductions.es/',
         'images' => [
-            e('/images/members/Bcn-Drone-Productions.webp'),
+            ['src' => e('/images/members/Bcn-Drone-Productions.webp'), 'alt' => 'Imagen de Bcn Drone Productions'],
         ],
-        'slide' => Status::INACTIVE,
         'slide-image' => '',
         'status' => Status::ACTIVE,
     ],
@@ -66,9 +63,9 @@ $members = filterActiveMembers($members);
 
 foreach ($members as &$member) {
     $member['title'] = $member['name'];
-    $member['alt'] = 'Imagen de ' . $member['name'];
     // $member['url'] = titleToUrl($member['name']);
-    $member['slide-text'] = $member['description'];
+    $member['slide-alt'] = 'Imagen de ' . $member['name'];
+    $member['name-schema'] = 'Página de ' . $member['name'];
 }
 unset($member);
 ?>

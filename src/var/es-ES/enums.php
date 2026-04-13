@@ -13,8 +13,8 @@ function categoryLabel(Category $category, string $lang = 'es-ES'): string
         Category::PERMIT->value => [
             'es-ES' => 'Licencia',
         ],
-        Category::PROJECT->value => [
-            'es-ES' => 'Proyecto técnico',
+        Category::INDUSTRIALFIRE->value => [
+            'es-ES' => 'Incendio industrial',
         ],
         Category::REPORT->value => [
             'es-ES' => 'Peritaje',

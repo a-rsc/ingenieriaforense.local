@@ -20,12 +20,11 @@ $permits = [
             'Acompañamiento técnico para <strong>abrir o legalizar la actividad</strong> con mayor seguridad.'
         ],
         'images' => [
-            e('/images/permits/Defectos-constructivos.webp'),
-            e('/images/permits/Danos-estructurales.webp'),
-            e('/images/permits/Causas-de-humedad.webp'),
-            e('/images/permits/Incumplimiento-contrato-obra.webp'),
+            ['src' => e('/images/permits/Defectos-constructivos.webp'), 'alt' => 'Imagen de defectos constructivos'],
+            ['src' => e('/images/permits/Danos-estructurales.webp'), 'alt' => 'Imagen de daños estructurales'],
+            ['src' => e('/images/permits/Causas-de-humedad.webp'), 'alt' => 'Imagen de causas de humedad'],
+            ['src' => e('/images/permits/Incumplimiento-contrato-obra.webp'), 'alt' => 'Imagen de incumplimiento de contrato de obra'],
         ],
-        'slide' => Status::ACTIVE,
         'slide-image' => e('/images/permits/Defectos-constructivos.webp'),
         'status' => Status::ACTIVE,
         'keywords' => 'licencia de actividad, tramitación licencia de actividad, ingeniero licencia actividad, licencia apertura, legalización de actividad, documentación licencia actividad, licencia para local, licencia para nave'
@@ -47,12 +46,11 @@ $permits = [
             'Enfoque para evitar <strong>inversiones a ciegas</strong> y requerimientos posteriores.'
         ],
         'images' => [
-            e('/images/permits/Defectos-constructivos.webp'),
-            e('/images/permits/Danos-estructurales.webp'),
-            e('/images/permits/Causas-de-humedad.webp'),
-            e('/images/permits/Incumplimiento-contrato-obra.webp'),
+            ['src' => e('/images/permits/Defectos-constructivos.webp'), 'alt' => 'Imagen de defectos constructivos'],
+            ['src' => e('/images/permits/Danos-estructurales.webp'), 'alt' => 'Imagen de daños estructurales'],
+            ['src' => e('/images/permits/Causas-de-humedad.webp'), 'alt' => 'Imagen de causas de humedad'],
+            ['src' => e('/images/permits/Incumplimiento-contrato-obra.webp'), 'alt' => 'Imagen de incumplimiento de contrato de obra'],
         ],
-        'slide' => Status::ACTIVE,
         'slide-image' => e('/images/permits/Danos-estructurales.webp'),
         'status' => Status::ACTIVE,
         'keywords' => 'licencia nave industrial, licencia de actividad nave industrial, legalizar nave industrial, proyecto técnico nave industrial, ingeniero nave industrial, apertura nave industrial, actividad industrial'
@@ -74,12 +72,11 @@ $permits = [
             'Enfoque para <strong>reducir errores y requerimientos administrativos</strong>.'
         ],
         'images' => [
-            e('/images/permits/Defectos-constructivos.webp'),
-            e('/images/permits/Danos-estructurales.webp'),
-            e('/images/permits/Causas-de-humedad.webp'),
-            e('/images/permits/Incumplimiento-contrato-obra.webp'),
+            ['src' => e('/images/permits/Defectos-constructivos.webp'), 'alt' => 'Imagen de defectos constructivos'],
+            ['src' => e('/images/permits/Danos-estructurales.webp'), 'alt' => 'Imagen de daños estructurales'],
+            ['src' => e('/images/permits/Causas-de-humedad.webp'), 'alt' => 'Imagen de causas de humedad'],
+            ['src' => e('/images/permits/Incumplimiento-contrato-obra.webp'), 'alt' => 'Imagen de incumplimiento de contrato de obra'],
         ],
-        'slide' => Status::ACTIVE,
         'slide-image' => e('/images/permits/Causas-de-humedad.webp'),
         'status' => Status::ACTIVE,
         'keywords' => 'comunicación previa, comunicación previa actividad, comunicación previa apertura, declaración responsable actividad, tramitación comunicación previa, documentación comunicación previa, ingeniero comunicación previa'
@@ -101,12 +98,11 @@ $permits = [
             'Enfoque orientado a <strong>regularizar la actividad</strong> con criterio y trazabilidad.'
         ],
         'images' => [
-            e('/images/permits/Defectos-constructivos.webp'),
-            e('/images/permits/Danos-estructurales.webp'),
-            e('/images/permits/Causas-de-humedad.webp'),
-            e('/images/permits/Incumplimiento-contrato-obra.webp'),
+            ['src' => e('/images/permits/Defectos-constructivos.webp'), 'alt' => 'Imagen de defectos constructivos'],
+            ['src' => e('/images/permits/Danos-estructurales.webp'), 'alt' => 'Imagen de daños estructurales'],
+            ['src' => e('/images/permits/Causas-de-humedad.webp'), 'alt' => 'Imagen de causas de humedad'],
+            ['src' => e('/images/permits/Incumplimiento-contrato-obra.webp'), 'alt' => 'Imagen de incumplimiento de contrato de obra'],
         ],
-        'slide' => Status::ACTIVE,
         'slide-image' => e('/images/permits/Incumplimiento-contrato-obra.webp'),
         'status' => Status::ACTIVE,
         'keywords' => 'legalización de actividad, legalizar actividad, regularización de actividad, legalización nave industrial, legalización local comercial, documentación actividad, ingeniero legalización actividad'
@@ -118,9 +114,9 @@ $permits = filterActiveMembers($permits);
 
 foreach ($permits as &$permit) {
     $permit['title'] = $permit['name'];
-    $permit['alt'] = 'Imagen de ' . $permit['name'];
     $permit['url'] = $pages['Permits']['url'] . titleToUrl($permit['name']);
-    $permit['slide-text'] = $permit['description'];
+    $permit['slide-alt'] = 'Imagen de ' . $permit['name'];
+    $permit['name-schema'] = 'Página de ' . $permit['name'];
 }
 unset($permit);
 ?>

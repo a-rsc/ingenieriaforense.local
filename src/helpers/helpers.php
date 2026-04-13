@@ -134,12 +134,50 @@ function getRandomItems(array $array, int $limit = 1): array|null {
 function getRandomActiveSlides(array $array, int $limit = 2): array|null {
     if (empty($array)) return null;
 
-    $filtered = array_values(array_filter($array, fn($s) =>
-        ($s['slide'] ?? null) == Status::ACTIVE
-    ));
+    shuffle($array);
 
-    shuffle($filtered);
+    return array_slice($array, 0, $limit);
+}
 
-    return array_slice($filtered, 0, $limit);
+/**
+ * Generate a BreadcrumbList schema based on the current page and service
+ */
+function getBreadcrumbList($pages, $pageByUrl, $service = null) {
+    $list = [];
+
+    // 1. Siempre empezamos por Home
+    $list[] = [
+        "@type" => "ListItem",
+        "position" => 1,
+        "name" => $pages['Home']['name'],
+        "item" => BASE_URL . $pages['Home']['url'],
+    ];
+
+    if ($service === null) {
+        // 2. Si no hay servicio, el segundo nivel es la página actual (ej. Contacto)
+        $list[] = [
+            "@type" => "ListItem",
+            "position" => 2,
+            "name" => $pages[$pageByUrl]['name'],
+            "item" => BASE_URL . $pages[$pageByUrl]['url'],
+        ];
+    } else {
+        // 2. Si hay servicio, el segundo nivel es la categoría (ej. Peritajes)
+        $list[] = [
+            "@type" => "ListItem",
+            "position" => 2,
+            "name" => $pages[$pageByUrl]['name'],
+            "item" => BASE_URL . $pages[$pageByUrl]['url'],
+        ];
+        // 3. Y el tercer nivel es el servicio específico (ej. Humedades)
+        $list[] = [
+            "@type" => "ListItem",
+            "position" => 3,
+            "name" => $service['name'],
+            "item" => BASE_URL . $service['url'],
+        ];
+    }
+
+    return $list;
 }
 ?>

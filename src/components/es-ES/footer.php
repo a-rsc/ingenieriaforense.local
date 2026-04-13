@@ -5,18 +5,26 @@ declare(strict_types=1);
     <footer class="bg-dark border-top border-light text-white" role="contentinfo">
         <div class="container py-4">
             <div class="row">
-<?php foreach ($serviceCollections ?? [] as $key => $serviceCollection): ?>
+<?php
+foreach ($serviceCollections ?? [] as $key => $serviceCollection):
+?>
                 <div class="col-md-3">
                     <p class="text-center"><a href="<?= $pages[$key]['url'] ?>"<?= isActive($pages[$key]['url']) ? ' class="active" aria-current="page"' : '' ?>><?= $pages[$key]['name'] ?></a></p>
                     <div class="navbar navbar-dark">
                         <ul class="navbar-nav list-unstyled">
-<?php foreach ($serviceCollection as $item): ?>
+<?php
+    foreach ($serviceCollection as $item):
+?>
                            <li class="nav-item"><a href="<?= $item['url'] ?>" class="nav-link p-0 <?= activeClass($item['url']) ?>"<?= activeClass($item['url'], ' aria-current="page"') ?> aria-label="<?= $item['title'] ?>"><?= $item['name'] ?></a></li>
-<?php endforeach; ?>
+<?php
+    endforeach;
+?>
                         </ul>
                     </div>
                 </div>
-<?php endforeach; ?>
+<?php
+    endforeach;
+?>
                 <div class="col-md-3">
                     <p class="text-center">Menú</p>
                     <!-- Navigation menu -->
@@ -27,7 +35,9 @@ declare(strict_types=1);
         if (($page['subcategory'] ?? null) != NavCategory::PRIMARY) continue;
 ?>
                             <li class="nav-item"><a href="<?= $page['url'] ?>" class="nav-link p-0 <?= activeClass($page['url']) ?>"<?= activeClass($page['url'], ' aria-current="page"') ?> aria-label="<?= $page['title'] ?>"><?= $page['name'] ?></a></li>
-<?php endforeach; ?>
+<?php
+    endforeach;
+?>
                         </ul>
                     </div>
                     <!-- End Navigation menu -->
@@ -51,7 +61,9 @@ declare(strict_types=1);
         if (($page['subcategory'] ?? null) != NavCategory::SECONDARY) continue;
 ?>
                         <li class="list-inline-item"><a href="<?= $page['url'] ?>"<?= activeClass($page['url'], ' class="active" aria-current="page"') ?>><?= $page['name'] ?></a></li>
-<?php endforeach; ?>
+<?php
+endforeach;
+?>
                         <li class="list-inline-item"><a href="<?= $pages['Home']['url'] ?>" aria-label="<?= COMPANY_BRAND ?>">&copy; <?= date('Y') . ' ' . COMPANY_NAME ?></a></li>
                     </ul>
                 </div>

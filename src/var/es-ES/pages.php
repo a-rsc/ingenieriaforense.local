@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+require BASE_PATH . "/src/var/$lang/pages/industrial-fires-page.php";
+
 // Pages
 $pages = [
     'Home' => [
@@ -13,29 +15,27 @@ $pages = [
         'list' => [],
         'url' => '/',
         'images' => [
-            e('/'),
+            ['src' => e('/'), 'alt' => 'Imagen de Home'],
         ],
-        'slide' => Status::INACTIVE,
         'slide-image' => '',
         'status' => Status::ACTIVE,
         'keywords' => 'ingeniería técnica, proyectos técnicos, licencias de actividad, ingeniería forense, informes periciales, peritajes, legalización de actividad, licencia nave industrial'
     ],
-    'Projects' => [
-        'name' => 'Proyectos',
+    'Industrial Fires' => [
+        'name' => 'Incendios industriales',
         'category' => Category::PAGE,
         'subcategory' => NavCategory::PRIMARY,
-        'title' => 'Proyectos técnicos',
-        'description' => 'Desarrollamos proyectos técnicos para actividades, naves y espacios productivos, con documentación clara, justificación normativa y soporte durante la tramitación.',
-        'text' => '<p>Desarrollamos <strong>proyectos técnicos</strong> para la implantación, apertura, adaptación o legalización de actividades en <strong>locales, naves y espacios productivos</strong>. Preparamos la documentación necesaria con un enfoque claro, ordenado y alineado con las exigencias del trámite.</p><p>Este bloque incluye servicios como <strong>proyecto técnico de actividad</strong>, <strong>memoria técnica</strong> y <strong>adecuación de local o nave</strong>, siempre con revisión previa del caso, análisis del inmueble y <strong>justificación normativa</strong>.</p><p>El objetivo es facilitar una base técnica sólida para tramitar correctamente la actividad y reducir errores, incidencias o requerimientos posteriores.</p>',
+        'title' => 'Ingeniería Forense de Incendios industriales',
+        'description' => 'Más allá del "Origen y Causa": Evidencia científica para el sector legal y asegurador.',
+        'text' => $industrialFiresPage,
         'list' => [],
-        'url' => '/proyectos-tecnicos',
+        'url' => '/incendios-industriales',
         'images' => [
-            e('/'),
+            ['src' => e('/'), 'alt' => 'Imagen de Incendios industriales'],
         ],
-        'slide' => Status::INACTIVE,
         'slide-image' => '',
         'status' => Status::ACTIVE,
-        'keywords' => 'proyectos técnicos, proyecto técnico de actividad, proyecto técnico licencia actividad, memoria técnica, adecuación de nave, adecuación de local, justificación normativa'
+        'keywords' => ''
     ],
     'Permits' => [
         'name' => 'Licencias',
@@ -47,9 +47,8 @@ $pages = [
         'list' => [],
         'url' => '/licencias-de-actividad',
         'images' => [
-            e('/'),
+            ['src' => e('/'), 'alt' => 'Imagen de Licencias de actividad'],
         ],
-        'slide' => Status::INACTIVE,
         'slide-image' => '',
         'status' => Status::ACTIVE,
         'keywords' => 'licencias de actividad, licencia de apertura, licencia de actividad nave industrial, comunicación previa, legalización de actividad, ingeniero licencia actividad, tramitación licencia actividad'
@@ -64,26 +63,24 @@ $pages = [
         'list' => [],
         'url' => '/ingenieria-forense',
         'images' => [
-            e('/'),
+            ['src' => e('/'), 'alt' => 'Imagen de Peritajes'],
         ],
-        'slide' => Status::INACTIVE,
         'slide-image' => '',
         'status' => Status::ACTIVE,
         'keywords' => 'ingeniería forense, informes periciales, peritajes, perito humedades, perito grietas, daños estructurales, defectos constructivos, incumplimiento de obra, tasación judicial'
     ],
     'Standard' => [
-        'name' => 'Casos habituales',
+        'name' => 'Casuística habitual',
         'category' => Category::PAGE,
         'subcategory' => NavCategory::PRIMARY,
-        'title' => 'Casos habituales',
+        'title' => 'Casuística habitual',
         'description' => 'Analizamos casos habituales relacionados con licencias, proyectos técnicos, humedades, grietas, daños estructurales, defectos constructivos y conflictos de obra.',
         'text' => '<p>En esta sección reunimos <strong>casos habituales</strong> que tratamos en el ámbito de las <strong>licencias de actividad</strong>, los <strong>proyectos técnicos</strong> y la <strong>ingeniería forense</strong>. El objetivo es ayudarte a identificar mejor tu situación y entender qué tipo de intervención técnica puede necesitar.</p><p>Aquí encontrarás escenarios frecuentes como <strong>licencia para nave industrial</strong>, <strong>comunicación previa</strong>, <strong>legalización de actividad</strong>, <strong>humedades</strong>, <strong>grietas</strong>, <strong>defectos constructivos</strong>, <strong>daños estructurales</strong> o <strong>incumplimientos de obra</strong>.</p><p>Esta página sirve como punto de entrada para orientar al usuario hacia el servicio más adecuado según su problema, necesidad de trámite o tipo de conflicto técnico.</p>',
         'list' => [],
-        'url' => '/casos-habituales',
+        'url' => '/casuistica-habitual',
         'images' => [
-            e('/'),
+            ['src' => e('/'), 'alt' => 'Imagen de Casuística habitual'],
         ],
-        'slide' => Status::INACTIVE,
         'slide-image' => '',
         'status' => Status::ACTIVE,
         'keywords' => 'casos habituales, licencia de actividad, proyecto técnico, humedades, grietas, daños estructurales, defectos constructivos, informe pericial, conflicto de obra'
@@ -98,11 +95,10 @@ $pages = [
         'list' => [],
         'url' => '/blog',
         'images' => [
-            e('/'),
+            ['src' => e('/'), 'alt' => 'Imagen de Blog'],
         ],
-        'slide' => Status::INACTIVE,
         'slide-image' => '',
-        'status' => Status::ACTIVE,
+        'status' => Status::INACTIVE,
         'keywords' => 'blog ingeniería, licencias de actividad, proyectos técnicos, informes periciales, humedades, grietas, patologías constructivas, comunicación previa, perito judicial'
     ],
     'About' => [
@@ -115,9 +111,8 @@ $pages = [
         'list' => [],
         'url' => '/sobre-' . strtolower(COMPANY_BRAND),
         'images' => [
-            e('/'),
+            ['src' => e('/'), 'alt' => 'Imagen de Nosotros'],
         ],
-        'slide' => Status::INACTIVE,
         'slide-image' => '',
         'status' => Status::ACTIVE,
         'keywords' => COMPANY_BRAND . ', ingeniería técnica, proyectos técnicos, licencias de actividad, ingeniería forense, informes periciales, peritajes, rigor técnico, independencia profesional'
@@ -132,9 +127,8 @@ $pages = [
         'list' => [],
         'url' => '/contacto',
         'images' => [
-            e('/'),
+            ['src' => e('/'), 'alt' => 'Imagen de Contacto'],
         ],
-        'slide' => Status::INACTIVE,
         'slide-image' => '',
         'status' => Status::ACTIVE,
         'keywords' => 'contacto ingeniería técnica, presupuesto licencia de actividad, presupuesto proyecto técnico, presupuesto informe pericial, consulta técnica, peritaje, ingeniería forense'
@@ -149,9 +143,8 @@ $pages = [
         'list' => [],
         'url' => '/politica-de-privacidad',
         'images' => [
-            e('/'),
+            ['src' => e('/'), 'alt' => 'Imagen de Política de Privacidad'],
         ],
-        'slide' => Status::INACTIVE,
         'slide-image' => '',
         'status' => Status::ACTIVE,
         'keywords' => 'política de privacidad, protección de datos, privacidad web, tratamiento de datos personales, RGPD'
@@ -166,9 +159,8 @@ $pages = [
         'list' => [],
         'url' => '/terminos-y-condiciones',
         'images' => [
-            e('/'),
+            ['src' => e('/'), 'alt' => 'Imagen de Términos y Condiciones'],
         ],
-        'slide' => Status::INACTIVE,
         'slide-image' => '',
         'status' => Status::ACTIVE,
         'keywords' => 'términos y condiciones, condiciones de uso, uso del sitio web, condiciones legales'
@@ -183,9 +175,8 @@ $pages = [
         'list' => [],
         'url' => '/aviso-legal',
         'images' => [
-            e('/'),
+            ['src' => e('/'), 'alt' => 'Imagen de Aviso Legal'],
         ],
-        'slide' => Status::INACTIVE,
         'slide-image' => '',
         'status' => Status::ACTIVE,
         'keywords' => 'aviso legal, información legal, titular del sitio web, condiciones legales, información corporativa'
@@ -200,9 +191,8 @@ $pages = [
         'list' => [],
         'url' => '/',
         'images' => [
-            e('/'),
+            ['src' => e('/'), 'alt' => 'Imagen de Página no encontrada'],
         ],
-        'slide' => Status::INACTIVE,
         'slide-image' => '',
         'status' => Status::ACTIVE,
         'keywords' => 'error 404, página no encontrada'
@@ -213,8 +203,8 @@ $pages = [
 $pages = filterActiveMembers($pages);
 
 foreach ($pages as &$page) {
-    $page['alt'] = 'Imagen de ' . $page['name'];
-    $page['slide-text'] = $page['description'];
+    $page['slide-alt'] = 'Imagen de ' . $page['name'];
+    $page['name-schema'] = 'Página de ' . $page['name'];
 }
 unset($page);
 ?>

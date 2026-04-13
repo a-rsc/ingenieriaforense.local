@@ -10,7 +10,7 @@ enum Status: string {
 enum Category: string {
     case MEMBER = 'member';
     case PERMIT = 'permit';
-    case PROJECT = 'project';
+    case INDUSTRIALFIRE = 'industrial-fire';
     case REPORT = 'report';
     case TESTIMONIAL = 'testimonial';
     case PAGE = 'page';
@@ -21,7 +21,7 @@ enum PermitCategory: string {
     case CONSTRUCTION = 'construction';
 }
 
-enum ProjectCategory: string {
+enum IndustrialFireCategory: string {
     case RESIDENTIAL = 'residential';
     case INDUSTRIAL = 'industrial';
 }

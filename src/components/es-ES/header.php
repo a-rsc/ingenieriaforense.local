@@ -24,7 +24,9 @@ declare(strict_types=1);
         if (($page['subcategory'] ?? null) != NavCategory::PRIMARY) continue;
 ?>
                         <li class="nav-item"><a href="<?= $page['url'] ?>" class="nav-link <?= activeClass($page['url']) ?>"<?= activeClass($page['url'], ' aria-current="page"') ?> title="<?= $page['name'] ?>"><?= $page['name'] ?></a></li>
-<?php endforeach; ?>
+<?php
+    endforeach;
+?>
                     </ul>
                 </div>
                 <!-- End Navigation menu -->
