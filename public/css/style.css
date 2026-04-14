@@ -1,371 +1,36 @@
-/* ======= Variables ======= */
-:root {
-  --navbar-height: 56px;
-  --focus-outline: 2px solid currentColor;
-  --focus-offset: 2px;
-  --transition-fast: 0.2s ease;
-  --transition-medium: 0.3s ease;
-  --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-}
+/* Base CSS */
+@import "./partials/base.css";
+/* Variables CSS */
+@import "./partials/variables.css";
+/* Typography CSS */
+@import "./partials/typography.css";
+/* Forms CSS */
+@import "./partials/forms.css";
+/* Preloader and content lines CSS */
+@import "./partials/preloader-content-lines.css";
+/* Navbar toggler CSS */
+@import "./partials/navbar-toggler.css";
 
-@media (min-width: 768px) {
-  :root {
-    --navbar-height: 72px;
-  }
-}
-
-/* ======= Base / Reset ======= */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: var(--navbar-height);
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: 'Didact Gothic', sans-serif;
-  font-size: 1rem;
-  line-height: 1.75;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-wrap: break-word;
-}
+/* ======= General ======= */
 
 main {
   padding-top: calc(var(--navbar-height) * 1.5);
 }
 
-/* ======= Typography ======= */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0 0 1.25rem;
-  line-height: 1.5;
-  text-align: center;
+.logo {
+    max-width: 100%;
+    height: auto;
 }
 
-h1,
-h2,
-h3 {
-  font-weight: bold;
-}
-
-h4,
-h5,
-h6 {
-  font-weight: bold;
-}
-
-h1 { font-size: clamp(1.6rem, 2vw, 2rem); }
-h2 { font-size: clamp(1.45rem, 1.8vw, 1.8rem); }
-h3 { font-size: clamp(1.3rem, 1.6vw, 1.6rem); }
-h4 { font-size: clamp(1.2rem, 1.4vw, 1.4rem); }
-h5 { font-size: clamp(1.1rem, 1.2vw, 1.2rem); }
-h6 { font-size: 1rem; }
-
-p,
-ol li,
-th,
-button,
-input,
-optgroup,
-select,
-textarea {
-  font: inherit;
-  line-height: inherit;
-}
-
-p {
-  margin: 0 0 1rem;
-  text-align: justify;
-}
-
-sup,
-sub {
-  font-size: 75%;
-  line-height: 1;
-}
-
-/* ======= Media ======= */
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-/* ======= Lists ======= */
-ul,
-ol {
-  margin: 0 0 1rem;
-  padding-left: 1.5rem;
-}
-
-ul[role="list"] {
-  list-style: none;
-  padding-left: 0;
-}
-
-/* ======= Blockquote ======= */
-blockquote {
-  margin: 0 0 1rem;
-}
-
-/* ======= Tables ======= */
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-thead {
-  text-transform: uppercase;
-}
-
-th,
-td {
-  padding: 0.625rem 0;
-  text-align: left;
-  vertical-align: top;
-}
-
-/* ======= Links ======= */
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:visited {
-  color: inherit;
-}
-
-header a[aria-current="page"],
-footer a[aria-current="page"] {
+.active {
   text-decoration: underline;
 }
 
-header a:hover,
-header a:focus,
-footer a:hover,
-footer a:focus,
-main a:hover,
-main a:focus {
-  color: inherit;
-  text-decoration: underline;
-}
-
-footer a {
-  transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
-}
-
-/* ======= Forms ======= */
-button,
-input,
-select,
-textarea {
-  margin: 0;
-}
-
-button {
-  appearance: none;
-  background: none;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-}
-
-input,
-select,
-textarea {
-  max-width: 100%;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="file"],
-textarea,
-select {
-  width: 100%;
-  padding: 0.625rem;
-  border: 0;
-  border-bottom: 1px solid currentColor;
-  background: transparent;
-  box-shadow: none;
-  line-height: 1.5;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-textarea {
-  resize: vertical;
-}
-
-select {
-  padding-right: 1.5rem;
-}
-
-/* ======= Native Buttons ======= */
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-button[type="submit"],
-button[type="reset"],
-button[type="button"] {
-  display: inline-block;
-  padding: 0.625rem 1.6875rem;
-  border: 1px solid currentColor;
-  background: transparent;
-  line-height: 1.75;
-  text-align: center;
-  cursor: pointer;
-  transition:
-    background-color 0.15s ease-out,
-    color 0.15s ease-out,
-    border-color 0.15s ease-out;
-}
-
-a.btn,
-a.btn-custom {
-  text-decoration: none;
-}
-
-a.btn:hover,
-a.btn:focus,
-a.btn-custom:hover,
-a.btn-custom:focus {
-  text-decoration: none;
-}
-
-/* ======= Focus (accesibilidad) ======= */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-  outline: var(--focus-outline);
-  outline-offset: var(--focus-offset);
-}
-
-/* ======= Preloader ======= */
-.Lfa-pageloading {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.Lfa-pageloading-inner {
-  text-align: center;
-}
-
-.Lfa-pageloading .logo {
-  max-width: 120px;
-  animation: fadeIn 1s ease-in-out infinite alternate;
-}
-
-.Lfa-pageloading.hidden {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0.4; }
-  to { opacity: 1; }
-}
-
-/* ======= Content lines ======= */
-.content-lines-wrapper {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.content-lines-inner {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-}
-
-.content-lines-inner::before,
-.content-lines-inner::after {
-  content: "";
-  width: 1px;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.05);
-}
-
-/* ======= Navbar toggler ======= */
-.navbar-toggler {
-  position: relative;
-  width: 50px;
-  height: 50px;
-  padding: 0;
-  border: 0;
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-.navbar-toggler:focus {
-  box-shadow: none;
-}
-
-.navbar-toggler-icon {
-  background-image: none;
-}
-
-.navbar-toggler span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 24px;
-  height: 2px;
-  background-color: #fff;
-  transform: translate(-50%, -50%);
-  transition: background-color var(--transition-medium), transform var(--transition-medium);
-}
-
-.navbar-toggler span::before,
-.navbar-toggler span::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #fff;
-  transition: transform var(--transition-medium);
-}
-
-.navbar-toggler span::before {
-  transform: translateY(-8px);
-}
-
-.navbar-toggler span::after {
-  transform: translateY(8px);
-}
-
-.navbar-toggler[aria-expanded="true"] span {
-  background-color: transparent;
-}
-
-.navbar-toggler[aria-expanded="true"] span::before {
-  transform: translateY(0) rotate(45deg);
-}
-
-.navbar-toggler[aria-expanded="true"] span::after {
-  transform: translateY(0) rotate(-45deg);
+.btn-custom {
+  padding: 0.5rem 1rem;
+  color: #000;
+  border: 1px solid #000;
+  box-shadow: var(--shadow-sm);
 }
 
 /* ======= Maincarousel ======= */
@@ -375,8 +40,9 @@ textarea:focus-visible {
 
 /* ======= Breadcrumb ======= */
 #breadcrumb {
-  margin-top: calc(var(--navbar-height) * -0.5);;
+  margin-top: calc(var(--navbar-height) * -0.5);
   padding-top: calc(var(--navbar-height) * 0.75);
+  --bs-breadcrumb-divider: '>';
 }
 
 /* ======= Cards ======= */
@@ -402,46 +68,7 @@ textarea:focus-visible {
   flex-direction: column;
 }
 
-/* Solo usa esto si NO pones mt-auto en el HTML */
-.reports .card-body .btn {
-  margin-top: auto;
-}
-
-/* ======= Partners ======= */
-.partners img {
-  max-width: 80px;
-  object-fit: contain;
-}
-
-/* ======= Footer / legal ======= */
-.next-legal-doc {
-  font-size: 0.875rem;
-  opacity: 0.75;
-}
-
-/* ======= General ======= */
-
-.logo {
-    max-width: 100%;
-    height: auto;
-}
-
-.lead strong {
-  font-weight: bold;
-}
-
-.active {
-  text-decoration: underline;
-}
-
-.btn-custom {
-  padding: 0.5rem 1rem;
-  color: #000;
-  border: 1px solid #000;
-  box-shadow: var(--shadow-sm);
-}
-
-/* Ajuste de títulos al hacer scroll */
+/* ======= About / legal ======= */
 .about h2,
 .legal-doc h2 {
   scroll-margin-top: var(--navbar-height);
@@ -460,4 +87,16 @@ textarea:focus-visible {
 .legal-doc h5,
 .legal-doc h6 {
   text-align: left;
+}
+
+/* ======= Partners ======= */
+.partners img {
+  max-width: 80px;
+  object-fit: contain;
+}
+
+/* ======= Footer / legal ======= */
+.footer-legal {
+  font-size: 0.875rem;
+  opacity: 0.75;
 }

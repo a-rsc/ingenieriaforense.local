@@ -2,9 +2,9 @@
 declare(strict_types=1);
 ?>
 <!-- Breadcrumb -->
-<nav id="breadcrumb" class="bg-light" aria-label="breadcrumb" style="--bs-breadcrumb-divider: '>';">
+<nav id="breadcrumb" class="bg-light shadow-sm" aria-label="breadcrumb">
     <div class="container pb-md-4">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item">
                 <a href="<?= $pages['Home']['url'] ?>">
                     <?= $pages['Home']['name'] ?>
@@ -13,20 +13,20 @@ declare(strict_types=1);
 <?php
     if ($service === null):
 ?>
-                <li class="breadcrumb-item active" aria-current="page">
-                    <?= $pages[$pageByUrl]['name'] ?>
-                </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                <?= $pages[$pageByUrl]['name'] ?>
+            </li>
 <?php
     else:
 ?>
-                <li class="breadcrumb-item">
-                    <a href="<?= $pages[$pageByUrl]['url'] ?>">
-                        <?= $pages[$pageByUrl]['name'] ?>
-                    </a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">
-                    <?= $service['name'] ?>
-                </li>
+            <li class="breadcrumb-item">
+                <a href="<?= $pages[$pageByUrl]['url'] ?>">
+                    <?= $pages[$pageByUrl]['name'] ?>
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                <?= $service['name'] ?>
+            </li>
 <?php
     endif;
 ?>

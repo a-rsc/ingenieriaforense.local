@@ -25,7 +25,7 @@ ob_start();
         $image = getRandomElement($item['images']);
 ?>
                                     <div class="col-md-4 d-flex">
-                                        <div class="card w-100 mb-4 shadow-lg">
+                                        <div class="card w-100 mb-4 shadow-sm">
                                             <img src="<?= $image['src'] ?>" class="card-img-top" alt="<?= $image['alt'] ?>" title="<?= $item['title'] ?>" width="286" height="180" decoding="async">
                                             <div class="card-body d-flex flex-column">
                                                 <h5 class="card-title"><?= $item['title'] ?></h5>

@@ -11,7 +11,7 @@ $activeSlides = array_merge(
 shuffle($activeSlides);
 ?>
     <!-- Carousel -->
-    <div id="mainCarousel" class="main-carousel carousel slide shadow-lg" data-bs-ride="carousel">
+    <div id="mainCarousel" class="main-carousel carousel slide shadow-sm" data-bs-ride="carousel">
         <!-- Indicators -->
         <div class="carousel-indicators">
 <?php
@@ -45,5 +45,6 @@ shuffle($activeSlides);
         <!-- Controls -->
         <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span><span class="visually-hidden">Anterior</span></button>
         <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span><span class="visually-hidden">Siguiente</span></button>
+        <!-- End Controls -->
     </div>
     <!-- End Carousel -->

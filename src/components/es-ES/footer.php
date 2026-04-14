@@ -55,7 +55,7 @@ foreach ($serviceCollections ?? [] as $key => $serviceCollection):
             </div>
             <div class="row">
                 <div class="col">
-                    <ul class="next-legal-doc list-inline text-center">
+                    <ul class="footer-legal list-inline text-center">
 <?php
     foreach ($pages ?? [] as $page):
         if (($page['subcategory'] ?? null) != NavCategory::SECONDARY) continue;

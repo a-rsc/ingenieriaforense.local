@@ -4,7 +4,7 @@ declare(strict_types=1);
 $randomTestimonial = $testimonials[array_rand($testimonials)];
 ?>
             <!-- Client Feedback -->
-            <section class="testimonials bg-light shadow-lg">
+            <section class="testimonials bg-light shadow-sm">
                 <div class="container py-4">
                     <blockquote class="text-center">
                         <h2>&ldquo;<?= e($randomTestimonial['text']) ?>&rdquo;</h2>

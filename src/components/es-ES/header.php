@@ -3,7 +3,7 @@ declare(strict_types=1);
 ?>
     <!-- Header -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-light fixed-top">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-light fixed-top">
             <div class="container">
                 <!-- Logo -->
                 <a href="<?= $pages['Home']['url'] ?>" title="<?= COMPANY_NAME ?>"><img class="logo" src="<?= COMPANY_ICON ?>" alt="Logo de <?= COMPANY_NAME ?>" width="80" height="80" decoding="async"></a>

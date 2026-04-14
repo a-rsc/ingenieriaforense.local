@@ -1,0 +1,90 @@
+/* css/partials/forms.css */
+
+/* ======= Forms ======= */
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+button {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.625rem;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  background: transparent;
+  box-shadow: none;
+  line-height: 1.5;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+textarea {
+  resize: vertical;
+}
+
+select {
+  padding-right: 1.5rem;
+}
+
+/* ======= Native Buttons ======= */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button[type="submit"],
+button[type="reset"],
+button[type="button"] {
+  display: inline-block;
+  padding: 0.625rem 1.6875rem;
+  border: 1px solid currentColor;
+  background: transparent;
+  line-height: 1.75;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease-out,
+    color 0.15s ease-out,
+    border-color 0.15s ease-out;
+}
+
+a.btn,
+a.btn-custom {
+  text-decoration: none;
+}
+
+a.btn:hover,
+a.btn:focus,
+a.btn-custom:hover,
+a.btn-custom:focus {
+  text-decoration: none;
+}
+
+/* ======= Focus (accesibilidad) ======= */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+

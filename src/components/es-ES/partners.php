@@ -14,7 +14,7 @@ declare(strict_types=1);
         ) continue;
 ?>
                     <div class="col">
-                        <div class="card bg-dark shadow-lg">
+                        <div class="card bg-dark shadow-sm">
                             <div class="d-flex justify-content-center">
                                 <img src="<?= $member['images'][0]['src'] ?>" class="card-img-top rounded" alt="<?= $member['images'][0]['alt'] ?>" width="80" height="80" loading="lazy" decoding="async">
                             </div>

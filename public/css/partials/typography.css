@@ -1,0 +1,51 @@
+/* css/partials/typography.css */
+
+/* ======= Typography ======= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1.25rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+h1 { font-size: clamp(1.6rem, 2vw, 2rem); }
+h2 { font-size: clamp(1.45rem, 1.8vw, 1.8rem); }
+h3 { font-size: clamp(1.3rem, 1.6vw, 1.6rem); }
+h4 { font-size: clamp(1.2rem, 1.4vw, 1.4rem); }
+h5 { font-size: clamp(1.1rem, 1.2vw, 1.2rem); }
+h6 { font-size: 1rem; }
+
+p,
+ol li,
+th,
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  line-height: inherit;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+sup,
+sub {
+  font-size: 75%;
+  line-height: 1;
+}

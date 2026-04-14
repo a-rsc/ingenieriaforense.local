@@ -1,0 +1,17 @@
+/* css/partials/variables.css */
+
+/* ======= CSS Variables ======= */
+:root {
+  --navbar-height: 56px;
+  --focus-outline: 2px solid currentColor;
+  --focus-offset: 2px;
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --navbar-height: 72px;
+  }
+}

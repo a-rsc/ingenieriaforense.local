@@ -1,0 +1,54 @@
+/* css/partials/preloader-content-lines.css */
+
+/* ======= Preloader ======= */
+.Lfa-pageloading {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Lfa-pageloading-inner {
+  text-align: center;
+}
+
+.Lfa-pageloading .logo {
+  max-width: 120px;
+  animation: fadeIn 1s ease-in-out infinite alternate;
+}
+
+.Lfa-pageloading.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* ======= Content lines ======= */
+.content-lines-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.content-lines-inner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.content-lines-inner::before,
+.content-lines-inner::after {
+  content: "";
+  width: 1px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.05);
+}
