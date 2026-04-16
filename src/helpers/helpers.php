@@ -1,183 +1,95 @@
 <?php
-declare(strict_types=1);
 
-/**
- * Find the key of a web page by its URL
- */
-function findKeyByUrl(array $array, string $url): string|int|null {
-    $key = array_search(
-        $url,
-        array_map(fn($page) => $page['url'], $array),
-        true
-    );
+use App\Core\Config;
 
-    return $key === false ? null : $key;
+if (!function_exists('__')) {
+    function __(string $key): string
+    {
+        return Config::get('lang.' . $key, $key);
+    }
 }
 
 /**
  * Escape HTML (XSS protection)
 */
-function e(string $url): string {
-    return htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
-}
-
-/**
- * Generate a full URL based on the base URL and the given path
-*/
-function filterActiveMembers(array $members): array {
-    return array_filter(
-        $members,
-        static fn(array $member): bool => ($member['status'] ?? null) === Status::ACTIVE
-    );
-}
-
-/**
- * Converts a title into a URL-friendly slug.
- * Example: "Memoria técnica" becomes "/memoria-tecnica".
- */
-function titleToUrl(string $title): string {
-    $title = mb_strtolower($title, 'UTF-8');
-
-    $replacements = [
-        'á' => 'a',
-        'é' => 'e',
-        'í' => 'i',
-        'ó' => 'o',
-        'ú' => 'u',
-        'ü' => 'u',
-        'ñ' => 'n',
-    ];
-
-    $title = strtr($title, $replacements);
-    $title = preg_replace('/[^a-z0-9]+/', '-', $title);
-    $title = trim($title, '-');
-
-    return '/' . $title;
-}
-
-/**
- * Check if url is home
- */
-function isHome(?string $url): bool {
-    return $url === 'Home';
-}
-
-/**
- * Return active class
- */
-function activeClass(string $url, string $classes = 'active', bool $strict = true): string {
-    global $currentPage;
-
-    // $url = trim($url, '/') ?: 'index';
-
-    $isActive = $strict
-        ? $currentPage === $url
-        : str_contains($currentPage, $url);
-
-    return $isActive ? $classes : '';
-}
-
-/**
- * Check if url is active
- */
-function isActive(string $url, bool $strict = true): bool {
-    global $currentPage;
-
-    // $url = trim($url, '/') ?: 'index';
-
-    if (!isset($currentPage)) return false;
-
-    if ($strict) {
-        return $currentPage === $url;
+if (!function_exists('e')) {
+    function e(string $url): string
+    {
+        return htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
     }
-
-    return str_contains($currentPage, $url);
 }
 
-/**
- * Get a random element from an array
- */
-function getRandomElement(array $array) {
-    if (empty($array)) return null;
+if (!function_exists('current_url')) {
+    function current_url(): string
+    {
+        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
 
-    return $array[array_rand($array)];
-}
+        $host = $_SERVER['HTTP_HOST'] ?? Config::get('app.domain');
+        $uri = $_SERVER['REQUEST_URI'] ?? '/';
 
-/**
- * Get random elements from an array
- */
-function getRandomItems(array $array, int $limit = 1): array|null {
-    if (empty($array)) return null;
-
-    if ($limit <= 0) {
-        return [];
+        return $protocol . '://' . $host . $uri;
     }
-
-    if (count($array) <= $limit) {
-        shuffle($array);
-        return $array;
-    }
-
-    $keys = array_rand($array, $limit);
-
-    // Si n = 1, array_rand devuelve una clave, no array
-    if (!is_array($keys)) {
-        return [$array[$keys]];
-    }
-
-    return array_map(fn($key) => $array[$key], $keys);
 }
 
-/**
- * Get random active slides from an array
- */
-function getRandomActiveSlides(array $array, int $limit = 2): array|null {
-    if (empty($array)) return null;
+if (!function_exists('route_slug')) {
+    function route_slug(string $name): string
+    {
+        $lang = \App\Core\Config::get('lang_code', 'es');
 
-    shuffle($array);
-
-    return array_slice($array, 0, $limit);
-}
-
-/**
- * Generate a BreadcrumbList schema based on the current page and service
- */
-function getBreadcrumbList($pages, $pageByUrl, $service = null) {
-    $list = [];
-
-    // 1. Siempre empezamos por Home
-    $list[] = [
-        "@type" => "ListItem",
-        "position" => 1,
-        "name" => $pages['Home']['name'],
-        "item" => BASE_URL . $pages['Home']['url'],
-    ];
-
-    if ($service === null) {
-        // 2. Si no hay servicio, el segundo nivel es la página actual (ej. Contacto)
-        $list[] = [
-            "@type" => "ListItem",
-            "position" => 2,
-            "name" => $pages[$pageByUrl]['name'],
-            "item" => BASE_URL . $pages[$pageByUrl]['url'],
+        $routes = [
+            'es' => [
+                'home' => '',
+                'about' => 'nosotros',
+                'contact' => 'contacto',
+            ],
+            'en' => [
+                'home' => '',
+                'about' => 'about',
+                'contact' => 'contact',
+            ],
         ];
-    } else {
-        // 2. Si hay servicio, el segundo nivel es la categoría (ej. Peritajes)
-        $list[] = [
-            "@type" => "ListItem",
-            "position" => 2,
-            "name" => $pages[$pageByUrl]['name'],
-            "item" => BASE_URL . $pages[$pageByUrl]['url'],
-        ];
-        // 3. Y el tercer nivel es el servicio específico (ej. Humedades)
-        $list[] = [
-            "@type" => "ListItem",
-            "position" => 3,
-            "name" => $service['name'],
-            "item" => BASE_URL . $service['url'],
-        ];
-    }
 
-    return $list;
+        if (!isset($routes[$lang][$name])) {
+            throw new Exception("Ruta no definida: $name");
+        }
+
+        return $routes[$lang][$name];
+    }
 }
-?>
+
+if (!function_exists('url')) {
+    function url(string $name = ''): string
+    {
+        $lang = Config::get('lang_code', 'es');
+        $slug = route_slug($name);
+
+        // Español SIN prefijo
+        if ($lang === 'es') {
+            return $slug === '' ? '/' : '/' . $slug;
+        }
+
+        // Otros idiomas CON prefijo
+        return $slug === ''
+            ? '/' . $lang . '/'
+            : '/' . $lang . '/' . $slug;
+    }
+}
+
+if (!function_exists('dd')) {
+    function dd(mixed $data): void
+    {
+        echo '<pre>';
+        var_dump($data);
+        echo '</pre>';
+        exit;
+    }
+}
+
+if (!function_exists('filterActiveMembers')) {
+    function filterActiveMembers(array $items): array
+    {
+        return array_filter($items, function ($item) {
+            return isset($item['status']) && $item['status']?->isActive();
+        });
+    }
+}

@@ -1,22 +1,43 @@
 <?php
+
 declare(strict_types=1);
 
-// Cargar las configuraciones de la aplicación
-require BASE_PATH . '/src/config/config.php';
+/**
+ * Autoload PSR-4 simple para el namespace App\
+ *
+ * Permite cargar clases automáticamente sin usar require manual.
+ * Ejemplo:
+ *   use App\Core\Router;
+ *   new Router();
+ *
+ * Buscará:
+ *   src/app/Core/Router.php
+ */
+spl_autoload_register(function (string $class): void {
 
-// Cargar las variables globales
-require BASE_PATH . '/src/var/globals.php';
-require BASE_PATH . '/src/var/enums.php'; // Enums
+    // Prefijo de namespace
+    $prefix = 'App\\';
 
-// Cargar las funciones helpers
-require BASE_PATH . '/src/helpers/helpers.php';
+    // Carpeta base donde están las clases
+    $baseDir = BASE_PATH . '/src/app/';
 
-// Cargar las variables locales
-require BASE_PATH . "/src/var/{$lang}/enums.php"; // Enums
-require BASE_PATH . "/src/var/{$lang}/pages.php"; // Página y SEO del sitio
-require BASE_PATH . "/src/var/{$lang}/members.php"; // Miembro del equipo, cliente o colaborador
-require BASE_PATH . "/src/var/{$lang}/permits.php"; // Licencia
-require BASE_PATH . "/src/var/{$lang}/industrial-fires.php"; // Incendios industriales
-require BASE_PATH . "/src/var/{$lang}/reports.php"; // Ingeniería forense
-require BASE_PATH . "/src/var/{$lang}/testimonials.php"; // Testimonio
+    // Si la clase no usa el namespace App\, ignorar
+    if (strncmp($prefix, $class, strlen($prefix)) !== 0) {
+        return;
+    }
+
+    // Quitar el prefijo (App\)
+    $relativeClass = substr($class, strlen($prefix));
+
+    // Convertir namespace a ruta de archivo
+    $file = $baseDir . str_replace('\\', '/', $relativeClass) . '.php';
+
+    // Verificar si el archivo existe
+    if (!file_exists($file)) {
+        die('Autoload no encontró: ' . $file);
+    }
+
+    // Cargar el archivo automáticamente
+    require_once $file;
+});
 ?>

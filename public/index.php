@@ -1,19 +1,23 @@
 <?php
-// Activar el modo estricto de comprobación de tipos para ese archivo
+
 declare(strict_types=1);
+
+use App\Core\App;
+use App\Core\Config;
 
 // Ruta base del proyecto
 define('BASE_PATH', dirname(__DIR__, 1));
 
-// Cargar el código común
+// Autoload
 require BASE_PATH . '/src/autoload.php';
 
-// Resolver página
-require BASE_PATH . '/src/core/page-resolver.php';
+// Helpers
+require_once BASE_PATH . '/src/helpers/helpers.php';
 
-// Cargar la plantilla
-require BASE_PATH . '/src/core/page-dispatcher.php';
+// Config
+Config::load(BASE_PATH . '/src/config/config.php');
 
-// Renderizar el layout
-require BASE_PATH . '/src/templates/layout.php';
+// Run app
+$app = new App();
+$app->run();
 ?>

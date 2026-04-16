@@ -1,71 +1,103 @@
 <?php
-// Configuración
 
-// Aplicación
-define('APP_NAME', 'IF360');
-define('DOMAIN', 'ingenieriaforense.es');
-define('BASE_URL', 'https://' . DOMAIN);
-define('APP_VERSION', '1.0.0');
+// Base del sistema
+$protocol = 'https';
+$domain = 'ingenieriaforense.local';
+$baseUrl = $protocol . '://' . $domain;
 
-// Entorno
-define('APP_ENV', 'development'); // Entornos: development, testing, staging y production
+// Email base
+$emailFrom = 'no-reply@' . $domain;
+$emailTo = 'if360@' . $domain;
+$smtpHost = 'smtp.' . $domain;
 
-// Idioma y localización
-define('APP_LOCALE', 'es_ES'); // Entorno de programación
-define('APP_LANG', 'es-ES'); // Estándar IETF BCP 47
-define('APP_LANGUAGE', 'Spanish'); // Language name in English
+// Rutas base
+$storagePath = BASE_PATH . '/storage/';
+$cachePath = $storagePath . 'cache/';
+$logPath = $storagePath . 'logs/';
+$uploadPath = $storagePath . 'uploads/';
 
-// Zona horaria
+// Configuración de entorno
 date_default_timezone_set('Europe/Madrid');
 
-// Empresa
-define('COMPANY_BRAND', 'IF360'); // Marca
-define('COMPANY_NAME', 'Ingeniería Forense 360'); // Nombre
-define('COMPANY_NIF', '53126821H'); // NIF
-define('COMPANY_ADDRESS', '-'); // Dirección
-define('COMPANY_LOCALITY', 'Barcelona'); // Ciudad
-define('COMPANY_COUNTRY', 'ES'); // País
-define('COMPANY_AREA_SERVED', 'ES'); // Área
-define('COMPANY_PRICE_RANGE', '€€'); // Moneda
-define('COMPANY_EMAIL', 'if360@' . DOMAIN); // Email
-define('COMPANY_PHONE', '+34608084789'); // Teléfono
-define('COMPANY_PHONE_A11Y', '+34 608 084 789'); // Teléfono accesibilidad (“a11y”)
-define('COMPANY_ICON', '/images/if360-80x80.png'); // Icono
-define('COMPANY_LOGO', '/images/if360.png'); // Logo
-define('COMPANY_OG_LOGO', '/images/if360-1200x630.png'); // Logo Open Graph: Es un protocolo creado por Facebook para controlar cómo se ve tu web cuando se comparte en redes sociales. Se genera una tarjeta con: título, descripción, imagen... (WhatsApp, Facebook, LinkedIn, Twitter (X))
+return [
 
-// Base de datos
-define('DB_HOST', '');
-define('DB_USER', '');
-define('DB_PASS', '');
-define('DB_NAME', '');
+    'app' => [
+        'name' => 'IF360',
+        'version' => '1.0.0',
+        'env' => 'development',
+        'protocol' => $protocol,
+        'domain' => $domain,
+        'url' => $baseUrl,
+        'charset' => 'UTF-8',
+        'timezone' => 'Europe/Madrid',
+        'lang' => 'es-ES',
+        'locale' => 'es_ES',
+        'language' => 'Spanish',
+    ],
 
-// Correo electrónico
-define('EMAIL_HOST', 'smtp.' . DOMAIN);
-define('EMAIL_PORT', 587);
-define('EMAIL_FROM', 'no-reply@' . DOMAIN);
-// define('EMAIL_FROM_USER', '');
-// define('EMAIL_FROM_PASS', '');
-define('EMAIL_TO', 'if360@' . DOMAIN);
-// define('EMAIL_TO_USER', 'if360@' . DOMAIN);
-// define('EMAIL_TO_PASS', 'A6e6BFnfWa_*2A6');
-define('CSRF_TOKEN', bin2hex(random_bytes(32))); // Token CSRF para formularios
+    'company' => [
+        'brand' => 'IF360',
+        'name' => 'Ingeniería Forense 360',
+        'nif' => '53126821H',
+        'address' => '-',
+        'locality' => 'Barcelona',
+        'country' => 'ES',
+        'area_served' => 'ES',
+        'price_range' => '€€',
+        'email' => $emailTo,
+        'phone' => '+34608084789',
+        'phone_a11y' => '+34 608 084 789',
 
-// Caché
-define('CACHE_ENABLED', true);
-define('CACHE_PATH', BASE_PATH . 'cache/');
+        // URLs completas (muy útil para SEO)
+        'icon' => $baseUrl . '/images/if360-80x80.png',
+        'logo' => $baseUrl . '/images/if360.png',
+        'og_logo' => $baseUrl . '/images/if360-1200x630.png',
+    ],
 
-// Logs
-define('LOG_ENABLED', true);
-define('LOG_PATH', BASE_PATH . 'logs/');
+    'db' => [
+        'host' => '127.0.0.1',
+        'dbname' => 'test',
+        'user' => 'root',
+        'pass' => 'password',
+        'charset' => 'utf8mb4',
+    ],
 
-// Seguridad
-define('SECURITY_SALT', 'una_cadena_secreta_para_hashing');
+    'email' => [
+        'host' => $smtpHost,
+        'port' => 587,
+        'from' => $emailFrom,
+        'to' => $emailTo,
+        'csrf_token' => bin2hex(random_bytes(32)),
+    ],
 
-// Archivos
-define('UPLOADS_PATH', BASE_PATH . 'uploads/');
+    'paths' => [
+        'storage' => $storagePath,
+        'cache' => $cachePath,
+        'logs' => $logPath,
+        'uploads' => $uploadPath,
+    ],
 
-// Sesiones
-define('SESSION_LIFETIME', 3600); // 1 hora
-define('SESSION_NAME', 'session');
+    'cache' => [
+        'enabled' => true,
+        'path' => $cachePath,
+    ],
+
+    'log' => [
+        'enabled' => true,
+        'path' => $logPath,
+    ],
+
+    'security' => [
+        'salt' => 'una_cadena_secreta_para_hashing',
+    ],
+
+    'uploads' => [
+        'path' => $uploadPath,
+    ],
+
+    'session' => [
+        'lifetime' => 3600,
+        'name' => 'if360_session',
+    ],
+];
 ?>
