@@ -1,6 +1,10 @@
 <?php
 
 return [
+    'alt' => 'Imagen de ',
+    'schema' => [
+        'page' => 'Página de ',
+    ],
     'status' => [
         'active' => 'Activo',
         'inactive' => 'Inactivo',
@@ -12,11 +16,10 @@ return [
         'partner' => 'Socio',
         'staff' => 'Personal',
     ],
-    'home_title' => 'Inicio',
-    'home_text' => 'Esta es la página de inicio.',
-    'about_title' => 'Nosotros',
-    'about_text' => 'Esta es la página de nosotros.',
-    'contact_title' => 'Contacto',
-    'contact_text' => 'Esta es la página de contacto.',
+
+    'table_of_contents' => 'Índice de Contenido',
+    'contact-us' => 'Contáctanos',
+
     'partners_title' => 'Entidades y colaboradores',
+    'partners_description' => 'Colaboramos con diversas entidades para ofrecer servicios de ingeniería forense de alta calidad.',
 ];

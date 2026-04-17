@@ -1,11 +1,28 @@
-<footer>
-
-    <?php print_r($testimonials); ?>
-
-
-
-    <p>&copy; <?= date('Y') ?> <?= htmlspecialchars($config['company']['name']) ?></p>
-</footer>
+    <!-- Footer -->
+    <footer class="bg-dark border-top border-light text-white" role="contentinfo">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col">
+                    <address>
+                        <ul class="list-unstyled">
+                            <li><span class="pe-3">✉️</span>Email: <a href="mailto:<?= $config['company']['email'] ?>" aria-label="Enviar correo a <?= $config['company']['name'] ?>"> <?= $config['company']['email'] ?></a></li>
+                            <li><span class="pe-3">☎️</span>Teléfono: <a href="tel:<?= $config['company']['phone'] ?>" aria-label="Llamar a <?= $config['company']['name'] ?>"> <?= $config['company']['phone_a11y'] ?></a></li>
+                        </ul>
+                    </address>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <ul class="footer-legal list-inline text-center">
+<?php foreach ($navSecondaries ?? [] as $navSecondary): ?>
+                        <li class="list-inline-item"><a href="<?= $navSecondary['url'] ?>"<?= activeClass($navSecondary['url'], ' class="active" aria-current="page"') ?>><?= $navSecondary['name'] ?></a></li>
+<?php endforeach; ?>
+                        <li class="list-inline-item"><a href="<?= url('home') ?>" aria-label="<?= $config['company']['name'] ?>">&copy; <?= date('Y') . ' ' . $config['company']['name'] ?></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- JS -->
     <script src="/js/bootstrap.bundle.min.js" defer></script>

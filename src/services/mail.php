@@ -114,4 +114,3 @@ declare(strict_types=1);
         http_response_code(500);
         echo $messages['500'];
     }
-?>

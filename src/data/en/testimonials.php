@@ -13,7 +13,7 @@ $makeTestimonial = function (
         'text' => $text,
         'images' => [
             'src' => $imageSrc,
-            'alt' => "Imagen de {$name}",
+            'alt' => "Image of {$name}",
         ],
         'status' => $status,
     ];
@@ -22,37 +22,37 @@ $makeTestimonial = function (
 $testimonials = [
     'carlos-martinez' => $makeTestimonial(
         'Carlos Martínez',
-        'Un servicio excelente y muy profesional. Superaron nuestras expectativas.',
+        'Excellent and very professional service. They exceeded our expectations.',
         '/carlos-martinez.jpg',
     ),
 
     'laura-gomez' => $makeTestimonial(
         'Laura Gómez',
-        'Gran atención al detalle y comunicación constante. Muy recomendables.',
+        'Excellent attention to detail and constant communication. Highly recommended.',
         '/laura-gomez.jpg',
     ),
 
     'javier-lopez' => $makeTestimonial(
         'Javier López',
-        'Un equipo muy eficiente que entrega resultados de alta calidad.',
+        'A very efficient team that delivers high-quality results.',
         '/javier-lopez.jpg',
     ),
 
     'marta-sanchez' => $makeTestimonial(
         'Marta Sánchez',
-        'Estamos encantados con el resultado. Todo el proceso fue muy sencillo.',
+        'We are delighted with the result. The entire process was very simple.',
         '/marta-sanchez.jpg',
     ),
 
     'david-fernandez' => $makeTestimonial(
         'David Fernández',
-        'Profesionales, cercanos y muy comprometidos con el proyecto.',
+        'Professionals, approachable and very committed to the project.',
         '/david-fernandez.jpg',
     ),
 
     'ana-ruiz' => $makeTestimonial(
         'Ana Ruiz',
-        'Nos ayudaron a mejorar nuestro proyecto con resultados excelentes.',
+        'They helped us improve our project with excellent results.',
         '/ana-ruiz.jpg',
     ),
 ];

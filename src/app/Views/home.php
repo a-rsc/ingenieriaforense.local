@@ -10,13 +10,13 @@
     // ]);
 ?>
     <hr>
-    <h2><?= e($title) ?? 'home_title' ?></h2>
-    <p><?= e($message) ?></p>
+    <h2><?= $pages['home']['title'] ?></h2>
+    <p><?= $pages['home']['description'] ?></p>
     <hr>
 
     <h1><?= current_url('') ?></h1>
 
-    <h2><?= __('home_title') ?></h2>
+    <h2><?= $pages['home']['title'] ?></h2>
 
     <h3>App name: <?= htmlspecialchars($config['app']['name']) ?></h3>
 

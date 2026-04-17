@@ -11,13 +11,12 @@ define('BASE_PATH', dirname(__DIR__, 1));
 // Autoload
 require BASE_PATH . '/src/autoload.php';
 
-// Helpers
-require_once BASE_PATH . '/src/helpers/helpers.php';
-
 // Config
 Config::load(BASE_PATH . '/src/config/config.php');
+
+// Helpers
+require BASE_PATH . '/src/helpers/helpers.php';
 
 // Run app
 $app = new App();
 $app->run();
-?>

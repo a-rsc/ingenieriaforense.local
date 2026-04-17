@@ -8,12 +8,12 @@ class App
     {
         $router = new Router();
 
-        require_once BASE_PATH . '/src/routes/web.php';
+        require BASE_PATH . '/src/routes/web.php';
 
         $uri = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
         $segments = array_values(array_filter(explode('/', trim($uri, '/'))));
 
-        $supportedLangs = ['es', 'en'];
+        $supportedLangs = Config::get('app.supported_langs', ['es']);
         $langCode = null;
 
         if (!empty($segments) && in_array($segments[0], $supportedLangs, true)) {
@@ -21,48 +21,62 @@ class App
             array_shift($segments);
         }
 
-        if ($langCode === null) {
-            $default = Config::get('app.lang', 'es-ES');
-            $langCode = substr($default, 0, 2);
+        $cleanUri = '/' . implode('/', $segments);
+
+        // Normalización de idioma en URL
+
+        // 1. Español → eliminar prefijo /es
+        if ($langCode === 'es' && ($uri === '/es' || $uri === '/es/' || str_starts_with($uri, '/es/'))) {
+            $redirectUri = substr($uri, 3);
+
+            if ($redirectUri === '' || $redirectUri === false) {
+                $redirectUri = '/';
+            }
+
+            header('Location: ' . $redirectUri, true, 301);
+            exit;
         }
 
-        $langFile = BASE_PATH . "/src/config/lang/{$langCode}.php";
+        // 2. Inglés → evitar /en/ (slash final)
+        if ($langCode === 'en' && $uri === '/en/') {
+            header('Location: /en', true, 301);
+            exit;
+        }
 
-        if (!file_exists($langFile)) {
+        $langFilepath = BASE_PATH . "/src/config/lang/{$langCode}.php";
+
+        if (!file_exists($langFilepath)) {
             $langCode = 'es';
-            $langFile = BASE_PATH . '/src/config/lang/es.php';
+            $langFilepath = Config::get('app.lang_filepath', BASE_PATH . '/src/config/lang/es.php');
         }
 
         $langConfigMap = [
             'es' => [
                 'lang' => 'es-ES',
-                'locale' => 'es_ES',
+                'lang_locale' => 'es_ES',
                 'language' => 'Spanish',
             ],
             'en' => [
                 'lang' => 'en-GB',
-                'locale' => 'en_GB',
+                'lang_locale' => 'en_GB',
                 'language' => 'English',
             ],
         ];
 
         $currentLangConfig = $langConfigMap[$langCode] ?? $langConfigMap['es'];
 
-        Config::set('lang', require $langFile);
-        Config::set('lang_code', $langCode);
-
         Config::set('app.lang', $currentLangConfig['lang']);
-        Config::set('app.locale', $currentLangConfig['locale']);
+        Config::set('app.lang_locale', $currentLangConfig['lang_locale']);
         Config::set('app.language', $currentLangConfig['language']);
+        Config::set('app.lang_code', $langCode);
+        Config::set('app.lang_filepath', require $langFilepath);
 
-        $cleanUri = '/' . implode('/', $segments);
-        if ($cleanUri === '/' || $cleanUri === '') {
-            $cleanUri = '/';
-        }
+        $pageKey = route_key_from_uri($cleanUri);
+
+        Config::set('current_page', $pageKey);
 
         $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 
         $router->dispatch($cleanUri, $method);
     }
 }
-?>

@@ -21,6 +21,21 @@ date_default_timezone_set('Europe/Madrid');
 
 return [
 
+    'current_page' => 'home',
+
+    'routes' => [
+        'es' => [
+            'home' => '',
+            'about' => 'nosotros',
+            'contact' => 'contacto',
+        ],
+        'en' => [
+            'home' => '',
+            'about' => 'about',
+            'contact' => 'contact',
+        ],
+    ],
+
     'app' => [
         'name' => 'IF360',
         'version' => '1.0.0',
@@ -30,9 +45,13 @@ return [
         'url' => $baseUrl,
         'charset' => 'UTF-8',
         'timezone' => 'Europe/Madrid',
+
+        'supported_langs' => ['es', 'en'],
         'lang' => 'es-ES',
-        'locale' => 'es_ES',
+        'lang_locale' => 'es_ES',
         'language' => 'Spanish',
+        'lang_code' => 'es',
+        'lang_filepath' => BASE_PATH . '/src/config/lang/es.php',
     ],
 
     'company' => [
@@ -100,4 +119,3 @@ return [
         'name' => 'if360_session',
     ],
 ];
-?>

@@ -7,7 +7,7 @@
                     <div class="col">
                         <div class="card bg-dark shadow-sm">
                             <div class="d-flex justify-content-center">
-                                <img src="<?= $partner['images'][0]['src'] ?>" class="card-img-top rounded" alt="<?= $partner['images'][0]['alt'] ?>" width="80" height="80" loading="lazy" decoding="async">
+                                <img src="<?= $partner['images']['src'] ?>" class="card-img-top rounded" alt="<?= $partner['images']['alt'] ?>" width="80" height="80" loading="lazy" decoding="async">
                             </div>
                             <div class="card-body">
                                 <p class="card-title text-center text-white"><?= $partner['name'] ?></p>

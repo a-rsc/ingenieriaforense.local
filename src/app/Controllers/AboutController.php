@@ -9,11 +9,11 @@ class AboutController extends Controller
     public function index(): void
     {
         $data = [
-            'title' => __('about_title'),
-            'message' => __('about_text'),
+            // 'title' => __('about_title'),
+            // 'description' => __('about_description'),
+            // 'text' => __('about_text'),
         ];
 
         $this->view('about', $data);
     }
 }
-?>

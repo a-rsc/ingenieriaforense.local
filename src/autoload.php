@@ -38,6 +38,5 @@ spl_autoload_register(function (string $class): void {
     }
 
     // Cargar el archivo automáticamente
-    require_once $file;
+    require $file;
 });
-?>

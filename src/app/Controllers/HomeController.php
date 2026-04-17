@@ -9,11 +9,11 @@ class HomeController extends Controller
     public function index(): void
     {
         $data = [
-            'title' => __('home_title'),
-            'message' => __('home_text'),
+            // 'title' => __('home_title'),
+            // 'description' => __('home_description'),
+            // 'text' => __('home_text'),
         ];
 
         $this->view('home', $data);
     }
 }
-?>

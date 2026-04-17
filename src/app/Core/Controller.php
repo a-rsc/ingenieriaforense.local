@@ -2,33 +2,25 @@
 
 namespace App\Core;
 
+use App\Core\Config;
+
 abstract class Controller
 {
     protected array $sharedData = [];
 
     public function __construct()
     {
-        // Idioma actual (de la URL)
-        $lang = Config::get('lang_code', 'es');
+        $pagesData = require content_path('data', 'pages');
 
-        // Rutas dinámicas
-        $membersPath = BASE_PATH . "/src/data/{$lang}/members.php";
-        $testimonialsPath = BASE_PATH . "/src/data/{$lang}/testimonials.php";
-
-        // Fallback por si no existe idioma
-        if (!file_exists($membersPath)) {
-            $membersPath = BASE_PATH . '/src/data/es/members.php';
-        }
-
-        if (!file_exists($testimonialsPath)) {
-            $testimonialsPath = BASE_PATH . '/src/data/es/testimonials.php';
-        }
-
-        $membersData = require $membersPath;
-        $testimonialsData = require $testimonialsPath;
+        $membersData = require content_path('data', 'members');
+        $testimonialsData = require content_path('data', 'testimonials');
 
         $this->sharedData = [
             'config' => Config::all(),
+
+            'pages' => $pagesData['pages'] ?? [],
+            'navPrimaries' => $pagesData['navPrimaries'] ?? [],
+            'navSecondaries' => $pagesData['navSecondaries'] ?? [],
 
             'clients' => $membersData['clients'] ?? [],
             'partners' => $membersData['partners'] ?? [],
@@ -45,4 +37,3 @@ abstract class Controller
         View::render($view, $data, $layout);
     }
 }
-?>

@@ -32,14 +32,14 @@ $makeMember = function (
 
 $members = [
     'enginyers-industrials-catalunya' => $makeMember(
-        'Enginyers Industrials de Catalunya',
+        'Industrial Engineers of Catalonia',
         Member::PARTNER,
-        'Colegio y asociación profesional que representa a los ingenieros industriales en Cataluña.',
+        'Professional college and association that represents industrial engineers in Catalonia.',
         '',
         [
-            'Colaboración en proyectos de investigación y desarrollo tecnológico.',
-            'Participación en programas de formación y capacitación para estudiantes y profesionales.',
-            'Intercambio de conocimientos y recursos para fomentar la innovación en el sector de la construcción.',
+            'Collaboration in research and development projects.',
+            'Participation in training and capacity-building programs for students and professionals.',
+            'Knowledge and resource exchange to promote innovation in the construction sector.',
         ],
         'https://www.eic.cat/',
         '/images/members/Enginyers-Industrials-Catalunya.jpg',
@@ -48,12 +48,12 @@ $members = [
     'universitat-politecnica-catalunya' => $makeMember(
         'Universitat Politècnica de Catalunya',
         Member::PARTNER,
-        'Universitat pública catalana especialitzada en enginyeria, arquitectura, ciència i tecnologia.',
+        'Public university in Catalonia specialized in engineering, architecture, science and technology.',
         '',
         [
-            'Colaboración en proyectos de investigación y desarrollo tecnológico.',
-            'Participación en programas de formación y capacitación para estudiantes y profesionales.',
-            'Intercambio de conocimientos y recursos para fomentar la innovación en el sector de la construcción.',
+            'Collaboration in research and development projects.',
+            'Participation in training and capacity-building programs for students and professionals.',
+            'Knowledge and resource exchange to promote innovation in the construction sector.',
         ],
         'https://www.upc.edu/ca',
         '/images/members/UPC.png',
@@ -62,12 +62,12 @@ $members = [
     'bcn-drone-productions' => $makeMember(
         'Bcn Drone Productions',
         Member::PARTNER,
-        'Audiovisuales con drones, cámaras 360, escáners láser etc.',
+        'Audiovisuals with drones, 360 cameras, laser scanners, etc.',
         '',
         [
-            'Colaboración en proyectos de investigación y desarrollo tecnológico.',
-            'Participación en programas de formación y capacitación para estudiantes y profesionales.',
-            'Intercambio de conocimientos y recursos para fomentar la innovación en el sector de la construcción.',
+            'Collaboration in research and development projects.',
+            'Participation in training and capacity-building programs for students and professionals.',
+            'Knowledge and resource exchange to promote innovation in the construction sector.',
         ],
         'https://www.bcndroneproductions.es/',
         '/images/members/Bcn-Drone-Productions.webp',

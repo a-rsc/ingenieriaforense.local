@@ -1,6 +1,10 @@
 <?php
 
 return [
+    'alt' => 'Image of ',
+    'schema' => [
+        'page' => 'Page of ',
+    ],
     'status' => [
         'active' => 'Active',
         'inactive' => 'Inactive',
@@ -12,11 +16,10 @@ return [
         'partner' => 'Partner',
         'staff' => 'Staff',
     ],
-    'home_title' => 'Home',
-    'home_text' => 'This is the home page.',
-    'about_title' => 'About',
-    'about_text' => 'This is the about page.',
-    'contact_title' => 'Contact',
-    'contact_text' => 'This is the contact page.',
+
+    'table_of_contents' => 'Table of Contents',
+    'contact-us' => 'Contact Us',
+
     'partners_title' => 'Entities and Collaborators',
+    'partners_description' => 'We collaborate with various entities to offer high-quality forensic engineering services.',
 ];
