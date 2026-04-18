@@ -11,11 +11,32 @@ $pageContent = [
         'keywords' => 'technical engineering, technical projects, activity licenses, forensic engineering, expert reports, expert opinions, legalizing activity, industrial warehouse license',
         'images' => [
             [
-                'src' => '/images/home1.jpg',
-                'alt' => 'Image Home 1',
-                'category' => 'Dampness',
-                'title' => 'Dampness Causes',
-                'description' => 'Technical analysis of the causes of dampness in buildings, homes and commercial premises.',
+                'src' => '/images/maincarousel/Causas-de-humedad.webp',
+                'alt' => 'Image of Causas de humedad',
+                'category' => 'Humedades',
+                'title' => 'Causas de humedad',
+                'description' => 'Análisis técnico de las causas de humedad en edificios, viviendas y locales comerciales.',
+            ],
+            [
+                'src' => '/images/maincarousel/Danos-estructurales.webp',
+                'alt' => 'Image of Daños estructurales',
+                'category' => 'Daños estructurales',
+                'title' => 'Daños estructurales',
+                'description' => 'Evaluación de daños estructurales en edificios, viviendas y locales comerciales, con análisis técnico y propuestas de reparación.',
+            ],
+            [
+                'src' => '/images/maincarousel/Defectos-constructivos.webp',
+                'alt' => 'Image of Defectos constructivos',
+                'category' => 'Defectos constructivos',
+                'title' => 'Defectos constructivos',
+                'description' => 'Análisis técnico de los defectos constructivos en edificios, viviendas y locales comerciales.',
+            ],
+            [
+                'src' => '/images/maincarousel/Incumplimiento-contrato-obra.webp',
+                'alt' => 'Image of Incumplimiento de obra',
+                'category' => 'Incumplimiento de obra',
+                'title' => 'Incumplimiento de obra',
+                'description' => 'Análisis técnico de los incumplimientos de obra en edificios, viviendas y locales comerciales.',
             ],
         ],
     ]

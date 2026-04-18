@@ -16,6 +16,10 @@ return [
         'partner' => 'Socio',
         'staff' => 'Personal',
     ],
+    'carousel' => [
+        'prev' => 'Anterior',
+        'next' => 'Siguiente',
+    ],
 
     'table_of_contents' => 'Índice de Contenido',
     'contact-us' => 'Contáctanos',

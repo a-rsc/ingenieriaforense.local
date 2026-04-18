@@ -16,6 +16,10 @@ return [
         'partner' => 'Partner',
         'staff' => 'Staff',
     ],
+    'carousel' => [
+        'prev' => 'Previous',
+        'next' => 'Next',
+    ],
 
     'table_of_contents' => 'Table of Contents',
     'contact-us' => 'Contact Us',
