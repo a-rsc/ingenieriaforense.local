@@ -8,9 +8,7 @@
         $isFirst = $key === 0;
 ?>
                 <button type="button" data-bs-target="#<?= $idCarousel ?>" data-bs-slide-to="<?= $key ?>"<?= $isFirst ? ' class="active" aria-current="true"' : '' ?> aria-label="Slide <?= $key + 1 ?>"></button>
-<?php
-    endforeach;
-?>
+<?php endforeach; ?>
             </div>
             <!-- End Indicators -->
             <!-- Slides -->
@@ -26,9 +24,7 @@
                         <p class="text-center"><?= $image['description'] ?></p>
                     </div>
                 </div>
-<?php
-    endforeach;
-?>
+<?php endforeach; ?>
             </div>
             <!-- End Slides -->
             <!-- Controls -->

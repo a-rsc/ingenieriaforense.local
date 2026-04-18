@@ -43,11 +43,11 @@ class App
             exit;
         }
 
-        $langFilepath = BASE_PATH . "/src/config/lang/{$langCode}.php";
+        $langTranslations = BASE_PATH . "/src/config/lang/{$langCode}.php";
 
-        if (!file_exists($langFilepath)) {
+        if (!file_exists($langTranslations)) {
             $langCode = 'es';
-            $langFilepath = Config::get('app.lang_filepath', BASE_PATH . '/src/config/lang/es.php');
+            $langTranslations = Config::get('app.lang_translations', BASE_PATH . '/src/config/lang/es.php');
         }
 
         $langConfigMap = [
@@ -69,7 +69,7 @@ class App
         Config::set('app.lang_locale', $currentLangConfig['lang_locale']);
         Config::set('app.language', $currentLangConfig['language']);
         Config::set('app.lang_code', $langCode);
-        Config::set('app.lang_filepath', require $langFilepath);
+        Config::set('app.lang_translations', require $langTranslations);
 
         $pageKey = route_key_from_uri($cleanUri);
 

@@ -39,7 +39,7 @@ if (!function_exists('normalize_uri')) {
 if (!function_exists('__')) {
     function __(string $key): string
     {
-        return Config::get('app.lang_filepath.' . $key, $key);
+        return Config::get('app.lang_transltions.' . $key, $key);
     }
 }
 

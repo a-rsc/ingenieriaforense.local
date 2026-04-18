@@ -7,7 +7,7 @@ use App\Support\PageProcessor;
 
 $brand = Config::get('company.brand');
 $name = Config::get('company.name');
-$schemaPage = Config::get('app.lang_filepath.schema.page', 'Página de ');
+$schemaPage = Config::get('app.lang_translations.schema.page', 'Página de ');
 
 $makePage = function (
     string $name = '',

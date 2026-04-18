@@ -10,7 +10,7 @@ class View
         $layoutPath = BASE_PATH . '/src/app/Views/' . $layout . '.php';
 
         if (!file_exists($viewPath)) {
-            die("Vista no encontrada: $viewPath");
+            throw new \RuntimeException("Vista no encontrada: $viewPath");
         }
 
         extract($data, EXTR_SKIP);
@@ -27,7 +27,7 @@ class View
         $partialPath = BASE_PATH . '/src/app/Views/partials/' . $partial . '.php';
 
         if (!file_exists($partialPath)) {
-            die("Partial no encontrado: $partialPath");
+            throw new \RuntimeException("Partial no encontrado: $partialPath");
         }
 
         extract($data, EXTR_SKIP);

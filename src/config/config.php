@@ -57,7 +57,7 @@ return [
         'lang_locale' => 'es_ES',
         'language' => 'Spanish',
         'lang_code' => 'es',
-        'lang_filepath' => BASE_PATH . '/src/config/lang/es.php',
+        'lang_translations' => BASE_PATH . '/src/config/lang/es.php',
     ],
 
     'company' => [
