@@ -5,14 +5,14 @@
                     <article>
                         <!-- Title -->
                         <header>
-                            <h1>Legal Notice</h1>
+                            <h1>Aviso Legal</h1>
                         </header>
                         <!-- End Title -->
                         <p>El presente aviso legal regula el acceso, navegación y uso del sitio web titularidad de <strong><?= $config['company']['name'] ?></strong>, así como las responsabilidades derivadas de la utilización de sus contenidos.</p>
                         <p>Le rogamos lea detenidamente este documento antes de utilizar el sitio web. El acceso implica la aceptación sin reservas de lo aquí dispuesto.</p>
                         <p><strong>Fecha de última actualización:</strong> <time datetime="2025-08-25">25 de agosto de 2025</time></p>
                         <!-- Table of contents -->
-                        <nav aria-label="Índice de contenido">
+                        <nav aria-label="<?= __('table_of_contents') ?>">
                             <ul class="list-unstyled ps-2">
                                 <li><a href="#data-controller" title="1. Identificación del titular">1. Identificación del titular</a></li>
                                 <li><a href="#purpose" title="2. Objeto y ámbito de aplicación">2. Objeto y ámbito de aplicación</a></li>

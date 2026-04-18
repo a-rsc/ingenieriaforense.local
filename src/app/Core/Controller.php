@@ -13,7 +13,7 @@ abstract class Controller
         $pagesData = require content_path('data', 'pages');
 
         $membersData = require content_path('data', 'members');
-        $testimonialsData = require content_path('data', 'testimonials');
+        $testimonialData = require content_path('data', 'testimonials');
 
         $this->sharedData = [
             'config' => Config::all(),
@@ -26,7 +26,7 @@ abstract class Controller
             'partners' => $membersData['partners'] ?? [],
             'staff' => $membersData['staff'] ?? [],
 
-            'testimonials' => $testimonialsData ?? [],
+            'testimonial' => $testimonialData ?? [],
         ];
     }
 

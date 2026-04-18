@@ -22,7 +22,17 @@ class Router
 
         if (!$action) {
             http_response_code(404);
-            echo "404 - Página no encontrada";
+
+            $action404 = $this->routes['GET']['/404'] ?? null;
+
+            if ($action404) {
+                [$controller, $function] = $action404;
+                $instance = new $controller();
+                $instance->$function();
+                return;
+            }
+
+            echo '404 - Página no encontrada';
             return;
         }
 

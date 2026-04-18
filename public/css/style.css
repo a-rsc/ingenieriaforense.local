@@ -33,6 +33,11 @@ main {
   box-shadow: var(--shadow-sm);
 }
 
+.btn-custom:focus,
+.btn-custom:hover {
+  border: 1px solid #000;
+}
+
 /* ======= Maincarousel ======= */
 .main-carousel {
   margin-top: calc(var(--navbar-height) * -0.5);

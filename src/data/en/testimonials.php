@@ -20,37 +20,37 @@ $makeTestimonial = function (
 };
 
 $testimonials = [
-    'carlos-martinez' => $makeTestimonial(
+    $makeTestimonial(
         'Carlos Martínez',
         'Excellent and very professional service. They exceeded our expectations.',
         '/carlos-martinez.jpg',
     ),
 
-    'laura-gomez' => $makeTestimonial(
+    $makeTestimonial(
         'Laura Gómez',
         'Excellent attention to detail and constant communication. Highly recommended.',
         '/laura-gomez.jpg',
     ),
 
-    'javier-lopez' => $makeTestimonial(
+    $makeTestimonial(
         'Javier López',
         'A very efficient team that delivers high-quality results.',
         '/javier-lopez.jpg',
     ),
 
-    'marta-sanchez' => $makeTestimonial(
+    $makeTestimonial(
         'Marta Sánchez',
         'We are delighted with the result. The entire process was very simple.',
         '/marta-sanchez.jpg',
     ),
 
-    'david-fernandez' => $makeTestimonial(
+    $makeTestimonial(
         'David Fernández',
         'Professionals, approachable and very committed to the project.',
         '/david-fernandez.jpg',
     ),
 
-    'ana-ruiz' => $makeTestimonial(
+    $makeTestimonial(
         'Ana Ruiz',
         'They helped us improve our project with excellent results.',
         '/ana-ruiz.jpg',
@@ -61,5 +61,5 @@ $testimonials = [
 $testimonials = array_filter($testimonials, fn(array $testimonial) => ($testimonial['status'] ?? null)?->isActive());
 
 return [
-    'testimonials' => $testimonials,
+    'testimonial' => random_item($testimonials),
 ];

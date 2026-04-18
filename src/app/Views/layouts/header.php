@@ -30,5 +30,10 @@ use App\Core\View;
 <body>
 
 <header>
-    <?php View::partial('nav', ['config' => $config, 'navPrimaries' => $navPrimaries]); ?>
+<?php
+    View::partial('nav', [
+        'config' => $config,
+        'navPrimaries' => $navPrimaries
+    ]);
+?>
 </header>

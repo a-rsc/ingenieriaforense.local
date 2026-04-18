@@ -140,7 +140,9 @@ if (!function_exists('current_url')) {
 
         $currentPage = Config::get('current_page', 'home');
 
-        // dd($currentPage);
+        if (!is_string($currentPage) || $currentPage === '404') {
+            $currentPage = 'home';
+        }
 
         return $protocol . '://' . $host . url($currentPage);
     }
@@ -190,6 +192,19 @@ if (!function_exists('content_path')) {
         }
 
         return $path;
+    }
+}
+
+if (!function_exists('random_item')) {
+    function random_item(array $array): mixed
+    {
+        if (empty($array)) {
+            return null;
+        }
+
+        $values = array_values($array);
+
+        return $values[array_rand($values)];
     }
 }
 

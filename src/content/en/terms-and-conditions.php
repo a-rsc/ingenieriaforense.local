@@ -5,14 +5,14 @@
                     <article>
                         <!-- Title -->
                         <header>
-                            <h1>Términos y Condiciones</h1>
+                            <h1>Terms and Conditions</h1>
                         </header>
                         <!-- End Title -->
                         <p>El presente documento establece los términos y condiciones que regulan el acceso y uso del sitio web de <strong><?= $config['company']['name'] ?></strong>, así como la contratación de nuestros servicios ofrecidos a través del mismo.</p>
                         <p>Al utilizar este sitio web o contratar nuestros servicios, el usuario acepta íntegramente los presentes términos. Le recomendamos leerlos detenidamente.</p>
                         <p><strong>Fecha de última actualización:</strong> <time datetime="2025-08-25">25 de agosto de 2025</time></p>
                         <!-- Table of contents -->
-                        <nav aria-label="Índice de contenido">
+                        <nav aria-label="<?= __('table_of_contents') ?>">
                             <ul class="list-unstyled ps-2">
                                 <li><a href="#data-controller" title="1. Identificación del titular">1. Identificación del titular</a></li>
                                 <li><a href="#purpose" title="2. Objeto">2. Objeto</a></li>

@@ -75,7 +75,7 @@ $pages = [
     'contact' => $makePage(
         'Contacto',
         NavType::PRIMARY,
-        'Contacto',
+        'Contáctanos para más información',
         'Contacta con nosotros para valorar tu caso, resolver dudas técnicas y solicitar presupuesto para proyectos, licencias de actividad o informes periciales.',
         'contacto',
     ),

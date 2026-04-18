@@ -5,14 +5,14 @@
                     <article>
                         <!-- Title -->
                         <header>
-                            <h1>Privacy Policy</h1>
+                            <h1>Política de Privacidad</h1>
                         </header>
                         <!-- End Title -->
                         <p>En <strong><?= $config['company']['name'] ?></strong> nos comprometemos a proteger su privacidad y garantizar la seguridad de sus datos personales.</p>
                         <p>Le recomendamos leer detenidamente esta política para entender nuestras prácticas de tratamiento de datos y sus derechos como usuario.</p>
                         <p><strong>Fecha de última actualización:</strong> <time datetime="2025-08-25">25 de agosto de 2025</time></p>
                         <!-- Table of contents -->
-                        <nav aria-label="Índice de contenido">
+                        <nav aria-label="<?= __('table_of_contents') ?>">
                             <ul class="list-unstyled ps-2">
                                 <li><a href="#data-controller" title="1. Responsable del tratamiento">1. Responsable del tratamiento</a></li>
                                 <li><a href="#purpose" title="2. Finalidad del tratamiento">2. Finalidad del tratamiento</a></li>

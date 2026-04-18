@@ -9,6 +9,8 @@ use App\Core\View;
     //     ]
     // ]);
 
+    shuffle($pages['home']['images']);
+
     View::partial('carousel', [
         'idCarousel' => 'mainCarousel',
         'classCarousel' => 'main-carousel',

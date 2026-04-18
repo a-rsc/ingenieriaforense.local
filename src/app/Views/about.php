@@ -45,7 +45,7 @@
                         </section>
                         <section>
                             <h2 id="contact-team"><?= $pages['about']['item_5'] ?></h2>
-                            <p><em><a href="<?= url('contact') ?>" title="<?= __('contact-us') ?>"><?= $pages['about']['item_5_text'] ?></a></em></p>
+                            <p><em><a href="<?= url('contact') ?>" title="<?= __('contact_us') ?>"><?= $pages['about']['item_5_text'] ?></a></em></p>
                         </section>
                         <!-- End Section content -->
                     </article>

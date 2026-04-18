@@ -7,7 +7,7 @@
                 <!-- End Logo -->
                 <!-- Phone -->
                 <div class="bg-light rounded ms-lg-3">
-                    <a href="tel:<?= $config['company']['phone'] ?>" class="nav-link btn btn-light btn-custom" title="<?= __('contact-us') ?>"><span class="pe-3">☎️</span><?= __('contact-us') ?></a>
+                    <a href="tel:<?= $config['company']['phone'] ?>" class="nav-link btn btn-light btn-custom" title="<?= __('contact_us') ?>"><span class="pe-3">☎️</span><?= __('contact_us') ?></a>
                 </div>
                 <!-- End Phone -->
                 <!-- Burger menu -->
