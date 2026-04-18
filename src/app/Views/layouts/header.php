@@ -31,6 +31,9 @@ use App\Core\View;
 
 <header>
 <?php
+    View::partial('accessibility-preloader-lines', [
+        'config' => $config,
+    ]);
     View::partial('nav', [
         'config' => $config,
         'navPrimaries' => $navPrimaries

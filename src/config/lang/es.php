@@ -30,6 +30,7 @@ return [
     'phone_label' => 'Llamar a ',
     'address' => 'Dirección',
     'nif' => 'NIF',
+    'skip_to_main_content' => 'Saltar al contenido principal',
     'back_to_home' => 'Volver a Home',
     'contact_us' => 'Contáctanos',
     'send_us_the_message' => 'Envianos el mensaje',

@@ -30,6 +30,7 @@ return [
     'phone_label' => 'Call ',
     'address' => 'Address',
     'nif' => 'NIF',
+    'skip_to_main_content' => 'Skip to main content',
     'back_to_home' => 'Back to Home',
     'contact_us' => 'Contact us',
     'send_us_the_message' => 'Send us the message',
