@@ -14,11 +14,20 @@ if (!function_exists('app_lang_code')) {
     }
 }
 
-if (!function_exists('normalize_path')) {
-    function normalize_path(string $path): string
+if (!function_exists('normalize_uri')) {
+    function normalize_uri(string $uri): string
     {
-        $path = '/' . trim($path, '/');
-        return $path === '/' ? '/' : rtrim($path, '/');
+        $uri = parse_url($uri, PHP_URL_PATH) ?: '/';
+
+        // root
+        if ($uri === '/' || $uri === '') {
+            return '';
+        }
+
+        // normalizar
+        $uri = '/' . trim($uri, '/');
+
+        return rtrim($uri, '/');
     }
 }
 
@@ -78,23 +87,24 @@ if (!function_exists('route_map')) {
  * =========================
  */
 if (!function_exists('route_slug')) {
-    function route_slug(string $uri): string
+    function route_slug(string $name): string
     {
         $lang = app_lang_code();
         $routes = route_map();
 
-        if (!isset($routes[$lang][$uri])) {
-            throw new \Exception("Ruta no definida: {$uri}");
+        if (!isset($routes[$lang][$name])) {
+            throw new \Exception("Ruta no definida: {$name}");
         }
 
-        return $routes[$lang][$uri];
+        return $routes[$lang][$name];
     }
 }
 
 if (!function_exists('route_key_from_uri')) {
     function route_key_from_uri(string $uri): string
     {
-        $uri = trim($uri, '/');
+        $uri = normalize_uri($uri);
+
         $lang = app_lang_code();
         $routes = route_map();
 
@@ -105,18 +115,20 @@ if (!function_exists('route_key_from_uri')) {
 }
 
 if (!function_exists('url')) {
-    function url(string $uri = ''): string
+    function url(string $name = ''): string
     {
         $lang = app_lang_code();
-        $slug = route_slug($uri);
+        $slug = route_slug($name);
 
-        if ($lang === 'es') {
-            return $slug === '' ? '/' : '/' . $slug;
+        if ($slug === '') {
+            return $lang === 'es' ? '/' : '/' . $lang;
         }
 
-        return $slug === ''
-            ? '/' . $lang . '/'
-            : '/' . $lang . '/' . $slug;
+        if ($lang === 'es') {
+            return '/' . $slug;
+        }
+
+        return '/' . $lang . '/' . $slug;
     }
 }
 
@@ -125,9 +137,12 @@ if (!function_exists('current_url')) {
     {
         $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
         $host = $_SERVER['HTTP_HOST'] ?? Config::get('app.domain');
-        $uri = $_SERVER['REQUEST_URI'] ?? '/';
 
-        return $protocol . '://' . $host . $uri;
+        $currentPage = Config::get('current_page', 'home');
+
+        // dd($currentPage);
+
+        return $protocol . '://' . $host . url($currentPage);
     }
 }
 
@@ -135,7 +150,7 @@ if (!function_exists('current_path')) {
     function current_path(): string
     {
         $uri = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
-        return normalize_path($uri);
+        return normalize_uri($uri);
     }
 }
 
@@ -148,7 +163,7 @@ if (!function_exists('activeClass')) {
     function activeClass(string $url, string $classes = 'active', bool $strict = true): string
     {
         $uri = current_path();
-        $url = normalize_path($url);
+        $url = normalize_uri($url);
 
         $isActive = $strict
             ? $uri === $url

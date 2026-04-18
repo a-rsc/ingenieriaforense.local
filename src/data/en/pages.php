@@ -34,7 +34,7 @@ $pages = [
         NavType::PRIMARY,
         'Home',
         'Technical engineering for projects, activity licenses and expert reports. We help you process, analyze and document each case with rigor and clarity.',
-        lang_prefix() . '/',
+        lang_prefix() . '',
     ),
 
     'industrial-fires' => $makePage(

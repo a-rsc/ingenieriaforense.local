@@ -16,7 +16,7 @@
 
     <h1><?= current_url('') ?></h1>
 
-    <h2><?= $pages['home']['title'] ?></h2>
+    <h2>No:<?= $app['title'] ?></h2>
 
     <h3>App name: <?= htmlspecialchars($config['app']['name']) ?></h3>
 

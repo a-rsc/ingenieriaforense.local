@@ -26,13 +26,19 @@ return [
     'routes' => [
         'es' => [
             'home' => '',
-            'about' => 'nosotros',
-            'contact' => 'contacto',
+            'about' => '/nosotros',
+            'contact' => '/contacto',
+            'privacy' => '/politica-de-privacidad',
+            'terms-and-conditions' => '/terminos-y-condiciones',
+            'legal-notice' => '/aviso-legal',
         ],
         'en' => [
             'home' => '',
-            'about' => 'about',
-            'contact' => 'contact',
+            'about' => '/about',
+            'contact' => '/contact',
+            'privacy' => '/privacy-policy',
+            'terms-and-conditions' => '/terms-and-conditions',
+            'legal-notice' => '/legal-notice',
         ],
     ],
 
