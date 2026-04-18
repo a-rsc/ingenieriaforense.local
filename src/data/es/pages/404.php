@@ -9,6 +9,9 @@ $pageContent = [
             [
                 'src' => '/images/legal-notice1.jpg',
                 'alt' => 'Imagen de Legal Notice 1',
+                'category' => 'Error 404',
+                'title' => 'Error 404',
+                'description' => 'La página que buscas no se ha encontrado.',
             ],
         ],
     ]

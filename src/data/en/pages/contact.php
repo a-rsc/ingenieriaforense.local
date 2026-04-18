@@ -9,6 +9,9 @@ $pageContent = [
             [
                 'src' => '/images/contact1.jpg',
                 'alt' => 'Image Contact 1',
+                'category' => 'Contact',
+                'title' => 'Contact',
+                'description' => 'If you need help with a technical project, an activity license or a technical report, you can contact us to evaluate your case and guide you on the best technical approach.',
             ],
         ],
     ]

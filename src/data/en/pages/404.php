@@ -9,6 +9,9 @@ $pageContent = [
             [
                 'src' => '/images/4041.jpg',
                 'alt' => 'Image 404 1',
+                'category' => 'Error 404',
+                'title' => 'Error 404',
+                'description' => 'The page you are looking for could not be found.',
             ],
         ],
     ]

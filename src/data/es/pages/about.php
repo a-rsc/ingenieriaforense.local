@@ -28,8 +28,11 @@ $pageContent = [
         'keywords' => 'ingeniería técnica, proyectos técnicos, licencias de actividad, ingeniería forense, informes periciales, peritajes, legalización de actividad, licencia nave industrial',
         'images' => [
             [
-            'src' => '/images/about1.jpg',
+                'src' => '/images/about1.jpg',
                 'alt' => 'Imagen de About 1',
+                'category' => 'Equipo',
+                'title' => 'Nuestro equipo',
+                'description' => 'Conoce a los profesionales que conforman nuestro equipo de ingenieros y especialistas.',
             ],
         ],
     ]

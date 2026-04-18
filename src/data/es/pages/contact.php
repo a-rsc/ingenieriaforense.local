@@ -9,6 +9,9 @@ $pageContent = [
             [
                 'src' => '/images/contact1.jpg',
                 'alt' => 'Imagen de Contact 1',
+                'category' => 'Contacto',
+                'title' => 'Contacto',
+                'description' => 'Si necesitas ayuda con un proyecto técnico, una licencia de actividad o un informe pericial, puedes contactar con nosotros para valorar tu caso y orientarte sobre la mejor vía técnica.',
             ],
         ],
     ]

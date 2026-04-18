@@ -28,8 +28,11 @@ $pageContent = [
         'keywords' => 'technical engineering, technical projects, activity licenses, forensic engineering, expert reports, expert opinions, legalizing activity, industrial warehouse license',
         'images' => [
             [
-            'src' => '/images/about1.jpg',
+                'src' => '/images/about1.jpg',
                 'alt' => 'Image About 1',
+                'category' => 'About Us',
+                'title' => 'About Us',
+                'description' => 'Learn more about our company and our team.',
             ],
         ],
     ]

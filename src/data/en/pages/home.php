@@ -13,6 +13,9 @@ $pageContent = [
             [
                 'src' => '/images/home1.jpg',
                 'alt' => 'Image Home 1',
+                'category' => 'Dampness',
+                'title' => 'Dampness Causes',
+                'description' => 'Technical analysis of the causes of dampness in buildings, homes and commercial premises.',
             ],
         ],
     ]
