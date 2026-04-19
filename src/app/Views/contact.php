@@ -94,10 +94,10 @@ View::partial('breadcrumb', [
                     <p><strong><?= $config['company.name'] ?></strong></p>
                     <address>
                         <ul class="list-unstyled">
-                            <li><strong><span class="pe-2" aria-hidden="true">✉️</span><?= __('email') ?>:</strong> <a href="mailto:<?= $config['email']['to'] ?>" aria-label="<?= __('email_label') . $config['company.name'] ?>"> <?= $config['email']['to'] ?></a></li>
-                            <li><strong><span class="pe-2" aria-hidden="true">☎️</span><?= __('phone') ?>:</strong> <a href="tel:<?= $config['company']['phone'] ?>" aria-label="<?= __('phone_label') . $config['company.name'] ?>"> <?= $config['company']['phone_a11y'] ?></a></li>
-                            <li><strong><span class="pe-2" aria-hidden="true">📍</span><?= __('address') ?>:</strong> <?= $config['company']['address'] ?></li>
-                            <li><strong><span class="pe-2" aria-hidden="true">🪪</span><?= __('nif') ?>:</strong> <?= $config['company']['nif'] ?></li>
+                            <li><strong><span class="pe-2" aria-hidden="true">✉️</span><?= __('email') ?>: </strong> <a href="mailto:<?= $config['email']['to'] ?>" aria-label="<?= __('email_label') . $config['company.name'] ?>"><?= $config['email']['to'] ?></a></li>
+                            <li><strong><span class="pe-2" aria-hidden="true">☎️</span><?= __('phone') ?>: </strong> <a href="tel:<?= $config['company']['phone'] ?>" aria-label="<?= __('phone_label') . $config['company.name'] ?>"><?= $config['company']['phone_a11y'] ?></a></li>
+                            <li><strong><span class="pe-2" aria-hidden="true">📍</span><?= __('address') ?>: </strong><?= $config['company']['address'] ?></li>
+                            <li><strong><span class="pe-2" aria-hidden="true">🪪</span><?= __('nif') ?>: </strong><?= $config['company']['nif'] ?></li>
                         </ul>
                     </address>
                     <!-- End Contact information -->
