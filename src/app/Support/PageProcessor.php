@@ -29,10 +29,12 @@ class PageProcessor
 
         $pages[$pageKey] = array_merge_recursive($pages[$pageKey], $pageContent['pages'] ?? []);
 
-        // Separar por categoría manteniendo keys
+        $parent = [];
+        $children = [];
         $navPrimaries = [];
         $navSecondaries = [];
 
+        // Separar por categoría manteniendo keys
         foreach ($pages as $key => $page) {
             match ($page['category']) {
                 NavType::PRIMARY => $navPrimaries[$key] = $page,
@@ -41,8 +43,24 @@ class PageProcessor
             };
         }
 
+        if (!empty($pages[$pageKey]['parent'])) {
+            $parentKey = $pages[$pageKey]['parent'];
+
+            if (!empty($pages[$parentKey])) {
+                $parent = $pages[$parentKey];
+            }
+        }
+
+        $children = array_filter(
+            $pages,
+            fn ($page) => ($page['parent'] ?? null) === $pageKey
+        );
+
         return [
             'pages' => $pages,
+            'currentPage' => $pages[$pageKey],
+            'parent' => $parent,
+            'children' => $children,
             'navPrimaries' => $navPrimaries,
             'navSecondaries' => $navSecondaries,
         ];

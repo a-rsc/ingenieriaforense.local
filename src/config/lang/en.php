@@ -11,6 +11,7 @@ return [
         'client' => 'Client',
         'partner' => 'Partner',
         'staff' => 'Staff',
+        'testimonial' => 'testimonial',
     ],
     'carousel' => [
         'prev' => 'Previous',

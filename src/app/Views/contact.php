@@ -1,6 +1,12 @@
 <?php
 
 use App\Core\View;
+
+View::partial('breadcrumb', [
+    'currentPage' => $currentPage,
+    'parent' => $parent,
+    'children' => $children,
+]);
 ?>
         <!-- Contact -->
         <div id="contact" class="contact container py-4">
@@ -9,8 +15,8 @@ use App\Core\View;
                     <article>
                         <!-- Title -->
                         <header>
-                            <h1 class="text-center"><?= $pages['contact']['title'] ?></h1>
-                            <p class="lead text-secondary"><?= $pages['contact']['description'] ?></p>
+                            <h1 class="text-center"><?= $currentPage['title'] ?></h1>
+                            <p class="lead text-secondary"><?= $currentPage['description'] ?></p>
                         </header>
                         <!-- End Title -->
                         <section>
@@ -75,7 +81,7 @@ use App\Core\View;
             </div>
         </div>
         <!-- End Contact -->
-<?php View::partial('testimonial', $testimonial); ?>
+<?php View::partial('testimonial', ['testimonial' => $testimonial]); ?>
         <!-- Data contact -->
         <div class="container py-4">
             <div class="row">
@@ -104,4 +110,3 @@ use App\Core\View;
             </div>
         </div>
         <!-- End Data contact -->
-

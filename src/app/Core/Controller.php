@@ -11,22 +11,22 @@ abstract class Controller
     public function __construct()
     {
         $pagesData = require content_path('data', 'pages');
-
         $membersData = require content_path('data', 'members');
-        $testimonialData = require content_path('data', 'testimonials');
 
         $this->sharedData = [
             'config' => Config::all(),
 
             'pages' => $pagesData['pages'] ?? [],
+            'currentPage' => $pagesData['currentPage'] ?? [],
+            'parent' => $pagesData['parent'] ?? [],
+            'children' => $pagesData['children'] ?? [],
             'navPrimaries' => $pagesData['navPrimaries'] ?? [],
             'navSecondaries' => $pagesData['navSecondaries'] ?? [],
 
             'clients' => $membersData['clients'] ?? [],
             'partners' => $membersData['partners'] ?? [],
             'staff' => $membersData['staff'] ?? [],
-
-            'testimonial' => $testimonialData ?? [],
+            'testimonial' => $membersData['testimonial'] ?? [],
         ];
     }
 

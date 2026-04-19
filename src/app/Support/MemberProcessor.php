@@ -15,12 +15,14 @@ class MemberProcessor
         $clients = [];
         $partners = [];
         $staff = [];
+        $testimonials = [];
 
         foreach ($members as $key => $member) {
             match ($member['category']) {
                 Member::CLIENT => $clients[$key] = $member,
                 Member::PARTNER => $partners[$key] = $member,
                 Member::STAFF => $staff[$key] = $member,
+                Member::TESTIMONIAL => $testimonials[$key] = $member,
                 default => null,
             };
         }
@@ -29,6 +31,7 @@ class MemberProcessor
             'clients' => $clients,
             'partners' => $partners,
             'staff' => $staff,
+            'testimonial' => random_item($testimonials),
         ];
     }
 }

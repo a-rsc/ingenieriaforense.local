@@ -7,7 +7,7 @@ use App\Core\View;
             <div class="row">
                 <div class="col">
 
-<a href="<?= "/incendios-industriales/origen-y-causa" ?>">Ver más</a>
+<a href="<?= $children['industrial-fires-origin-cause']['url'] ?>">Ver más</a>
 <a href="<?= url('industrial-fires-fire-dynamics') ?>">Ver más</a>
 <a href="<?= url('industrial-fires-pci-audit') ?>">Ver más</a>
 

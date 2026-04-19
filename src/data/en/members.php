@@ -7,7 +7,7 @@ use App\Support\MemberProcessor;
 $makeMember = function (
     string $name,
     Member|null $category = null,
-    string $description = '',
+    string $description = '', // quote
     string $text = '',
     array $list = [],
     string $url = '',
@@ -31,7 +31,7 @@ $makeMember = function (
 };
 
 $members = [
-    'enginyers-industrials-catalunya' => $makeMember(
+    $makeMember(
         'Industrial Engineers of Catalonia',
         Member::PARTNER,
         'Professional college and association that represents industrial engineers in Catalonia.',
@@ -45,7 +45,7 @@ $members = [
         '/images/members/Enginyers-Industrials-Catalunya.jpg',
     ),
 
-    'universitat-politecnica-catalunya' => $makeMember(
+    $makeMember(
         'Universitat Politècnica de Catalunya',
         Member::PARTNER,
         'Public university in Catalonia specialized in engineering, architecture, science and technology.',
@@ -59,7 +59,7 @@ $members = [
         '/images/members/UPC.png',
     ),
 
-    'bcn-drone-productions' => $makeMember(
+    $makeMember(
         'Bcn Drone Productions',
         Member::PARTNER,
         'Audiovisuals with drones, 360 cameras, laser scanners, etc.',
@@ -71,6 +71,66 @@ $members = [
         ],
         'https://www.bcndroneproductions.es/',
         '/images/members/Bcn-Drone-Productions.webp',
+    ),
+
+    $makeMember(
+        'Carlos Martínez',
+        Member::TESTIMONIAL,
+        'Excellent and very professional service. They exceeded our expectations.',
+        '',
+        [],
+        '',
+        '/images/members/carlos-martinez.jpg',
+    ),
+
+    $makeMember(
+        'Laura Gómez',
+        Member::TESTIMONIAL,
+        'Excellent attention to detail and constant communication. Highly recommended.',
+        '',
+        [],
+        '',
+        '/images/members/laura-gomez.jpg',
+    ),
+
+    $makeMember(
+        'Javier López',
+        Member::TESTIMONIAL,
+        'A very efficient team that delivers high-quality results.',
+        '',
+        [],
+        '',
+        '/images/members/javier-lopez.jpg',
+    ),
+
+    $makeMember(
+        'Marta Sánchez',
+        Member::TESTIMONIAL,
+        'We are delighted with the result. The entire process was very simple.',
+        '',
+        [],
+        '',
+        '/images/members/marta-sanchez.jpg',
+    ),
+
+    $makeMember(
+        'David Fernández',
+        Member::TESTIMONIAL,
+        'Professionals, approachable and very committed to the project.',
+        '',
+        [],
+        '',
+        '/images/members/david-fernandez.jpg',
+    ),
+
+    $makeMember(
+        'Ana Ruiz',
+        Member::TESTIMONIAL,
+        'They helped us improve our project with excellent results.',
+        '',
+        [],
+        '',
+        '/images/members/ana-ruiz.jpg',
     ),
 ];
 

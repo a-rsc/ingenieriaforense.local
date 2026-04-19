@@ -9,6 +9,7 @@ enum Member: string
     case CLIENT = 'client';
     case PARTNER = 'partner';
     case STAFF = 'staff';
+    case TESTIMONIAL = 'testimonial';
 
     /**
      * Obtener todos los valores

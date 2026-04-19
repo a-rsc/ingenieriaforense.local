@@ -13,8 +13,8 @@ use App\Core\View;
     <!-- SEO Meta Tags -->
     <meta name="robots" content="index, follow">
     <meta name="author" content="<?= $config['company']['name'] ?>">
-    <title><?= "{$pages[$config['current_page']]['title']} | " . $config['company']['name'] ?></title>
-    <meta name="description" content="<?= $pages[$config['current_page']]['description'] ?>">
+    <title><?= "{$currentPage['title']} | " . $config['company']['name'] ?></title>
+    <meta name="description" content="<?= $currentPage['description'] ?>">
     <link rel="canonical" href="<?= current_url() ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
