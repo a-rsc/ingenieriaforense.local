@@ -1,5 +1,5 @@
         <!-- Terms and Conditions -->
-        <div id="terms-conditions" class="legal-doc container py-4">
+        <div id="terms-conditions" class="legal-content container py-4">
             <div class="row">
                 <div class="col">
                     <article>

@@ -82,7 +82,7 @@ main {
 }
 
 .about h2,
-.legal-doc h2 {
+.legal-content h2 {
   scroll-margin-top: var(--navbar-height);
 }
 
@@ -92,12 +92,12 @@ main {
 .about h4,
 .about h5,
 .about h6,
-.legal-doc h1,
-.legal-doc h2,
-.legal-doc h3,
-.legal-doc h4,
-.legal-doc h5,
-.legal-doc h6 {
+.legal-content h1,
+.legal-content h2,
+.legal-content h3,
+.legal-content h4,
+.legal-content h5,
+.legal-content h6 {
   text-align: left;
 }
 

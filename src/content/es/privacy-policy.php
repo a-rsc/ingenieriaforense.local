@@ -1,5 +1,5 @@
         <!-- Privacy Policy -->
-        <div id="privacy-policy" class="legal-doc container py-4">
+        <div id="privacy-policy" class="legal-content container py-4">
             <div class="row">
                 <div class="col">
                     <article>

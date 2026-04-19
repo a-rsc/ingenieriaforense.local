@@ -23,7 +23,6 @@
         </div>
     </div>
 </footer>
-
 <!-- JS -->
 <script src="/js/bootstrap.bundle.min.js" defer></script>
 <script src="/js/script.js" defer></script>

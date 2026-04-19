@@ -8,4 +8,4 @@ View::partial('breadcrumb', [
     'children' => $children,
 ]);
 
-require content_path('content', 'terms-and-conditions');
+require content_path('content', $config['current_page']);

@@ -52,19 +52,9 @@ class PageController extends Controller
         $this->view('contact');
     }
 
-    public function privacyPolicy(): void
+    public function legalContent(): void
     {
-        $this->view('privacy-policy');
-    }
-
-    public function termsAndConditions(): void
-    {
-        $this->view('terms-and-conditions');
-    }
-
-    public function legalNotice(): void
-    {
-        $this->view('legal-notice');
+        $this->view('legal-content');
     }
 
     public function notFound(): void

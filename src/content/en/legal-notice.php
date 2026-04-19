@@ -1,5 +1,5 @@
         <!-- Legal Notice -->
-        <div id="legal-notice" class="legal-doc container py-4">
+        <div id="legal-notice" class="legal-content container py-4">
             <div class="row">
                 <div class="col">
                     <article>
