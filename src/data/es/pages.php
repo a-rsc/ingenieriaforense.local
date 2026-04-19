@@ -43,7 +43,7 @@ $pages = [
         'Ingeniería Forense de Incendios industriales',
         'Más allá del "Origen y Causa": Evidencia científica para el sector legal y asegurador.',
         '/incendios-industriales',
-        Status::INACTIVE,
+        Status::ACTIVE,
     ),
 
     'standard' => $makePage(
@@ -52,7 +52,7 @@ $pages = [
         'Casos habituales',
         'Analizamos casos habituales relacionados con licencias, proyectos técnicos, humedades, grietas, daños estructurales, defectos constructivos y conflictos de obra.',
         '/casos-habituales',
-        Status::INACTIVE,
+        Status::ACTIVE,
     ),
 
     'blog' => $makePage(

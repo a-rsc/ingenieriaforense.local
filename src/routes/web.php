@@ -5,6 +5,10 @@ use App\Controllers\PageController;
 $router->get('/', [PageController::class, 'index']);
 
 // Páginas estáticas
+$router->get('/incendios-industriales', [PageController::class, 'industrialFires']);
+$router->get('/industrial-fires', [PageController::class, 'industrialFires']);
+$router->get('/casos-habituales', [PageController::class, 'standard']);
+$router->get('/standard', [PageController::class, 'standard']);
 $router->get('/nosotros', [PageController::class, 'about']);
 $router->get('/about', [PageController::class, 'about']);
 $router->get('/contacto', [PageController::class, 'contact']);

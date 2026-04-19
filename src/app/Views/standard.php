@@ -16,6 +16,7 @@ use App\Core\View;
         'classCarousel' => 'main-carousel',
         'images' => $pages['home']['images'],
     ]);
+
 ?>
 
     <hr>

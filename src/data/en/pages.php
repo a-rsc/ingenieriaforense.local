@@ -43,7 +43,7 @@ $pages = [
         'Industrial Fires',
         'Beyond "Origin and Cause": Scientific Evidence for the Legal and Insurance Sectors.',
         lang_prefix() . '/industrial-fires',
-        Status::INACTIVE,
+        Status::ACTIVE,
     ),
 
     'standard' => $makePage(
@@ -52,7 +52,7 @@ $pages = [
         'Standard Cases',
         'We analyze typical cases related to licenses, technical projects, moisture, cracks, structural damages, construction defects and construction conflicts.',
         lang_prefix() . '/standard',
-        Status::INACTIVE,
+        Status::ACTIVE,
     ),
 
     'blog' => $makePage(

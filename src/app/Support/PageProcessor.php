@@ -21,13 +21,13 @@ class PageProcessor
 
         if (!file_exists($pageContentPath)) {
             $pageContentPath = BASE_PATH . "/src/data/es/pages/{$pageKey}.php";
-        }
+            }
 
         $pageContent = file_exists($pageContentPath)
             ? require $pageContentPath
             : [];
 
-        $pages = array_replace_recursive($pages, $pageContent['pages'] ?? []);
+        $pages[$pageKey] = array_merge_recursive($pages[$pageKey], $pageContent['pages'] ?? []);
 
         // Separar por categoría manteniendo keys
         $navPrimaries = [];

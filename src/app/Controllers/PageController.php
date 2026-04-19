@@ -17,6 +17,16 @@ class PageController extends Controller
         $this->view('home', $data);
     }
 
+    public function industrialFires(): void
+    {
+        $this->view('industrial-fires');
+    }
+
+    public function standard(): void
+    {
+        $this->view('standard');
+    }
+
     public function about(): void
     {
         $this->view('about');

@@ -26,17 +26,21 @@ return [
     'routes' => [
         'es' => [
             'home' => '',
+            'industrial-fires' => '/incendios-industriales',
+            'standard' => '/casos-habituales',
             'about' => '/nosotros',
             'contact' => '/contacto',
-            'privacy' => '/politica-de-privacidad',
+            'privacy-policy' => '/politica-de-privacidad',
             'terms-and-conditions' => '/terminos-y-condiciones',
             'legal-notice' => '/aviso-legal',
         ],
         'en' => [
             'home' => '',
+            'industrial-fires' => '/industrial-fires',
+            'standard' => '/standard',
             'about' => '/about',
             'contact' => '/contact',
-            'privacy' => '/privacy-policy',
+            'privacy-policy' => '/privacy-policy',
             'terms-and-conditions' => '/terms-and-conditions',
             'legal-notice' => '/legal-notice',
         ],
