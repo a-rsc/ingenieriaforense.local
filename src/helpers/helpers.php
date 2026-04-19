@@ -125,10 +125,10 @@ if (!function_exists('url')) {
         }
 
         if ($lang === 'es') {
-            return '/' . $slug;
+            return $slug;
         }
 
-        return '/' . $lang . '/' . $slug;
+        return '/' . $lang . $slug;
     }
 }
 
