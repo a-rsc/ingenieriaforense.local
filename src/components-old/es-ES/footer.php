@@ -47,8 +47,8 @@ foreach ($serviceCollections ?? [] as $key => $serviceCollection):
                 <div class="col">
                     <address>
                         <ul class="list-unstyled">
-                            <li><span class="pe-3">✉️</span>Email: <a href="mailto:<?= EMAIL_TO ?>" aria-label="Enviar correo a <?= COMPANY_NAME ?>"> <?= EMAIL_TO ?></a></li>
-                            <li><span class="pe-3">☎️</span>Teléfono: <a href="tel:<?= COMPANY_PHONE ?>" aria-label="Llamar a <?= COMPANY_NAME ?>"> <?= COMPANY_PHONE_A11Y ?></a></li>
+                            <li><span class="pe-2">✉️</span>Email: <a href="mailto:<?= EMAIL_TO ?>" aria-label="Enviar correo a <?= COMPANY_NAME ?>"> <?= EMAIL_TO ?></a></li>
+                            <li><span class="pe-2">☎️</span>Teléfono: <a href="tel:<?= COMPANY_PHONE ?>" aria-label="Llamar a <?= COMPANY_NAME ?>"> <?= COMPANY_PHONE_A11Y ?></a></li>
                         </ul>
                     </address>
                 </div>

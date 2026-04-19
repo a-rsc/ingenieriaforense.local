@@ -33,18 +33,6 @@ if (!function_exists('normalize_uri')) {
 
 /**
  * =========================
- * 🌐 TRANSLATIONS
- * =========================
- */
-if (!function_exists('__')) {
-    function __(string $key): string
-    {
-        return Config::get('app.translations.' . $key, $key);
-    }
-}
-
-/**
- * =========================
  * 🔐 SECURITY / ESCAPE
  * =========================
  */
@@ -52,6 +40,18 @@ if (!function_exists('e')) {
     function e(mixed $value): string
     {
         return htmlspecialchars((string) ($value ?? ''), ENT_QUOTES, 'UTF-8');
+    }
+}
+
+/**
+ * =========================
+ * 🌐 TRANSLATIONS
+ * =========================
+ */
+if (!function_exists('__')) {
+    function __(string $key): string
+    {
+        return Config::get('app.translations.' . $key, $key);
     }
 }
 
@@ -153,6 +153,41 @@ if (!function_exists('current_path')) {
     {
         $uri = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
         return normalize_uri($uri);
+    }
+}
+
+if (!function_exists('localized_route')) {
+    function localized_route(string $pageKey, string $targetLang): string
+    {
+        $routes = Config::get('routes', []);
+        $langRoutes = $routes[$targetLang] ?? [];
+
+        if (!array_key_exists($pageKey, $langRoutes)) {
+            return $targetLang === 'en' ? '/en' : '/';
+        }
+
+        $path = trim((string) $langRoutes[$pageKey]);
+
+        if ($path === '') {
+            return $targetLang === 'en' ? '/en' : '/';
+        }
+
+        if ($path[0] !== '/') {
+            $path = '/' . $path;
+        }
+
+        return $targetLang === 'en' ? '/en' . $path : $path;
+    }
+}
+
+if (!function_exists('switch_language_url')) {
+    function switch_language_url(): string
+    {
+        $currentPage = Config::get('current_page', 'home');
+        $currentLang = Config::get('app.lang_code', 'es');
+        $targetLang = $currentLang === 'en' ? 'es' : 'en';
+
+        return localized_route($currentPage, $targetLang);
     }
 }
 
