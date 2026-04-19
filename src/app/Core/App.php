@@ -11,22 +11,25 @@ class App
         require BASE_PATH . '/src/routes/web.php';
 
         $uri = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
+        $uriLower = strtolower($uri);
         $segments = array_values(array_filter(explode('/', trim($uri, '/'))));
 
         $supportedLangs = Config::get('app.supported_langs', ['es']);
-        $langCode = null;
+        $langCode = 'es';
 
-        if (!empty($segments) && in_array($segments[0], $supportedLangs, true)) {
-            $langCode = $segments[0];
-            array_shift($segments);
+        if (!empty($segments)) {
+            $firstSegment = strtolower($segments[0]);
+
+            if (in_array($firstSegment, $supportedLangs, true)) {
+                $langCode = $firstSegment;
+                array_shift($segments);
+            }
         }
 
         $cleanUri = '/' . implode('/', $segments);
 
-        // Normalización de idioma en URL
-
-        // 1. Español → eliminar prefijo /es
-        if ($langCode === 'es' && ($uri === '/es' || $uri === '/es/' || str_starts_with($uri, '/es/'))) {
+        // Español → eliminar prefijo /es
+        if ($langCode === 'es' && ($uriLower === '/es' || $uriLower === '/es/' || str_starts_with($uriLower, '/es/'))) {
             $redirectUri = substr($uri, 3);
 
             if ($redirectUri === '' || $redirectUri === false) {
@@ -37,17 +40,30 @@ class App
             exit;
         }
 
-        // 2. Inglés → evitar /en/ (slash final)
-        if ($langCode === 'en' && $uri === '/en/') {
-            header('Location: /en', true, 301);
-            exit;
+        // Inglés → forzar /en en minúsculas
+        if ($langCode === 'en') {
+            if ($uriLower === '/en' || $uriLower === '/en/' || str_starts_with($uriLower, '/en/')) {
+                if ($uri !== $uriLower) {
+                    header('Location: ' . $uriLower, true, 301);
+                    exit;
+                }
+
+                if ($uri === '/en/') {
+                    header('Location: /en', true, 301);
+                    exit;
+                }
+            } else {
+                $redirectUri = '/en' . ($uri === '/' ? '' : $uri);
+                header('Location: ' . $redirectUri, true, 301);
+                exit;
+            }
         }
 
-        $langTranslations = BASE_PATH . "/src/config/lang/{$langCode}.php";
+        $translationsPath = BASE_PATH . "/src/config/lang/{$langCode}.php";
 
-        if (!file_exists($langTranslations)) {
+        if (!file_exists($translationsPath)) {
             $langCode = 'es';
-            $langTranslations = Config::get('app.lang_translations', BASE_PATH . '/src/config/lang/es.php');
+            $translationsPath = Config::get('app.translations_path', BASE_PATH . '/src/config/lang/es.php');
         }
 
         $langConfigMap = [
@@ -69,7 +85,8 @@ class App
         Config::set('app.lang_locale', $currentLangConfig['lang_locale']);
         Config::set('app.language', $currentLangConfig['language']);
         Config::set('app.lang_code', $langCode);
-        Config::set('app.lang_translations', require $langTranslations);
+        Config::set('app.translations_path', $translationsPath);
+        Config::set('app.translations', require $translationsPath);
 
         $pageKey = route_key_from_uri($cleanUri);
 

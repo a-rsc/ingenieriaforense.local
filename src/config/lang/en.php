@@ -38,8 +38,8 @@ return [
     'form' => [
         'title' => 'Cuéntanos tu caso y te responderemos pronto',
         'legend' => 'Formulario de contacto',
-        'name_label' => 'Nombre',
-        'name_input' => 'Tu nombre *',
+        'name_label' => 'Name',
+        'name_input' => 'Your name *',
         'email_label' => 'Email',
         'email_input' => 'Tu email *',
         'phone_label' => 'Teléfono',

@@ -34,7 +34,7 @@ spl_autoload_register(function (string $class): void {
 
     // Verificar si el archivo existe
     if (!file_exists($file)) {
-        throw new RuntimeException("Autoload no encontró: $file");
+        return;
     }
 
     // Cargar el archivo automáticamente
