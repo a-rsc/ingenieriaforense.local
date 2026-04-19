@@ -181,7 +181,7 @@ if (!function_exists('localized_route')) {
 }
 
 if (!function_exists('switch_language_url')) {
-    function switch_language_url(): string
+    function switch_lang_code_url(): string
     {
         $currentPage = Config::get('current_page', 'home');
         $currentLang = Config::get('app.lang_code', 'es');

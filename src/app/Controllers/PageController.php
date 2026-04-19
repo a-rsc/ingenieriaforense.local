@@ -22,6 +22,21 @@ class PageController extends Controller
         $this->view('industrial-fires');
     }
 
+    public function industrialFiresOriginCause(): void
+    {
+        $this->view('industrial-fires-origin-cause');
+    }
+
+    public function industrialFiresFireDynamics(): void
+    {
+        $this->view('industrial-fires-fire-dynamics');
+    }
+
+    public function industrialFiresPciAudit(): void
+    {
+        $this->view('industrial-fires-pci-audit');
+    }
+
     public function standard(): void
     {
         $this->view('standard');
@@ -57,5 +72,5 @@ class PageController extends Controller
         http_response_code(404);
 
         $this->view('404');
-        }
+    }
 }

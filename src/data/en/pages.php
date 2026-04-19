@@ -46,13 +46,40 @@ $pages = [
         Status::ACTIVE,
     ),
 
+    'industrial-fires-origin-cause' => $makePage(
+        'Origen y causa',
+        null,
+        'Investigación de origen y causa en incendios industriales',
+        'Análisis técnico-forense para determinar foco, fuente de ignición y secuencia causal en incendios industriales.',
+        lang_prefix() . '/incendios-industriales/origen-y-causa',
+        Status::ACTIVE,
+    ),
+
+    'industrial-fires-fire-dynamics' => $makePage(
+        'Dinámica del fuego',
+        null,
+        'Análisis dinámico del fuego en incendios industriales',
+        'Estudio de propagación, humos, sectorización y evolución térmica en incendios industriales.',
+        lang_prefix() . '/incendios-industriales/dinamica-del-fuego',
+        Status::ACTIVE,
+    ),
+
+    'industrial-fires-pci-audit' => $makePage(
+        'Auditoría PCI',
+        null,
+        'Auditoría forense de sistemas PCI',
+        'Evaluación técnica del diseño, mantenimiento y funcionamiento de sistemas de protección contra incendios.',
+        lang_prefix() . '/incendios-industriales/auditoria-pci',
+        Status::ACTIVE,
+    ),
+
     'standard' => $makePage(
         'Standard Cases',
         NavType::PRIMARY,
         'Standard Cases',
         'We analyze typical cases related to licenses, technical projects, moisture, cracks, structural damages, construction defects and construction conflicts.',
         lang_prefix() . '/standard',
-        Status::ACTIVE,
+        Status::INACTIVE,
     ),
 
     'blog' => $makePage(

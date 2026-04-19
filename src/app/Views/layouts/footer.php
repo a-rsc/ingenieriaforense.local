@@ -5,8 +5,8 @@
                 <div class="col">
                     <address>
                         <ul class="list-unstyled">
-                            <li><span class="pe-2">✉️</span><?= __('email') ?>: <a href="mailto:<?= $config['company']['email'] ?>" aria-label="<?= __('email_label') . $config['company']['name'] ?>"> <?= $config['company']['email'] ?></a></li>
-                            <li><span class="pe-2">☎️</span><?= __('phone') ?>: <a href="tel:<?= $config['company']['phone'] ?>" aria-label="<?= __('phone_label') . $config['company']['name'] ?>"> <?= $config['company']['phone_a11y'] ?></a></li>
+                            <li><span class="pe-2" aria-hidden="true">✉️</span><?= __('email') ?>: <a href="mailto:<?= $config['company']['email'] ?>" aria-label="<?= __('email_label') . $config['company']['name'] ?>"> <?= $config['company']['email'] ?></a></li>
+                            <li><span class="pe-2" aria-hidden="true">☎️</span><?= __('phone') ?>: <a href="tel:<?= $config['company']['phone'] ?>" aria-label="<?= __('phone_label') . $config['company']['name'] ?>"> <?= $config['company']['phone_a11y'] ?></a></li>
                         </ul>
                     </address>
                 </div>

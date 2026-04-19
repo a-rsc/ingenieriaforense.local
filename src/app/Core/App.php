@@ -10,12 +10,11 @@ class App
 
         require BASE_PATH . '/src/routes/web.php';
 
-        $uri = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
-        $uriLower = strtolower($uri);
-        $segments = array_values(array_filter(explode('/', trim($uri, '/'))));
+        $supportedLangs = Config::get('app.supported_langs', ['es', 'en']);
+        $langCode = Config::get('app.lang_code', 'es');
 
-        $supportedLangs = Config::get('app.supported_langs', ['es']);
-        $langCode = 'es';
+        $uri = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
+        $segments = array_values(array_filter(explode('/', trim($uri, '/'))));
 
         if (!empty($segments)) {
             $firstSegment = strtolower($segments[0]);
@@ -29,42 +28,11 @@ class App
         $cleanUri = '/' . implode('/', $segments);
 
         // Español → eliminar prefijo /es
-        if ($langCode === 'es' && ($uriLower === '/es' || $uriLower === '/es/' || str_starts_with($uriLower, '/es/'))) {
-            $redirectUri = substr($uri, 3);
-
-            if ($redirectUri === '' || $redirectUri === false) {
-                $redirectUri = '/';
-            }
-
-            header('Location: ' . $redirectUri, true, 301);
-            exit;
-        }
-
+        $this->handleSpanishCanonicalRedirect($langCode, $uri);
         // Inglés → forzar /en en minúsculas
-        if ($langCode === 'en') {
-            if ($uriLower === '/en' || $uriLower === '/en/' || str_starts_with($uriLower, '/en/')) {
-                if ($uri !== $uriLower) {
-                    header('Location: ' . $uriLower, true, 301);
-                    exit;
-                }
-
-                if ($uri === '/en/') {
-                    header('Location: /en', true, 301);
-                    exit;
-                }
-            } else {
-                $redirectUri = '/en' . ($uri === '/' ? '' : $uri);
-                header('Location: ' . $redirectUri, true, 301);
-                exit;
-            }
-        }
+        $this->handleEnglishCanonicalRedirect($langCode, $uri);
 
         $translationsPath = BASE_PATH . "/src/config/lang/{$langCode}.php";
-
-        if (!file_exists($translationsPath)) {
-            $langCode = 'es';
-            $translationsPath = Config::get('app.translations_path', BASE_PATH . '/src/config/lang/es.php');
-        }
 
         $langConfigMap = [
             'es' => [
@@ -95,5 +63,45 @@ class App
         $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 
         $router->dispatch($cleanUri, $method);
+    }
+
+    private function handleSpanishCanonicalRedirect(string $langCode, string $uri): void
+    {
+        if ($langCode !== 'es') {
+            return;
+        }
+
+        $uriLower = strtolower($uri);
+
+        if ($uriLower === '/es' || $uriLower === '/es/' || str_starts_with($uriLower, '/es/')) {
+            header('Location: ' . (substr($uri, 3) ?: '/'), true, 301);
+            exit;
+        }
+    }
+
+    private function handleEnglishCanonicalRedirect(string $langCode, string $uri): void
+    {
+        if ($langCode !== 'en') {
+            return;
+        }
+
+        $uriLower = strtolower($uri);
+
+        if ($uriLower === '/en' || $uriLower === '/en/' || str_starts_with($uriLower, '/en/')) {
+            if ($uri === '/en/') {
+                header('Location: /en', true, 301);
+                exit;
+            }
+
+            if ($uri !== $uriLower) {
+                header('Location: ' . $uriLower, true, 301);
+                exit;
+            }
+
+            return;
+        }
+
+        header('Location: /en' . ($uri === '/' ? '' : $uri), true, 301);
+        exit;
     }
 }

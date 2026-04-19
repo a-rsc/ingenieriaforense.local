@@ -6,6 +6,11 @@ use App\Core\View;
         <div id="industrial-fires" class="industrial-fires container py-4">
             <div class="row">
                 <div class="col">
+
+<a href="<?= "/incendios-industriales/origen-y-causa" ?>">Ver más</a>
+<a href="<?= url('industrial-fires-fire-dynamics') ?>">Ver más</a>
+<a href="<?= url('industrial-fires-pci-audit') ?>">Ver más</a>
+
                     <section class="intro-text">
                         <p>En el entorno industrial, un incendio no es solo un evento accidental; es un fenómeno complejo donde convergen procesos químicos, fallos eléctricos de alta potencia y deficiencias en sistemas de protección. En <strong>ingenieriaforense.es</strong>, aportamos claridad técnica donde la pericia convencional no llega, transformando datos de campo en evidencias científicas robustas para procesos judiciales y reclamaciones de grandes daños.</p>
                     </section>
@@ -42,12 +47,12 @@ use App\Core\View;
                             </ul>
                         </article>
                     </section>
-                    <aside class="legal-notice" style="background-color: #f4f4f4; padding: 20px; border-left: 5px solid red; margin-top: 40px;">
+                    <aside class="legal-notice">
                         <p><strong>Especialistas en Litigios de Grandes Riesgos:</strong> Proporcionamos a bufetes de abogados informes periciales visados, diseñados para soportar el rigor de un interrogatorio judicial. Nuestra prioridad es la objetividad técnica como base para una defensa legal sólida.</p>
                     </aside>
-                    <section class="cta">
+                    <section class="cta text-center">
                         <h2>¿Necesita un análisis de viabilidad para un caso de incendio industrial?</h2>
-                        <a href="/contacto" class="btn btn-custom">Contactar con nuestros ingenieros forenses</a>
+                        <a href="/contacto" class="btn btn-custom btn-light">Contactar con nuestros ingenieros forenses</a>
                     </section>
 <?php
     shuffle($pages['industrial-fires']['images']);

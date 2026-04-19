@@ -10,11 +10,11 @@ use App\Core\Config;
                 <a href="<?= url('home') ?>" title="<?= $config['company']['name'] ?>"><img class="logo" src="<?= $config['company']['icon'] ?>" alt="Logo de <?= $config['company']['name'] ?>" width="80" height="80" decoding="async"></a>
                 <!-- End Logo -->
                 <!-- Phone -->
-                <a href="tel:<?= $config['company']['phone'] ?>" class="btn btn-custom btn-light me-lg-3" title="<?= __('contact_us') ?>"><span class="pe-2">☎️</span><?= $config['company']['phone_a11y'] ?></a>
+                <a href="tel:<?= $config['company']['phone'] ?>" class="btn btn-custom btn-light me-lg-3" title="<?= __('contact_us') ?>"><span class="pe-2" aria-hidden="true">☎️</span><?= $config['company']['phone_a11y'] ?></a>
                 <!-- End Phone -->
                 <!-- Language -->
-                <a href="<?= htmlspecialchars(switch_language_url(), ENT_QUOTES, 'UTF-8') ?>" class="navbar__lang-switch btn btn-custom bg-light" aria-label="Cambiar idioma">
-                    <span class="pe-2" aria-hidden="true">🌐</span><?= Config::get('app.lang_code', 'es') === 'en' ? 'ES' : 'EN' ?></a>
+                <a href="<?= switch_lang_code_url() ?>" class="navbar__lang-switch btn btn-custom bg-light" aria-label="Cambiar idioma">
+                    <span class="pe-2" aria-hidden="true">🌐</span><?= Config::get('app.lang_code', 'es') === 'en' ? 'Español' : 'English' ?></a>
                 <!-- End Language -->
                 <!-- Navigation menu -->
                 <!-- Burger menu -->

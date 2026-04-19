@@ -26,7 +26,12 @@ return [
     'routes' => [
         'es' => [
             'home' => '',
+
             'industrial-fires' => '/incendios-industriales',
+            'industrial-fires-origin-cause' => '/incendios-industriales/origen-y-causa',
+            'industrial-fires-fire-dynamics' => '/incendios-industriales/dinamica-del-fuego',
+            'industrial-fires-pci-audit' => '/incendios-industriales/auditoria-pci',
+
             'standard' => '/casos-habituales',
             'about' => '/nosotros',
             'contact' => '/contacto',
@@ -36,7 +41,12 @@ return [
         ],
         'en' => [
             'home' => '',
+
             'industrial-fires' => '/industrial-fires',
+            'industrial-fires-origin-cause' => '/industrial-fires/origin-and-cause',
+            'industrial-fires-fire-dynamics' => '/industrial-fires/fire-dynamics',
+            'industrial-fires-pci-audit' => '/industrial-fires/pci-audit',
+
             'standard' => '/standard',
             'about' => '/about',
             'contact' => '/contact',
