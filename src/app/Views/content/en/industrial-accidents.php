@@ -6,8 +6,8 @@ use App\Core\View;
         <div id="industrial-accidents" class="industrial-accidents container py-4">
             <div class="row">
                 <div class="col">
-<?php foreach ($children as $key => $child): ?>
-                    <a href="<?= $child['url'] ?>">Ver más</a>
+<?php foreach ($currentPage['children'] as $key => $child): ?>
+                    <a href="<?= $pages[$child]['url'] ?>">Ver más</a>
 <?php endforeach; ?>
                     <section class="intro-text">
                         <p>En el entorno industrial, un incendio no es solo un evento accidental; es un fenómeno complejo donde convergen procesos químicos, fallos eléctricos de alta potencia y deficiencias en sistemas de protección. En <strong>ingenieriaforense.es</strong>, aportamos claridad técnica donde la pericia convencional no llega, transformando datos de campo en evidencias científicas robustas para procesos judiciales y reclamaciones de grandes daños.</p>

@@ -12,7 +12,7 @@
                 <div class="navbar navbar-dark">
                     <ul class="navbar-nav list-unstyled">
 <?php foreach ($navFooterPrimary['children'] ?? [] as $child): ?>
-                        <li class="nav-item"><a href="<?= $child['url'] ?>" class="nav-link p-0 <?= active_class($child['url']) ?>"<?= active_class($child['url'], ' aria-current="page"') ?> aria-label="<?= $child['title'] ?>"><?= $child['name'] ?></a></li>
+                        <li class="nav-item"><a href="<?= $pages[$child]['url'] ?>" class="nav-link p-0 <?= active_class($pages[$child]['url']) ?>"<?= active_class($pages[$child]['url'], ' aria-current="page"') ?> aria-label="<?= $pages[$child]['title'] ?>"><?= $pages[$child]['name'] ?></a></li>
 <?php endforeach; ?>
                     </ul>
                 </div>
@@ -23,9 +23,9 @@
                 <p class="text-center">Menú</p>
                 <div class="navbar navbar-dark">
                     <ul class="navbar-nav list-unstyled" aria-label="Navegación inferior">
-                        <?php foreach ($navHeaderPrimaries ?? [] as $navHeaderPrimary): ?>
+<?php foreach ($navHeaderPrimaries ?? [] as $navHeaderPrimary): ?>
                         <li class="nav-item"><a href="<?= $navHeaderPrimary['url']?: '/' ?>" class="nav-link p-0 <?= active_class($navHeaderPrimary['url']) ?>"<?= active_class($navHeaderPrimary['url'], ' aria-current="page"') ?> aria-label="<?= $navHeaderPrimary['title'] ?>"><?= $navHeaderPrimary['name'] ?></a></li>
-                            <?php endforeach; ?>
+<?php endforeach; ?>
                     </ul>
                 </div>
             </div>

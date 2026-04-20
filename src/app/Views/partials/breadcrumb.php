@@ -5,15 +5,13 @@
                 <li class="breadcrumb-item">
                     <a href="/" title="Home">Home</a>
                 </li>
-<?php if (!empty($parent)): ?>
+<?php if (!empty($pages[$currentPage['parent']])): ?>
                 <li class="breadcrumb-item">
-                    <a href="<?= $parent['url'] ?>" title="<?= $parent['name'] ?>">
-                        <?= $parent['name'] ?>
-                    </a>
+                    <a href="<?= $pages[$currentPage['parent']]['url'] ?>" title="<?= $pages[$currentPage['parent']]['name'] ?>"><?= $pages[$currentPage['parent']]['name'] ?></a>
                 </li>
 <?php endif; ?>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <?= $currentPage['name'] ?>
+                    <span><?= $currentPage['name'] ?></span>
                 </li>
             </ol>
         </div>

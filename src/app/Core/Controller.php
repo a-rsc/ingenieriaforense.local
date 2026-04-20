@@ -17,10 +17,8 @@ abstract class Controller
         $this->sharedData = [
             'config' => $config,
 
-            'pages' => $pagesData['pages'] ?? [],
             'currentPage' => $pagesData['currentPage'] ?? [],
-            'parent' => $pagesData['parent'] ?? [],
-            'children' => $pagesData['children'] ?? [],
+            'pages' => $pagesData['pages'] ?? [],
             'navHeaderPrimaries' => $pagesData['navHeaderPrimaries'] ?? [],
             'navFooterPrimaries' => $pagesData['navFooterPrimaries'] ?? [],
             'navFooterSecondaries' => $pagesData['navFooterSecondaries'] ?? [],

@@ -12,12 +12,14 @@ $makePage = function (
     string $url = '',
     Status $status = Status::ACTIVE,
     string $image = '',
-    ?string $parent = null
+    ?string $parent = '',
+    array $children = [],
 ): array {
     return [
         'name' => $name,
         'category' => $category,
         'parent' => $parent,
+        'children' => $children,
         'content' => [
             'title' => $title,
             'description' => $description,
@@ -52,6 +54,12 @@ $pages = [
         '/incendios-industriales',
         Status::ACTIVE,
         '/images/pages/Causas-de-humedad.webp',
+        '',
+        [
+            'industrial-fires-origin-cause',
+            'industrial-fires-fire-dynamics',
+            'industrial-fires-pci-audit',
+        ],
     ),
 
     'industrial-fires-origin-cause' => $makePage(
@@ -98,6 +106,12 @@ $pages = [
         '/accidentes-industriales',
         Status::ACTIVE,
         '/images/pages/Causas-de-humedad.webp',
+        '',
+        [
+            'industrial-accidents-child1',
+            'industrial-accidents-child2',
+            'industrial-accidents-child3',
+        ],
     ),
 
     'industrial-accidents-child1' => $makePage(

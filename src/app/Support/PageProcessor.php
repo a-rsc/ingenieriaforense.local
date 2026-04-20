@@ -35,12 +35,9 @@ class PageProcessor
             $pageContent['pages'] ?? []
         );
 
-        $parent = [];
-        $children = [];
         $navHeaderPrimaries = [];
         $navFooterPrimaries = [];
         $navFooterSecondaries = [];
-        $pagesByParent = [];
 
         // Split pages by category while preserving original keys
         foreach ($pages as $key => $page) {
@@ -57,38 +54,11 @@ class PageProcessor
             if (in_array(NavType::FOOTERSECONDARY, $categories, true)) {
                 $navFooterSecondaries[$key] = $page;
             }
-
-            // Group pages by parent key
-            $parentKey = $page['parent'] ?? null;
-
-            if ($parentKey !== null) {
-                $pagesByParent[$parentKey][$key] = $page;
-            }
         }
-
-        // Attach child pages to each footer primary item
-        foreach ($navFooterPrimaries as $key => &$footerPage) {
-            $footerPage['children'] = $pagesByParent[$key] ?? [];
-        }
-        unset($footerPage);
-
-        // Resolve current page parent
-        if (!empty($pages[$pageKey]['parent'])) {
-            $parentKey = $pages[$pageKey]['parent'];
-
-            if (!empty($pages[$parentKey])) {
-                $parent = $pages[$parentKey];
-            }
-        }
-
-        // Resolve current page children
-        $children = $pagesByParent[$pageKey] ?? [];
 
         return [
-            'pages' => $pages,
             'currentPage' => $pages[$pageKey] ?? [],
-            'parent' => $parent,
-            'children' => $children,
+            'pages' => $pages,
             'navHeaderPrimaries' => $navHeaderPrimaries,
             'navFooterPrimaries' => $navFooterPrimaries,
             'navFooterSecondaries' => $navFooterSecondaries,
