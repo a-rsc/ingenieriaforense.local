@@ -91,18 +91,18 @@ View::partial('breadcrumb', [
                         <h2 class="text-start"><?= __('data_contact') ?></h2>
                     </header>
                     <!-- Contact information -->
-                    <p><strong><?= $config['company.name'] ?></strong></p>
+                    <p><strong><?= $config['company']['name'] ?></strong></p>
                     <address>
                         <ul class="list-unstyled">
-                            <li><strong><span class="pe-2" aria-hidden="true">✉️</span><?= __('email') ?>: </strong> <a href="mailto:<?= $config['email']['to'] ?>" aria-label="<?= __('email_label') . $config['company.name'] ?>"><?= $config['email']['to'] ?></a></li>
-                            <li><strong><span class="pe-2" aria-hidden="true">☎️</span><?= __('phone') ?>: </strong> <a href="tel:<?= $config['company']['phone'] ?>" aria-label="<?= __('phone_label') . $config['company.name'] ?>"><?= $config['company']['phone_a11y'] ?></a></li>
+                            <li><strong><span class="pe-2" aria-hidden="true">✉️</span><?= __('email') ?>: </strong> <a href="mailto:<?= $config['email']['to'] ?>" aria-label="<?= __('email_label') . $config['company']['name'] ?>"><?= $config['email']['to'] ?></a></li>
+                            <li><strong><span class="pe-2" aria-hidden="true">☎️</span><?= __('phone') ?>: </strong> <a href="tel:<?= $config['company']['phone'] ?>" aria-label="<?= __('phone_label') . $config['company']['name'] ?>"><?= $config['company']['phone_a11y'] ?></a></li>
                             <li><strong><span class="pe-2" aria-hidden="true">📍</span><?= __('address') ?>: </strong><?= $config['company']['address'] ?></li>
                             <li><strong><span class="pe-2" aria-hidden="true">🪪</span><?= __('nif') ?>: </strong><?= $config['company']['nif'] ?></li>
                         </ul>
                     </address>
                     <!-- End Contact information -->
                     <!-- Map -->
-                    <iframe title="Ubicación de <?= $config['company.name'] ?> en el mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11933.167158433429!2d2.2775296703553183!3d41.60620153297257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4c7cf4242446d%3A0x1c7b5f146fbca228!2sGranollers%2C%20Barcelona!5e0!3m2!1ses!2ses!4v1756287453221!5m2!1ses!2ses" width="100%" height="500" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    <iframe title="Ubicación de <?= $config['company']['name'] ?> en el mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11933.167158433429!2d2.2775296703553183!3d41.60620153297257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4c7cf4242446d%3A0x1c7b5f146fbca228!2sGranollers%2C%20Barcelona!5e0!3m2!1ses!2ses!4v1756287453221!5m2!1ses!2ses" width="100%" height="500" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                     <!-- End Map -->
                 </section>

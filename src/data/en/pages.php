@@ -1,13 +1,8 @@
 <?php
 
-use App\Core\Config;
 use App\Enums\NavType;
 use App\Enums\Status;
 use App\Support\PageProcessor;
-
-$brand = Config::get('company.brand');
-$name = Config::get('company.name');
-$schemaPage = Config::get('app.translations.schema.page', 'Página de ');
 
 $makePage = function (
     string $name = '',
@@ -18,17 +13,18 @@ $makePage = function (
     Status $status = Status::ACTIVE,
     string $image = '',
     ?string $parent = null
-) use ($schemaPage): array {
+): array {
     return [
         'name' => $name,
         'category' => $category,
         'parent' => $parent,
-        'title' => $title,
-        'description' => $description,
+        'content' => [
+            'title' => $title,
+            'description' => $description,
+        ],
         'url' => $url,
         'image' => $image,
         'status' => $status,
-        'schema' => $schemaPage . $name,
     ];
 };
 
@@ -109,8 +105,8 @@ $pages = [
     'about' => $makePage(
         'About',
         NavType::PRIMARY,
-        'About ' . $brand,
-        "Get to know {$name}, a firm specialized in technical projects, activity licenses and forensic engineering with a clear, rigorous and independent approach.",
+        'About ' . $config['company']['brand'],
+        "Get to know {$config['company']['name']}, a firm specialized in technical projects, activity licenses and forensic engineering with a clear, rigorous and independent approach.",
         lang_prefix() . '/about',
         Status::ACTIVE,
         '/images/pages/Causas-de-humedad.webp',

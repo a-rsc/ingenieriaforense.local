@@ -17,14 +17,16 @@ $makeResource = function (
     return [
         'name' => $name,
         'category' => $category,
-        'title' => $name,
-        'description' => $description,
-        'text' => $text,
-        'list' => $list,
+        'content' => [
+            'title' => $name,
+            'description' => $description,
+            'text' => $text,
+            'list' => $list,
+        ],
         'url' => $url,
         'images' => [
             'src' => $imageSrc,
-            'alt' => "Imagen de {$name}",
+            'alt' => "Image of {$name}",
         ],
         'status' => $status,
     ];

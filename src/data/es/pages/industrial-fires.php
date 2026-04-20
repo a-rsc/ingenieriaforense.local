@@ -1,42 +1,44 @@
 <?php
 
-use App\Core\Config;
-
-$name = Config::get('company.name');
-
 $pageContent = [
-    'text' => '',
-    'list' => [],
     'keywords' => 'ingeniería técnica, proyectos técnicos, licencias de actividad, ingeniería forense, informes periciales, peritajes, legalización de actividad, licencia nave industrial',
+    'content' => [
+        'item_1_title' => '',
+        'item_1' => '',
+        'list' => [],
+    ],
     'images' => [
         [
-            'src' => '/images/maincarousel/Causas-de-humedad.webp',
-            'alt' => 'Imagen de Causas de humedad',
+            'src' => '/images/pages/Causas-de-humedad.webp',
+            'alt' => $config['app']['translations']['alt'] . 'Causas de humedad',
             'category' => 'Humedades',
             'title' => 'Causas de humedad',
             'description' => 'Análisis técnico de las causas de humedad en edificios, viviendas y locales comerciales.',
         ],
         [
-            'src' => '/images/maincarousel/Danos-estructurales.webp',
-            'alt' => 'Imagen de Daños estructurales',
-            'category' => 'Daños estructurales',
+            'src' => '/images/pages/Danos-estructurales.webp',
+            'alt' => $config['app']['translations']['alt'] . 'Daños estructurales',
+            'category' => 'Daños',
             'title' => 'Daños estructurales',
             'description' => 'Evaluación de daños estructurales en edificios, viviendas y locales comerciales, con análisis técnico y propuestas de reparación.',
         ],
         [
-            'src' => '/images/maincarousel/Defectos-constructivos.webp',
-            'alt' => 'Imagen de Defectos constructivos',
-            'category' => 'Defectos constructivos',
+            'src' => '/images/pages/Defectos-constructivos.webp',
+            'alt' => $config['app']['translations']['alt'] . 'Defectos constructivos',
+            'category' => 'Defectos',
             'title' => 'Defectos constructivos',
             'description' => 'Análisis técnico de los defectos constructivos en edificios, viviendas y locales comerciales.',
         ],
         [
-            'src' => '/images/maincarousel/Incumplimiento-contrato-obra.webp',
-            'alt' => 'Imagen de Incumplimiento de obra',
-            'category' => 'Incumplimiento de obra',
-            'title' => 'Incumplimiento de obra',
+            'src' => '/images/pages/Incumplimiento-contrato-obra.webp',
+            'alt' => $config['app']['translations']['alt'] . 'Incumplimiento contrato obra',
+            'category' => 'Incumplimiento',
+            'title' => 'Incumplimiento contrato obra',
             'description' => 'Análisis técnico de los incumplimientos de obra en edificios, viviendas y locales comerciales.',
         ],
+    ],
+    'schema' => [
+        'name' => $config['app']['translations']['schema']['page'] . $pages[$pageKey]['name'],
     ],
 ];
 

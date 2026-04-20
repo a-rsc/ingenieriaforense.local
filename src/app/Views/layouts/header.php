@@ -13,7 +13,7 @@ use App\Core\View;
     <!-- SEO Meta Tags -->
     <meta name="robots" content="index, follow">
     <meta name="author" content="<?= $config['company']['name'] ?>">
-    <title><?= "{$currentPage['title']} | " . $config['company']['name'] ?></title>
+    <title><?= "{$currentPage['name']} | " . $config['company']['name'] ?></title>
     <meta name="description" content="<?= $currentPage['description'] ?>">
     <link rel="canonical" href="<?= current_url() ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@ use App\Core\View;
     <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap"></noscript>
     <meta property="og:type" content="website">
-    <meta property="og:title" content="<?= "{$currentPage['title']} | " . $config['company']['name'] ?>">
+    <meta property="og:title" content="<?= "{$currentPage['name']} | " . $config['company']['name'] ?>">
     <meta property="og:description" content="<?= $currentPage['description'] ?>">
     <meta property="og:url" content="<?= $config['app']['url'] . $currentPage['url'] ?>">
     <meta property="og:image" content="<?= $config['company']['og_logo'] ?>">
@@ -29,9 +29,9 @@ use App\Core\View;
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="<?= $config['company']['name'] ?>">
     <meta property="og:image:alt" content="Logo de <?= $config['company']['name'] ?>">
-    <meta property="og:locale" content="<?= $config['company']['lang_locale'] ?>">
+    <meta property="og:locale" content="<?= $config['app']['lang_locale'] ?>">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<?= "{$currentPage['title']} | " . $config['company']['name'] ?>">
+    <meta name="twitter:title" content="<?= "{$currentPage['name']} | " . $config['company']['name'] ?>">
     <meta name="twitter:description" content="<?= $currentPage['description'] ?>">
     <meta name="twitter:image" content="<?= $config['company']['og_logo'] ?>">
     <!-- End SEO Meta Tags -->

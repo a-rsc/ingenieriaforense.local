@@ -10,11 +10,12 @@ abstract class Controller
 
     public function __construct()
     {
+        $config = Config::all();
         $pagesData = require content_path('data', 'pages');
         $resourcesData = require content_path('data', 'resources');
 
         $this->sharedData = [
-            'config' => Config::all(),
+            'config' => $config,
 
             'pages' => $pagesData['pages'] ?? [],
             'currentPage' => $pagesData['currentPage'] ?? [],
