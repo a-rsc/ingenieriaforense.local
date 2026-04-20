@@ -8,4 +8,6 @@ View::partial('breadcrumb', [
     'children' => $children,
 ]);
 
-require content_path('content', 'industrial-fires-fire-dynamics');
+// dd('hola');
+
+require content_path('content', $config['current_page']);

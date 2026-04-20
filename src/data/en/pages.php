@@ -40,9 +40,9 @@ $pages = [
     ),
 
     'industrial-fires' => $makePage(
-        'Industrial Fires',
+        'Industrial fires',
         NavType::PRIMARY,
-        'Industrial Fires',
+        'Industrial fires',
         'Beyond "Origin and Cause": Scientific Evidence for the Legal and Insurance Sectors.',
         lang_prefix() . '/industrial-fires',
         Status::ACTIVE,
@@ -80,6 +80,49 @@ $pages = [
         Status::ACTIVE,
         '/images/pages/Causas-de-humedad.webp',
         'industrial-fires',
+    ),
+
+    'industrial-accidents' => $makePage(
+        'Siniestros industriales',
+        NavType::PRIMARY,
+        'Ingeniería Forense de Incendios industriales',
+        'Más allá del "Origen y Causa": Evidencia científica para el sector legal y asegurador.',
+        lang_prefix() . '/industrial-accidents',
+        Status::ACTIVE,
+        '/images/pages/Causas-de-humedad.webp',
+    ),
+
+    'industrial-accidents-child1' => $makePage(
+        'Siniestros industriales 1',
+        null,
+        'Investigación de origen y causa en incendios industriales',
+        'Análisis técnico-forense para determinar foco, fuente de ignición y secuencia causal en incendios industriales.',
+        lang_prefix() . '/industrial-accidents/industrial-accidents-child1',
+        Status::ACTIVE,
+        '/images/pages/Causas-de-humedad.webp',
+        'industrial-accidents',
+    ),
+
+    'industrial-accidents-child2' => $makePage(
+        'Siniestros industriales 2',
+        null,
+        'Análisis dinámico del fuego en incendios industriales',
+        'Estudio de propagación, humos, sectorización y evolución térmica en incendios industriales.',
+        lang_prefix() . '/industrial-accidents/industrial-accidents-child2',
+        Status::ACTIVE,
+        '/images/pages/Causas-de-humedad.webp',
+        'industrial-accidents',
+    ),
+
+    'industrial-accidents-child3' => $makePage(
+        'Siniestros industriales 3',
+        null,
+        'Auditoría forense de sistemas PCI',
+        'Evaluación técnica del diseño, mantenimiento y funcionamiento de sistemas de protección contra incendios.',
+        lang_prefix() . '/industrial-accidents/industrial-accidents-child3',
+        Status::ACTIVE,
+        '/images/pages/Causas-de-humedad.webp',
+        'industrial-accidents',
     ),
 
     'standard' => $makePage(

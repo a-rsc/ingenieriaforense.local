@@ -32,6 +32,11 @@ return [
             'industrial-fires-fire-dynamics' => '/incendios-industriales/dinamica-del-fuego',
             'industrial-fires-pci-audit' => '/incendios-industriales/auditoria-pci',
 
+            'industrial-accidents' => '/accidentes-industriales',
+            'industrial-accidents-child1' => '/accidentes-industriales/industrial-accidents-child1',
+            'industrial-accidents-child2' => '/accidentes-industriales/industrial-accidents-child2',
+            'industrial-accidents-child3' => '/accidentes-industriales/industrial-accidents-child3',
+
             'standard' => '/casos-habituales',
             'about' => '/nosotros',
             'contact' => '/contacto',
@@ -46,6 +51,11 @@ return [
             'industrial-fires-origin-cause' => '/industrial-fires/origin-and-cause',
             'industrial-fires-fire-dynamics' => '/industrial-fires/fire-dynamics',
             'industrial-fires-pci-audit' => '/industrial-fires/pci-audit',
+
+            'industrial-accidents' => '/industrial-accidents',
+            'industrial-accidents-child1' => '/industrial-accidents/industrial-accidents-child1',
+            'industrial-accidents-child2' => '/industrial-accidents/industrial-accidents-child2',
+            'industrial-accidents-child3' => '/industrial-accidents/industrial-accidents-child3',
 
             'standard' => '/standard',
             'about' => '/about',

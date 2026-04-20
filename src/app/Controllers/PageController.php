@@ -22,19 +22,9 @@ class PageController extends Controller
         $this->view('industrial-fires');
     }
 
-    public function industrialFiresOriginCause(): void
+    public function industrialAccidents(): void
     {
-        $this->view('industrial-fires-origin-cause');
-    }
-
-    public function industrialFiresFireDynamics(): void
-    {
-        $this->view('industrial-fires-fire-dynamics');
-    }
-
-    public function industrialFiresPciAudit(): void
-    {
-        $this->view('industrial-fires-pci-audit');
+        $this->view('industrial-accidents');
     }
 
     public function standard(): void

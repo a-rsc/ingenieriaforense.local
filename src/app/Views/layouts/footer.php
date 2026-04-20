@@ -1,6 +1,26 @@
 <!-- Footer -->
 <footer class="bg-dark border-top border-light text-white" role="contentinfo">
     <div class="container py-4">
+
+
+
+
+                <!-- Navigation menu -->
+                <div class="col-md-3">
+                    <p class="text-center">Menú</p>
+                    <div class="navbar navbar-dark">
+                         <ul class="navbar-nav list-unstyled" aria-label="Navegación inferior">
+<?php foreach ($navPrimaries ?? [] as $navPrimary): ?>
+                            <li class="nav-item"><a href="<?= $navPrimary['url']?: '/' ?>" class="nav-link p-0 <?= activeClass($navPrimary['url']) ?>"<?= activeClass($navPrimary['url'], ' aria-current="page"') ?> aria-label="<?= $navPrimary['title'] ?>"><?= $navPrimary['name'] ?></a></li>
+<?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End Navigation menu -->
+
+
+
+
         <div class="row">
             <div class="col">
                 <address>

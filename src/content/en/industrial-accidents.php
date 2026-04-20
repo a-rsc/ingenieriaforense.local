@@ -3,7 +3,7 @@
 use App\Core\View;
 ?>
         <!-- Industrial fires -->
-        <div id="industrial-fires" class="industrial-fires container py-4">
+        <div id="industrial-accidents" class="industrial-accidents container py-4">
             <div class="row">
                 <div class="col">
 <?php foreach ($children as $key => $child): ?>
