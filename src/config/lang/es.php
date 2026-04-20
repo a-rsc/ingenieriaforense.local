@@ -35,6 +35,7 @@ return [
     'back_to_home' => 'Volver a Home',
     'contact_us' => 'Contáctanos',
     'send_us_the_message' => 'Envianos el mensaje',
+    'created_by_ARS' => 'Creada por ARS',
 
     'form' => [
         'title' => 'Cuéntanos tu caso y te responderemos pronto',
