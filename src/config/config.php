@@ -2,7 +2,7 @@
 
 // Base del sistema
 $protocol = 'https';
-$domain = 'ingenieriaforense.local';
+$domain = 'ingenieriaforense.es';
 $baseUrl = $protocol . '://' . $domain;
 
 // Email base

@@ -14,8 +14,8 @@ View::partial('breadcrumb', [
                 <article>
                     <!-- Title -->
                     <header>
-                        <h1 class="text-center"><?= $currentPage['title'] ?></h1>
-                        <p class="lead text-secondary"><?= $currentPage['description'] ?></p>
+                        <h1 class="text-center"><?= $currentPage['content']['title'] ?></h1>
+                        <p class="lead text-secondary"><?= $currentPage['content']['description'] ?></p>
                     </header>
                     <!-- End Title -->
                     <section>
