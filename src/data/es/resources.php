@@ -1,12 +1,12 @@
 <?php
 
-use App\Enums\Member;
+use App\Enums\ResourceType;
 use App\Enums\Status;
-use App\Support\MemberProcessor;
+use App\Support\ResourceProcessor;
 
-$makeMember = function (
+$makeResource = function (
     string $name,
-    Member|null $category = null,
+    ResourceType|null $category = null,
     string $description = '', // quote
     string $text = '',
     array $list = [],
@@ -30,10 +30,10 @@ $makeMember = function (
     ];
 };
 
-$members = [
-    $makeMember(
+$resources = [
+    $makeResource(
         'Enginyers Industrials de Catalunya',
-        Member::PARTNER,
+        ResourceType::PARTNER,
         'Colegio y asociación profesional que representa a los ingenieros industriales en Cataluña.',
         '',
         [
@@ -42,12 +42,12 @@ $members = [
             'Intercambio de conocimientos y recursos para fomentar la innovación en el sector de la construcción.',
         ],
         'https://www.eic.cat/',
-        '/images/members/Enginyers-Industrials-Catalunya.jpg',
+        '/images/resources/Enginyers-Industrials-Catalunya.jpg',
     ),
 
-    $makeMember(
+    $makeResource(
         'Universitat Politècnica de Catalunya',
-        Member::PARTNER,
+        ResourceType::PARTNER,
         'Universitat pública catalana especialitzada en enginyeria, arquitectura, ciència i tecnologia.',
         '',
         [
@@ -56,12 +56,12 @@ $members = [
             'Intercambio de conocimientos y recursos para fomentar la innovación en el sector de la construcción.',
         ],
         'https://www.upc.edu/ca',
-        '/images/members/UPC.png',
+        '/images/resources/UPC.png',
     ),
 
-    $makeMember(
+    $makeResource(
         'Bcn Drone Productions',
-        Member::PARTNER,
+        ResourceType::PARTNER,
         'Audiovisuales con drones, cámaras 360, escáners láser etc.',
         '',
         [
@@ -70,69 +70,69 @@ $members = [
             'Intercambio de conocimientos y recursos para fomentar la innovación en el sector de la construcción.',
         ],
         'https://www.bcndroneproductions.es/',
-        '/images/members/Bcn-Drone-Productions.webp',
+        '/images/resources/Bcn-Drone-Productions.webp',
     ),
 
-    $makeMember(
+    $makeResource(
         'Carlos Martínez',
-        Member::TESTIMONIAL,
+        ResourceType::TESTIMONIAL,
         'Un servicio excelente y muy profesional. Superaron nuestras expectativas.',
         '',
         [],
         '',
-        '/images/members/carlos-martinez.jpg',
+        '/images/resources/carlos-martinez.jpg',
     ),
 
-    $makeMember(
+    $makeResource(
         'Laura Gómez',
-        Member::TESTIMONIAL,
+        ResourceType::TESTIMONIAL,
         'Gran atención al detalle y comunicación constante. Muy recomendables.',
         '',
         [],
         '',
-        '/images/members/laura-gomez.jpg',
+        '/images/resources/laura-gomez.jpg',
     ),
 
-    $makeMember(
+    $makeResource(
         'Javier López',
-        Member::TESTIMONIAL,
+        ResourceType::TESTIMONIAL,
         'Un equipo muy eficiente que entrega resultados de alta calidad.',
         '',
         [],
         '',
-        '/images/members/javier-lopez.jpg',
+        '/images/resources/javier-lopez.jpg',
     ),
 
-    $makeMember(
+    $makeResource(
         'Marta Sánchez',
-        Member::TESTIMONIAL,
+        ResourceType::TESTIMONIAL,
         'Estamos encantados con el resultado. Todo el proceso fue muy sencillo.',
         '',
         [],
         '',
-        '/images/members/marta-sanchez.jpg',
+        '/images/resources/marta-sanchez.jpg',
     ),
 
-    $makeMember(
+    $makeResource(
         'David Fernández',
-        Member::TESTIMONIAL,
+        ResourceType::TESTIMONIAL,
         'Profesionales, cercanos y muy comprometidos con el proyecto.',
         '',
         [],
         '',
-        '/images/members/david-fernandez.jpg',
+        '/images/resources/david-fernandez.jpg',
     ),
 
-    $makeMember(
+    $makeResource(
         'Ana Ruiz',
-        Member::TESTIMONIAL,
+        ResourceType::TESTIMONIAL,
         'Nos ayudaron a mejorar nuestro proyecto con resultados excelentes.',
         '',
         [],
         '',
-        '/images/members/ana-ruiz.jpg',
+        '/images/resources/ana-ruiz.jpg',
     ),
 ];
 
 // Procesar (común)
-return MemberProcessor::process($members);
+return ResourceProcessor::process($resources);

@@ -12,13 +12,16 @@
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col-12">
                 <ul class="footer-legal list-inline text-center">
 <?php foreach ($navSecondaries ?? [] as $navSecondary): ?>
-                    <li class="list-inline-item"><a href="<?= $navSecondary['url'] ?>"<?= activeClass($navSecondary['url'], ' class="active" aria-current="page"') ?>><?= $navSecondary['name'] ?></a></li>
+                    <li class="list-inline-item"><a href="<?= $navSecondary['url']?: '/' ?>"<?= activeClass($navSecondary['url']?: '/', ' class="active" aria-current="page"') ?>><?= $navSecondary['name'] ?></a></li>
 <?php endforeach; ?>
                     <li class="list-inline-item"><a href="<?= url('home') ?>" aria-label="<?= $config['company']['name'] ?>">&copy; <?= date('Y') . ' ' . $config['company']['name'] ?></a></li>
                 </ul>
+            </div>
+            <div class="col-12 footer-legal">
+                <a href="">Página creada por ARS</a>
             </div>
         </div>
     </div>

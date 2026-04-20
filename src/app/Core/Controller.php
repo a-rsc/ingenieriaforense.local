@@ -11,7 +11,7 @@ abstract class Controller
     public function __construct()
     {
         $pagesData = require content_path('data', 'pages');
-        $membersData = require content_path('data', 'members');
+        $resourcesData = require content_path('data', 'resources');
 
         $this->sharedData = [
             'config' => Config::all(),
@@ -23,10 +23,10 @@ abstract class Controller
             'navPrimaries' => $pagesData['navPrimaries'] ?? [],
             'navSecondaries' => $pagesData['navSecondaries'] ?? [],
 
-            'clients' => $membersData['clients'] ?? [],
-            'partners' => $membersData['partners'] ?? [],
-            'staff' => $membersData['staff'] ?? [],
-            'testimonial' => $membersData['testimonial'] ?? [],
+            'clients' => $resourcesData['clients'] ?? [],
+            'partners' => $resourcesData['partners'] ?? [],
+            'staff' => $resourcesData['staff'] ?? [],
+            'testimonial' => $resourcesData['testimonial'] ?? [],
         ];
     }
 

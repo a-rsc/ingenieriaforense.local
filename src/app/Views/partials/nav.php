@@ -22,7 +22,7 @@ use App\Core\Config;
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav w-100 justify-content-around text-white">
 <?php foreach ($navPrimaries ?? [] as $navPrimary): ?>
-                    <li class="nav-item"><a href="<?= $navPrimary['url'] ?>" class="nav-link <?= activeClass($navPrimary['url']) ?>"<?= activeClass($navPrimary['url'], ' aria-current="page"') ?> title="<?= $navPrimary['name'] ?>"><?= $navPrimary['name'] ?></a></li>
+                    <li class="nav-item"><a href="<?= $navPrimary['url']?: '/' ?>" class="nav-link <?= activeClass($navPrimary['url']?: '/') ?>"<?= activeClass($navPrimary['url']?: '/', ' aria-current="page"') ?> title="<?= $navPrimary['name'] ?>"><?= $navPrimary['name'] ?></a></li>
 <?php endforeach; ?>
                 </ul>
             </div>

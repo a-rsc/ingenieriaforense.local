@@ -1,12 +1,12 @@
 <?php
 
-use App\Enums\Member;
+use App\Enums\ResourceType;
 use App\Enums\Status;
-use App\Support\MemberProcessor;
+use App\Support\ResourceProcessor;
 
-$makeMember = function (
+$makeResource = function (
     string $name,
-    Member|null $category = null,
+    ResourceType|null $category = null,
     string $description = '', // quote
     string $text = '',
     array $list = [],
@@ -30,10 +30,10 @@ $makeMember = function (
     ];
 };
 
-$members = [
-    $makeMember(
+$resources = [
+    $makeResource(
         'Industrial Engineers of Catalonia',
-        Member::PARTNER,
+        ResourceType::PARTNER,
         'Professional college and association that represents industrial engineers in Catalonia.',
         '',
         [
@@ -42,12 +42,12 @@ $members = [
             'Knowledge and resource exchange to promote innovation in the construction sector.',
         ],
         'https://www.eic.cat/',
-        '/images/members/Enginyers-Industrials-Catalunya.jpg',
+        '/images/resources/Enginyers-Industrials-Catalunya.jpg',
     ),
 
-    $makeMember(
+    $makeResource(
         'Universitat Politècnica de Catalunya',
-        Member::PARTNER,
+        ResourceType::PARTNER,
         'Public university in Catalonia specialized in engineering, architecture, science and technology.',
         '',
         [
@@ -56,12 +56,12 @@ $members = [
             'Knowledge and resource exchange to promote innovation in the construction sector.',
         ],
         'https://www.upc.edu/ca',
-        '/images/members/UPC.png',
+        '/images/resources/UPC.png',
     ),
 
-    $makeMember(
+    $makeResource(
         'Bcn Drone Productions',
-        Member::PARTNER,
+        ResourceType::PARTNER,
         'Audiovisuals with drones, 360 cameras, laser scanners, etc.',
         '',
         [
@@ -70,69 +70,69 @@ $members = [
             'Knowledge and resource exchange to promote innovation in the construction sector.',
         ],
         'https://www.bcndroneproductions.es/',
-        '/images/members/Bcn-Drone-Productions.webp',
+        '/images/resources/Bcn-Drone-Productions.webp',
     ),
 
-    $makeMember(
+    $makeResource(
         'Carlos Martínez',
-        Member::TESTIMONIAL,
+        ResourceType::TESTIMONIAL,
         'Excellent and very professional service. They exceeded our expectations.',
         '',
         [],
         '',
-        '/images/members/carlos-martinez.jpg',
+        '/images/resources/carlos-martinez.jpg',
     ),
 
-    $makeMember(
+    $makeResource(
         'Laura Gómez',
-        Member::TESTIMONIAL,
+        ResourceType::TESTIMONIAL,
         'Excellent attention to detail and constant communication. Highly recommended.',
         '',
         [],
         '',
-        '/images/members/laura-gomez.jpg',
+        '/images/resources/laura-gomez.jpg',
     ),
 
-    $makeMember(
+    $makeResource(
         'Javier López',
-        Member::TESTIMONIAL,
+        ResourceType::TESTIMONIAL,
         'A very efficient team that delivers high-quality results.',
         '',
         [],
         '',
-        '/images/members/javier-lopez.jpg',
+        '/images/resources/javier-lopez.jpg',
     ),
 
-    $makeMember(
+    $makeResource(
         'Marta Sánchez',
-        Member::TESTIMONIAL,
+        ResourceType::TESTIMONIAL,
         'We are delighted with the result. The entire process was very simple.',
         '',
         [],
         '',
-        '/images/members/marta-sanchez.jpg',
+        '/images/resources/marta-sanchez.jpg',
     ),
 
-    $makeMember(
+    $makeResource(
         'David Fernández',
-        Member::TESTIMONIAL,
+        ResourceType::TESTIMONIAL,
         'Professionals, approachable and very committed to the project.',
         '',
         [],
         '',
-        '/images/members/david-fernandez.jpg',
+        '/images/resources/david-fernandez.jpg',
     ),
 
-    $makeMember(
+    $makeResource(
         'Ana Ruiz',
-        Member::TESTIMONIAL,
+        ResourceType::TESTIMONIAL,
         'They helped us improve our project with excellent results.',
         '',
         [],
         '',
-        '/images/members/ana-ruiz.jpg',
+        '/images/resources/ana-ruiz.jpg',
     ),
 ];
 
 // Procesar (común)
-return MemberProcessor::process($members);
+return ResourceProcessor::process($resources);

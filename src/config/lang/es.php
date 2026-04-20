@@ -7,7 +7,7 @@ return [
         'draft' => 'Borrador',
         'deleted' => 'Eliminado',
     ],
-    'member' => [
+    'resources' => [
         'client' => 'Cliente',
         'partner' => 'Socio',
         'staff' => 'Personal',
