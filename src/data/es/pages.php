@@ -6,7 +6,7 @@ use App\Support\PageProcessor;
 
 $makePage = function (
     string $name = '',
-    NavType|null $category = null,
+    array $category = [],
     string $title = '',
     string $description = '',
     string $url = '',
@@ -31,7 +31,9 @@ $makePage = function (
 $pages = [
     'home' => $makePage(
         'Home',
-        NavType::PRIMARY,
+        [
+            NavType::HEADERPRIMARY,
+        ],
         'Home',
         'Ingeniería técnica para proyectos, licencias de actividad e informes periciales. Te ayudamos a tramitar, analizar y documentar cada caso con rigor y claridad.',
         '',
@@ -41,7 +43,10 @@ $pages = [
 
     'industrial-fires' => $makePage(
         'Incendios industriales',
-        NavType::PRIMARY,
+        [
+            NavType::HEADERPRIMARY,
+            NavType::FOOTERPRIMARY,
+        ],
         'Ingeniería Forense de Incendios industriales',
         'Más allá del "Origen y Causa": Evidencia científica para el sector legal y asegurador.',
         '/incendios-industriales',
@@ -51,7 +56,7 @@ $pages = [
 
     'industrial-fires-origin-cause' => $makePage(
         'Origen y causa',
-        null,
+        [],
         'Investigación de origen y causa en incendios industriales',
         'Análisis técnico-forense para determinar foco, fuente de ignición y secuencia causal en incendios industriales.',
         '/incendios-industriales/origen-y-causa',
@@ -62,7 +67,7 @@ $pages = [
 
     'industrial-fires-fire-dynamics' => $makePage(
         'Dinámica del fuego',
-        null,
+        [],
         'Análisis dinámico del fuego en incendios industriales',
         'Estudio de propagación, humos, sectorización y evolución térmica en incendios industriales.',
         '/incendios-industriales/dinamica-del-fuego',
@@ -73,7 +78,7 @@ $pages = [
 
     'industrial-fires-pci-audit' => $makePage(
         'Auditoría PCI',
-        null,
+        [],
         'Auditoría forense de sistemas PCI',
         'Evaluación técnica del diseño, mantenimiento y funcionamiento de sistemas de protección contra incendios.',
         '/incendios-industriales/auditoria-pci',
@@ -84,7 +89,10 @@ $pages = [
 
     'industrial-accidents' => $makePage(
         'Siniestros industriales',
-        NavType::PRIMARY,
+        [
+            NavType::HEADERPRIMARY,
+            NavType::FOOTERPRIMARY,
+        ],
         'Ingeniería Forense de Incendios industriales',
         'Más allá del "Origen y Causa": Evidencia científica para el sector legal y asegurador.',
         '/accidentes-industriales',
@@ -94,7 +102,7 @@ $pages = [
 
     'industrial-accidents-child1' => $makePage(
         'Siniestros industriales 1',
-        null,
+        [],
         'Investigación de origen y causa en incendios industriales',
         'Análisis técnico-forense para determinar foco, fuente de ignición y secuencia causal en incendios industriales.',
         '/accidentes-industriales/industrial-accidents-child1',
@@ -105,7 +113,7 @@ $pages = [
 
     'industrial-accidents-child2' => $makePage(
         'Siniestros industriales 2',
-        null,
+        [],
         'Análisis dinámico del fuego en incendios industriales',
         'Estudio de propagación, humos, sectorización y evolución térmica en incendios industriales.',
         '/accidentes-industriales/industrial-accidents-child2',
@@ -116,7 +124,7 @@ $pages = [
 
     'industrial-accidents-child3' => $makePage(
         'Siniestros industriales 3',
-        null,
+        [],
         'Auditoría forense de sistemas PCI',
         'Evaluación técnica del diseño, mantenimiento y funcionamiento de sistemas de protección contra incendios.',
         '/accidentes-industriales/industrial-accidents-child3',
@@ -127,7 +135,9 @@ $pages = [
 
     'standard' => $makePage(
         'Casos habituales',
-        NavType::PRIMARY,
+        [
+            NavType::HEADERPRIMARY,
+        ],
         'Casos habituales',
         'Analizamos casos habituales relacionados con licencias, proyectos técnicos, humedades, grietas, daños estructurales, defectos constructivos y conflictos de obra.',
         '/casos-habituales',
@@ -137,7 +147,9 @@ $pages = [
 
     'blog' => $makePage(
         'Blog',
-        NavType::PRIMARY,
+        [
+            NavType::HEADERPRIMARY,
+        ],
         'Blog',
         'Blog sobre licencias de actividad, proyectos técnicos, informes periciales, patologías constructivas y dudas frecuentes para ayudarte a tomar mejores decisiones técnicas.',
         '/blog',
@@ -147,7 +159,9 @@ $pages = [
 
     'about' => $makePage(
         'Nosotros',
-        NavType::PRIMARY,
+        [
+            NavType::HEADERPRIMARY,
+        ],
         'Sobre ' . $config['company']['brand'],
         "Conoce a {$config['company']['name']}, una firma especializada en proyectos técnicos, licencias de actividad e ingeniería forense con enfoque claro, riguroso e independiente.",
         '/nosotros',
@@ -157,7 +171,9 @@ $pages = [
 
     'contact' => $makePage(
         'Contacto',
-        NavType::PRIMARY,
+        [
+            NavType::HEADERPRIMARY,
+        ],
         'Contáctanos para más información',
         'Contacta con nosotros para valorar tu caso, resolver dudas técnicas y solicitar presupuesto para proyectos, licencias de actividad o informes periciales.',
         '/contacto',
@@ -167,7 +183,9 @@ $pages = [
 
     'privacy-policy' => $makePage(
         'Política de Privacidad',
-        NavType::SECONDARY,
+        [
+            NavType::FOOTERSECONDARY,
+        ],
         'Política de Privacidad',
         'Consulta nuestra política de privacidad para entender cómo protegemos tus datos personales.',
         '/politica-de-privacidad',
@@ -177,7 +195,9 @@ $pages = [
 
     'terms-and-conditions' => $makePage(
         'Términos y Condiciones',
-        NavType::SECONDARY,
+        [
+            NavType::FOOTERSECONDARY,
+        ],
         'Términos y Condiciones',
         'Consulta los términos y condiciones de uso de este sitio web y la información aplicable a su navegación y utilización.',
         '/terminos-y-condiciones',
@@ -187,7 +207,9 @@ $pages = [
 
     'legal-notice' => $makePage(
         'Aviso Legal',
-        NavType::SECONDARY,
+        [
+            NavType::FOOTERSECONDARY,
+        ],
         'Aviso Legal',
         'Consulta el aviso legal de este sitio web para conocer la información identificativa, condiciones generales y aspectos legales aplicables.',
         '/aviso-legal',
@@ -197,7 +219,7 @@ $pages = [
 
     '404' => $makePage(
         'Página no encontrada',
-        null,
+        [],
         'Página no encontrada',
         'La página que buscas no se ha encontrado. Es posible que haya sido eliminada, cambiada de nombre o esté temporalmente no disponible.',
         '404',

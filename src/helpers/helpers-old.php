@@ -58,7 +58,7 @@ function isHome(?string $url): bool {
 /**
  * Return active class
  */
-function activeClass(string $url, string $classes = 'active', bool $strict = true): string {
+function active_class(string $url, string $classes = 'active', bool $strict = true): string {
     global $currentPage;
 
     // $url = trim($url, '/') ?: 'index';

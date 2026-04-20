@@ -196,8 +196,8 @@ if (!function_exists('switch_language_url')) {
  * 🎯 NAVIGATION / ACTIVE
  * =========================
  */
-if (!function_exists('activeClass')) {
-    function activeClass(string $url, string $classes = 'active', bool $strict = true): string
+if (!function_exists('active_class')) {
+    function active_class(string $url, string $classes = 'active', bool $strict = true): string
     {
         $uri = current_path();
         $url = normalize_uri($url);

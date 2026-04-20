@@ -21,8 +21,9 @@ abstract class Controller
             'currentPage' => $pagesData['currentPage'] ?? [],
             'parent' => $pagesData['parent'] ?? [],
             'children' => $pagesData['children'] ?? [],
-            'navPrimaries' => $pagesData['navPrimaries'] ?? [],
-            'navSecondaries' => $pagesData['navSecondaries'] ?? [],
+            'navHeaderPrimaries' => $pagesData['navHeaderPrimaries'] ?? [],
+            'navFooterPrimaries' => $pagesData['navFooterPrimaries'] ?? [],
+            'navFooterSecondaries' => $pagesData['navFooterSecondaries'] ?? [],
 
             'clients' => $resourcesData['clients'] ?? [],
             'partners' => $resourcesData['partners'] ?? [],

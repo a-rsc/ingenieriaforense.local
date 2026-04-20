@@ -6,8 +6,9 @@ use App\Core\Config;
 
 enum NavType: string
 {
-    case PRIMARY = 'primary';
-    case SECONDARY = 'secondary';
+    case HEADERPRIMARY = 'header primary';
+    case FOOTERPRIMARY = 'footer primary';
+    case FOOTERSECONDARY = 'footer secondary';
 
     /**
      * Obtener todos los valores

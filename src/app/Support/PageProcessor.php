@@ -9,40 +9,70 @@ class PageProcessor
 {
     public static function process(array $pages): array
     {
-        // Obtener datos de contexto
+        // Get context data
         $langCode = app_lang_code();
         $pageKey = Config::get('current_page');
 
-        // Filtrar activos
-        $pages = array_filter($pages, fn(array $page) => ($page['status'] ?? null)?->isActive());
+        // Filter active pages
+        $pages = array_filter(
+            $pages,
+            fn(array $page) => ($page['status'] ?? null)?->isActive()
+        );
 
-        // Cargar contenido específico de la página
+        // Load page-specific content
         $pageContentPath = BASE_PATH . "/src/data/{$langCode}/pages/{$pageKey}.php";
 
         if (!file_exists($pageContentPath)) {
             $pageContentPath = BASE_PATH . "/src/data/es/pages/{$pageKey}.php";
-            }
+        }
 
         $pageContent = file_exists($pageContentPath)
             ? require $pageContentPath
             : [];
 
-        $pages[$pageKey] = array_merge_recursive($pages[$pageKey], $pageContent['pages'] ?? []);
+        $pages[$pageKey] = array_replace_recursive(
+            $pages[$pageKey] ?? [],
+            $pageContent['pages'] ?? []
+        );
 
         $parent = [];
         $children = [];
-        $navPrimaries = [];
-        $navSecondaries = [];
+        $navHeaderPrimaries = [];
+        $navFooterPrimaries = [];
+        $navFooterSecondaries = [];
+        $pagesByParent = [];
 
-        // Separar por categoría manteniendo keys
+        // Split pages by category while preserving original keys
         foreach ($pages as $key => $page) {
-            match ($page['category']) {
-                NavType::PRIMARY => $navPrimaries[$key] = $page,
-                NavType::SECONDARY => $navSecondaries[$key] = $page,
-                default => null,
-            };
+            $categories = $page['category'] ?? [];
+
+            if (in_array(NavType::HEADERPRIMARY, $categories, true)) {
+                $navHeaderPrimaries[$key] = $page;
+            }
+
+            if (in_array(NavType::FOOTERPRIMARY, $categories, true)) {
+                $navFooterPrimaries[$key] = $page;
+            }
+
+            if (in_array(NavType::FOOTERSECONDARY, $categories, true)) {
+                $navFooterSecondaries[$key] = $page;
+            }
+
+            // Group pages by parent key
+            $parentKey = $page['parent'] ?? null;
+
+            if ($parentKey !== null) {
+                $pagesByParent[$parentKey][$key] = $page;
+            }
         }
 
+        // Attach child pages to each footer primary item
+        foreach ($navFooterPrimaries as $key => &$footerPage) {
+            $footerPage['children'] = $pagesByParent[$key] ?? [];
+        }
+        unset($footerPage);
+
+        // Resolve current page parent
         if (!empty($pages[$pageKey]['parent'])) {
             $parentKey = $pages[$pageKey]['parent'];
 
@@ -51,18 +81,17 @@ class PageProcessor
             }
         }
 
-        $children = array_filter(
-            $pages,
-            fn ($page) => ($page['parent'] ?? null) === $pageKey
-        );
+        // Resolve current page children
+        $children = $pagesByParent[$pageKey] ?? [];
 
         return [
             'pages' => $pages,
-            'currentPage' => $pages[$pageKey],
+            'currentPage' => $pages[$pageKey] ?? [],
             'parent' => $parent,
             'children' => $children,
-            'navPrimaries' => $navPrimaries,
-            'navSecondaries' => $navSecondaries,
+            'navHeaderPrimaries' => $navHeaderPrimaries,
+            'navFooterPrimaries' => $navFooterPrimaries,
+            'navFooterSecondaries' => $navFooterSecondaries,
         ];
     }
 }

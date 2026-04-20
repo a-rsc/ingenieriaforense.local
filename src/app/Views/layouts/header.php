@@ -48,7 +48,7 @@ use App\Core\View;
     ]);
     View::partial('nav', [
         'config' => $config,
-        'navPrimaries' => $navPrimaries
+        'navHeaderPrimaries' => $navHeaderPrimaries
     ]);
 ?>
 </header>

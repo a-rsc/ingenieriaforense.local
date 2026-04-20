@@ -21,8 +21,8 @@ use App\Core\Config;
             <!-- End Burger menu -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav w-100 justify-content-around text-white">
-<?php foreach ($navPrimaries ?? [] as $navPrimary): ?>
-                    <li class="nav-item"><a href="<?= $navPrimary['url']?: '/' ?>" class="nav-link <?= activeClass($navPrimary['url']?: '/') ?>"<?= activeClass($navPrimary['url']?: '/', ' aria-current="page"') ?> title="<?= $navPrimary['name'] ?>"><?= $navPrimary['name'] ?></a></li>
+<?php foreach ($navHeaderPrimaries ?? [] as $navHeaderPrimary): ?>
+                    <li class="nav-item"><a href="<?= $navHeaderPrimary['url']?: '/' ?>" class="nav-link <?= active_class($navHeaderPrimary['url']?: '/') ?>"<?= active_class($navHeaderPrimary['url']?: '/', ' aria-current="page"') ?> title="<?= $navHeaderPrimary['name'] ?>"><?= $navHeaderPrimary['name'] ?></a></li>
 <?php endforeach; ?>
                 </ul>
             </div>
