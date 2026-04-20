@@ -13,7 +13,7 @@ use App\Core\Config;
             <!-- End Phone -->
             <!-- Language -->
             <a href="<?= switch_lang_code_url() ?>" class="navbar__lang-switch btn btn-custom bg-light" aria-label="Cambiar idioma">
-                <span class="pe-2" aria-hidden="true">🌐</span><?= Config::get('app.lang_code', 'es') === 'en' ? 'Español' : 'English' ?></a>
+                <span class="pe-2" aria-hidden="true">🌐</span><?= app_lang_code() === 'en' ? 'Español' : 'English' ?></a>
             <!-- End Language -->
             <!-- Navigation menu -->
             <!-- Burger menu -->

@@ -8,4 +8,4 @@ View::partial('breadcrumb', [
     'children' => $children,
 ]);
 
-require content_path('content', $config['current_page']);
+require BASE_PATH . '/src/app/Views/content/' . app_lang_code() . "/{$config['current_page']}.php";

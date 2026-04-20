@@ -1,49 +1,42 @@
 <?php
 
 use App\Controllers\PageController;
+use App\Core\Config;
 
-$router->get('/', [PageController::class, 'index']);
+$routeHandlers = [
+    'home' => [PageController::class, 'index'],
 
-// Páginas estáticas
-// Parent 1 - child 3
-$router->get('/incendios-industriales', [PageController::class, 'industrialFires']);
-$router->get('/industrial-fires', [PageController::class, 'industrialFires']);
+    'industrial-fires' => [PageController::class, 'industrialFires'],
+    'industrial-fires-origin-cause' => [PageController::class, 'industrialFires'],
+    'industrial-fires-fire-dynamics' => [PageController::class, 'industrialFires'],
+    'industrial-fires-pci-audit' => [PageController::class, 'industrialFires'],
 
-$router->get('/incendios-industriales/origen-y-causa', [PageController::class, 'industrialFires']);
-$router->get('/industrial-fires/origin-and-cause', [PageController::class, 'industrialFires']);
+    'industrial-accidents' => [PageController::class, 'industrialAccidents'],
+    'industrial-accidents-child1' => [PageController::class, 'industrialAccidents'],
+    'industrial-accidents-child2' => [PageController::class, 'industrialAccidents'],
+    'industrial-accidents-child3' => [PageController::class, 'industrialAccidents'],
 
-$router->get('/incendios-industriales/dinamica-del-fuego', [PageController::class, 'industrialFires']);
-$router->get('/industrial-fires/fire-dynamics', [PageController::class, 'industrialFires']);
+    'standard' => [PageController::class, 'standard'],
+    'about' => [PageController::class, 'about'],
+    'contact' => [PageController::class, 'contact'],
 
-$router->get('/incendios-industriales/auditoria-pci', [PageController::class, 'industrialFires']);
-$router->get('/industrial-fires/pci-audit', [PageController::class, 'industrialFires']);
+    'privacy-policy' => [PageController::class, 'legalContent'],
+    'terms-and-conditions' => [PageController::class, 'legalContent'],
+    'legal-notice' => [PageController::class, 'legalContent'],
+];
 
-// Parent 2 - child 3
-$router->get('/accidentes-industriales', [PageController::class, 'industrialAccidents']);
-$router->get('/industrial-accidents', [PageController::class, 'industrialAccidents']);
+$routes = Config::get('routes', []);
 
-$router->get('/accidentes-industriales/industrial-accidents-child1', [PageController::class, 'industrialAccidents']);
-$router->get('/industrial-accidents/industrial-accidents-child1', [PageController::class, 'industrialAccidents']);
+foreach ($routes as $lang => $langRoutes) {
+    foreach ($langRoutes as $key => $slug) {
+        if (!isset($routeHandlers[$key])) {
+            continue;
+        }
 
-$router->get('/accidentes-industriales/industrial-accidents-child2', [PageController::class, 'industrialAccidents']);
-$router->get('/industrial-accidents/industrial-accidents-child2', [PageController::class, 'industrialAccidents']);
+        $path = $slug === '' ? '/' : $slug;
 
-$router->get('/accidentes-industriales/industrial-accidents-child3', [PageController::class, 'industrialAccidents']);
-$router->get('/industrial-accidents/industrial-accidents-child3', [PageController::class, 'industrialAccidents']);
+        $router->get($path, $routeHandlers[$key]);
+    }
+}
 
-$router->get('/casos-habituales', [PageController::class, 'standard']);
-$router->get('/standard', [PageController::class, 'standard']);
-$router->get('/nosotros', [PageController::class, 'about']);
-$router->get('/about', [PageController::class, 'about']);
-$router->get('/contacto', [PageController::class, 'contact']);
-$router->get('/contact', [PageController::class, 'contact']);
-
-$router->get('/politica-de-privacidad', [PageController::class, 'legalContent']);
-$router->get('/privacy-policy', [PageController::class, 'legalContent']);
-$router->get('/terminos-y-condiciones', [PageController::class, 'legalContent']);
-$router->get('/terms-and-conditions', [PageController::class, 'legalContent']);
-$router->get('/aviso-legal', [PageController::class, 'legalContent']);
-$router->get('/legal-notice', [PageController::class, 'legalContent']);
-
-// 404 interna
 $router->get('/404', [PageController::class, 'notFound']);
