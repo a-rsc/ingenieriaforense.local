@@ -17,13 +17,20 @@ return [
         'prev' => 'Anterior',
         'next' => 'Siguiente',
     ],
-
-    'alt' => 'Imagen de ',
     'schema' => [
         'page' => 'Página de ',
     ],
 
+    'menu' => 'Menú',
+    'nav' => [
+        'nav_top_home' => 'Navegación superior de home',
+        'nav_footer_home' => 'Navegación inferior de Home',
+        'nav_footer' => 'Subnavegación de ',
+        'nav_legal_content' => 'Navegación de Contenido legal',
+        '' => '',
+    ],
     'table_of_contents' => 'Índice de contenido',
+    'alt' => 'Imagen de ',
     'data_contact' => 'Datos de contacto',
     'email' => 'Email',
     'email_label' => 'Enviar correo a ',

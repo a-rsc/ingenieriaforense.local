@@ -3,7 +3,7 @@
 use App\Core\Config;
 ?>
     <!-- Navbar -->
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-light fixed-top" aria-label="Navegación superior de Home">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-light fixed-top" aria-label="<?= __('nav.nav_top_home') ?>">
         <div class="container">
                 <!-- Logo -->
                  <div class="d-flex align-items-center flex-nowrap gap-2">

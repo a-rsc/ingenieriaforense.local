@@ -2,14 +2,14 @@
 <footer class="bg-dark border-top border-light text-white" role="contentinfo">
     <div class="container py-4">
         <!-- Navigation menu -->
-        <div class="row">
+        <div class="row pb-4">
 <?php foreach ($navFooterPrimaries ?? [] as $navFooterPrimary): ?>
             <div class="col-md-4">
                 <p class="text-center"><a href="<?= $navFooterPrimary['url'] ?>"<?= active_class($navFooterPrimary['url']) ? ' class="active" aria-current="page"' : '' ?>><?= $navFooterPrimary['name'] ?></a></p>
-                <nav class="navbar-dark" aria-label="Subnavegación de <?= $navFooterPrimary['name'] ?>">
+                <nav class="navbar-dark" aria-label="<?= __('nav.nav_footer') . $navFooterPrimary['name'] ?>">
                     <ul class="navbar-nav list-unstyled">
 <?php foreach ($navFooterPrimary['children'] ?? [] as $child): ?>
-                        <li class="nav-item" style="list-style: disc;"><a href="<?= $pages[$child]['url'] ?>" class="nav-link p-0 <?= active_class($pages[$child]['url']) ?>"<?= active_class($pages[$child]['url'], ' aria-current="page"') ?> aria-label="<?= $pages[$child]['title'] ?>"><?= $pages[$child]['name'] ?></a></li>
+                        <li class="nav-item"><a href="<?= $pages[$child]['url'] ?>" class="nav-link p-0 <?= active_class($pages[$child]['url']) ?>"<?= active_class($pages[$child]['url'], ' aria-current="page"') ?> aria-label="<?= $pages[$child]['title'] ?>"><?= $pages[$child]['name'] ?></a></li>
 <?php endforeach; ?>
                     </ul>
                 </nav>
@@ -17,10 +17,10 @@
 <?php endforeach; ?>
             <div class="col-md-4">
                 <p class="text-center">Menú</p>
-                <nav class="navbar-dark" aria-label="Navegación inferior de Home">
+                <nav class="navbar-dark" aria-label="<?= __('nav.nav_footer_home') ?>">
                     <ul class="navbar-nav list-unstyled">
 <?php foreach ($navHeaderPrimaries ?? [] as $navHeaderPrimary): ?>
-                        <li style="list-style: disc;"><a href="<?= $navHeaderPrimary['url']?: '/' ?>" class="nav-link p-0 <?= active_class($navHeaderPrimary['url']) ?>"<?= active_class($navHeaderPrimary['url'], ' aria-current="page"') ?> aria-label="<?= $navHeaderPrimary['title'] ?>"><?= $navHeaderPrimary['name'] ?></a></li>
+                        <li class="nav-item"><a href="<?= $navHeaderPrimary['url']?: '/' ?>" class="nav-link p-0 <?= active_class($navHeaderPrimary['url']) ?>"<?= active_class($navHeaderPrimary['url'], ' aria-current="page"') ?> aria-label="<?= $navHeaderPrimary['title'] ?>"><?= $navHeaderPrimary['name'] ?></a></li>
 <?php endforeach; ?>
                     </ul>
                 </nav>
@@ -39,7 +39,7 @@
         </div>
         <div class="row">
             <div class="col footer-legal-content text-center">
-                <nav class="navbar-dark" aria-label="Navegación de Contenido legal">
+                <nav class="navbar-dark" aria-label="<?= __('nav.nav_legal_content') ?>">
                     <ul class="list-inline">
 <?php foreach ($navFooterSecondaries ?? [] as $navFooterSecondary): ?>
                         <li class="list-inline-item"><a href="<?= $navFooterSecondary['url']?: '/' ?>"<?= active_class($navFooterSecondary['url']?: '/', ' class="active" aria-current="page"') ?>><?= $navFooterSecondary['name'] ?></a></li>

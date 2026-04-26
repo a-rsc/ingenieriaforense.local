@@ -17,13 +17,20 @@ return [
         'prev' => 'Previous',
         'next' => 'Next',
     ],
-
-    'alt' => 'Image of ',
     'schema' => [
         'page' => 'Page of ',
     ],
 
+    'menu' => 'Menu',
+    'nav' => [
+        'nav_top_home' => '',
+        'nav_footer_home' => '',
+        'nav_footer' => '',
+        'nav_legal_content' => '',
+        '' => '',
+    ],
     'table_of_contents' => 'Table of contents',
+    'alt' => 'Image of ',
     'data_contact' => 'Data Contact',
     'email' => 'Email',
     'email_label' => 'Send to ',

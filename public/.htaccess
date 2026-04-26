@@ -10,8 +10,8 @@ RewriteRule ^\.well-known/acme-challenge/ - [L]
 # Cambia el dominio si aún estás en local
 # =========================================================
 RewriteCond %{HTTPS} !=on [OR]
-RewriteCond %{HTTP_HOST} ^www\.ingenieriaforense\.es$ [NC]
-RewriteRule ^ https://ingenieriaforense.es%{REQUEST_URI} [R=301,L]
+RewriteCond %{HTTP_HOST} ^www\.ingenieriaforense\.local$ [NC]
+RewriteRule ^ https://ingenieriaforense.local%{REQUEST_URI} [R=301,L]
 
 # =========================================================
 # 2) Redirigir /index.php a /

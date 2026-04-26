@@ -42,6 +42,8 @@ main {
 }
 
 .btn-custom:focus,
+.btn-custom:focus-visible,
+.btn-custom:focus-within,
 .btn-custom:hover {
   border: 1px solid #000;
 }
@@ -59,8 +61,10 @@ main {
 }
 
 /* ======= Cards ======= */
-.card:hover .card-title,
-.card:focus-within .card-title {
+.card:focus .card-title,
+.card:focus-within .card-title,
+.card:focus-visible .card-title,
+.card:hover .card-title {
   color: inherit;
   text-decoration: underline;
 }
@@ -116,7 +120,21 @@ main {
 }
 
 /* ======= Footer / legal ======= */
+footer li.nav-item {
+  list-style: disc;
+  color: #ffffff8c;
+}
+
 .footer-legal-content {
   font-size: 0.875rem;
-  opacity: 0.75;
+  color: #ffffff8c;
 }
+
+.footer-legal-content:focus,
+.footer-legal-content:focus,
+.footer-legal-content:focus,
+.footer-legal-content:hover {
+  font-size: 0.875rem;
+  color: #ffffffbf;
+}
+
