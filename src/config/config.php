@@ -96,7 +96,7 @@ return [
         'price_range' => '€€',
         'email' => $emailTo,
         'phone' => '+34608084789',
-        'phone_a11y' => '+34 608 084 789',
+        'phone_a11y' => '608 084 789',
 
         // URLs completas (muy útil para SEO)
         'icon' => $baseUrl . '/images/if360-80x80.png',

@@ -26,10 +26,18 @@ main {
   text-decoration: underline;
 }
 
+@media (max-width: 768px) {
+  nav .btn-custom {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
 .btn-custom {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 0.75rem;
   color: #000;
   border: 1px solid #000;
+  border-radius: 8px;
   box-shadow: var(--shadow-sm);
 }
 

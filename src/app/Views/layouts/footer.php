@@ -1,38 +1,32 @@
 <!-- Footer -->
 <footer class="bg-dark border-top border-light text-white" role="contentinfo">
     <div class="container py-4">
+        <!-- Navigation menu -->
         <div class="row">
-<?php
-    // dd($navFooterPrimaries['industrial-fires']['url']);
-?>
 <?php foreach ($navFooterPrimaries ?? [] as $navFooterPrimary): ?>
-            <!-- Navigation menu -->
             <div class="col-md-4">
                 <p class="text-center"><a href="<?= $navFooterPrimary['url'] ?>"<?= active_class($navFooterPrimary['url']) ? ' class="active" aria-current="page"' : '' ?>><?= $navFooterPrimary['name'] ?></a></p>
-                <div class="navbar navbar-dark">
+                <nav class="navbar-dark" aria-label="Subnavegación de <?= $navFooterPrimary['name'] ?>">
                     <ul class="navbar-nav list-unstyled">
 <?php foreach ($navFooterPrimary['children'] ?? [] as $child): ?>
-                        <li class="nav-item"><a href="<?= $pages[$child]['url'] ?>" class="nav-link p-0 <?= active_class($pages[$child]['url']) ?>"<?= active_class($pages[$child]['url'], ' aria-current="page"') ?> aria-label="<?= $pages[$child]['title'] ?>"><?= $pages[$child]['name'] ?></a></li>
+                        <li class="nav-item" style="list-style: disc;"><a href="<?= $pages[$child]['url'] ?>" class="nav-link p-0 <?= active_class($pages[$child]['url']) ?>"<?= active_class($pages[$child]['url'], ' aria-current="page"') ?> aria-label="<?= $pages[$child]['title'] ?>"><?= $pages[$child]['name'] ?></a></li>
 <?php endforeach; ?>
                     </ul>
-                </div>
+                </nav>
             </div>
 <?php endforeach; ?>
-
             <div class="col-md-4">
                 <p class="text-center">Menú</p>
-                <div class="navbar navbar-dark">
-                    <ul class="navbar-nav list-unstyled" aria-label="Navegación inferior">
+                <nav class="navbar-dark" aria-label="Navegación inferior de Home">
+                    <ul class="navbar-nav list-unstyled">
 <?php foreach ($navHeaderPrimaries ?? [] as $navHeaderPrimary): ?>
-                        <li class="nav-item"><a href="<?= $navHeaderPrimary['url']?: '/' ?>" class="nav-link p-0 <?= active_class($navHeaderPrimary['url']) ?>"<?= active_class($navHeaderPrimary['url'], ' aria-current="page"') ?> aria-label="<?= $navHeaderPrimary['title'] ?>"><?= $navHeaderPrimary['name'] ?></a></li>
+                        <li style="list-style: disc;"><a href="<?= $navHeaderPrimary['url']?: '/' ?>" class="nav-link p-0 <?= active_class($navHeaderPrimary['url']) ?>"<?= active_class($navHeaderPrimary['url'], ' aria-current="page"') ?> aria-label="<?= $navHeaderPrimary['title'] ?>"><?= $navHeaderPrimary['name'] ?></a></li>
 <?php endforeach; ?>
                     </ul>
-                </div>
+                </nav>
             </div>
-            <!-- End Navigation menu -->
         </div>
-
-
+        <!-- End Navigation menu -->
         <div class="row">
             <div class="col">
                 <address>
@@ -45,12 +39,14 @@
         </div>
         <div class="row">
             <div class="col footer-legal-content text-center">
-                <ul class="list-inline">
+                <nav class="navbar-dark" aria-label="Navegación de Contenido legal">
+                    <ul class="list-inline">
 <?php foreach ($navFooterSecondaries ?? [] as $navFooterSecondary): ?>
-                    <li class="list-inline-item"><a href="<?= $navFooterSecondary['url']?: '/' ?>"<?= active_class($navFooterSecondary['url']?: '/', ' class="active" aria-current="page"') ?>><?= $navFooterSecondary['name'] ?></a></li>
+                        <li class="list-inline-item"><a href="<?= $navFooterSecondary['url']?: '/' ?>"<?= active_class($navFooterSecondary['url']?: '/', ' class="active" aria-current="page"') ?>><?= $navFooterSecondary['name'] ?></a></li>
 <?php endforeach; ?>
-                    <li class="list-inline-item"><a href="<?= url('home') ?>" aria-label="<?= $config['company']['name'] ?>">&copy; <?= date('Y') . ' ' . $config['company']['name'] ?></a></li>
-                </ul>
+                        <li class="list-inline-item"><a href="<?= url('home') ?>" aria-label="<?= $config['company']['name'] ?>">&copy; <?= date('Y') . ' ' . $config['company']['name'] ?></a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
         <div class="row">

@@ -68,7 +68,7 @@ View::partial('breadcrumb', [
                                 </div>
                                 <!-- End Accept privacy policy -->
                                 <div class="col-md-12 text-center">
-                                    <button name="submitBtn" type="submit" class="btn btn-light btn-custom"><span class="pe-2" aria-hidden="true">📩</span><?= __('send_us_the_message') ?></button>
+                                    <button name="submitBtn" type="submit" class="btn btn-custom btn-light"><span class="pe-2" aria-hidden="true">📩</span><?= __('send_us_the_message') ?></button>
                                 </div>
                             </fieldset>
                             <!-- End Fields -->

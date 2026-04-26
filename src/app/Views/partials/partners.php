@@ -4,7 +4,7 @@
             <h2 class="text-white visually-hidden"><?= __('partners_title') ?></h2>
             <div class="row g-4">
 <?php foreach ($partners ?? [] as $key => $partner): ?>
-                <div class="col">
+                <div class="col-md-4">
                     <div class="card bg-dark shadow-sm">
                         <div class="d-flex justify-content-center">
                             <img src="<?= $partner['images']['src'] ?>" class="card-img-top rounded" alt="<?= $partner['images']['alt'] ?>" width="80" height="80" loading="lazy" decoding="async">
