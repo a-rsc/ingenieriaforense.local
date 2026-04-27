@@ -1,3 +1,7 @@
+<?php
+
+use App\Core\View;
+?>
 <!-- Footer -->
 <footer class="bg-dark border-top border-light text-white" role="contentinfo">
     <div class="container py-4">
@@ -31,8 +35,8 @@
             <div class="col">
                 <address>
                     <ul class="list-unstyled">
-                        <li><span class="pe-2" aria-hidden="true">✉️</span><?= __('email') ?>: <a href="mailto:<?= $config['company']['email'] ?>" aria-label="<?= __('email_label') . $config['company']['name'] ?>"><?= $config['company']['email'] ?></a></li>
-                        <li><span class="pe-2" aria-hidden="true">☎️</span><?= __('phone') ?>: <a href="tel:<?= $config['company']['phone'] ?>" aria-label="<?= __('phone_label') . $config['company']['name'] ?>"><?= $config['company']['phone_a11y'] ?></a></li>
+                        <li><span class="pe-2" aria-hidden="true">✉️</span><?= __('email') ?>: <a href="mailto:<?= $config['company']['email'] ?>" aria-label="<?= __('email_a') . $config['company']['name'] ?>"><?= $config['company']['email'] ?></a></li>
+                        <li><span class="pe-2" aria-hidden="true">☎️</span><?= __('phone') ?>: <a href="tel:<?= $config['company']['phone'] ?>" aria-label="<?= __('phone_a') . $config['company']['name'] ?>"><?= $config['company']['phone_a11y'] ?></a></li>
                     </ul>
                 </address>
             </div>
@@ -56,6 +60,7 @@
         </div>
     </div>
 </footer>
+<?php View::partial('cookies') ?>
 <!-- JS -->
 <script src="/js/bootstrap.bundle.min.js" defer></script>
 <script src="/js/script.js" defer></script>

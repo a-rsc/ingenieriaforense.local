@@ -6,6 +6,32 @@ window.addEventListener('load', () => {
   }
 });
 
+// Cookie Banner
+document.addEventListener("DOMContentLoaded", function () {
+  const cookieBanner = document.getElementById("cookieBanner");
+  const acceptCookies = document.getElementById("acceptCookies");
+  const rejectCookies = document.getElementById("rejectCookies");
+
+  const cookieChoice = localStorage.getItem("cookieConsent");
+
+  if (!cookieChoice) {
+    cookieBanner.classList.remove("d-none");
+  }
+
+  acceptCookies.addEventListener("click", function () {
+    localStorage.setItem("cookieConsent", "accepted");
+    cookieBanner.classList.add("d-none");
+
+    // Aquí puedes activar scripts como Google Analytics, Meta Pixel, etc.
+    // loadAnalytics();
+  });
+
+  rejectCookies.addEventListener("click", function () {
+    localStorage.setItem("cookieConsent", "rejected");
+    cookieBanner.classList.add("d-none");
+  });
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 

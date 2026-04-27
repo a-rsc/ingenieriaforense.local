@@ -50,7 +50,7 @@ use App\Core\View;
                     </aside>
                     <section class="cta text-center">
                         <h2>¿Necesita un análisis de viabilidad para un caso de incendio industrial?</h2>
-                        <a href="/contacto" class="btn btn-custom btn-light">Contactar con nuestros ingenieros forenses</a>
+                        <a href="/contacto" class="btn btn-light">Contactar con nuestros ingenieros forenses</a>
                     </section>
 <?php
     shuffle($pages['industrial-fires']['images']);

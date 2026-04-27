@@ -68,7 +68,7 @@ View::partial('breadcrumb', [
                                 </div>
                                 <!-- End Accept privacy policy -->
                                 <div class="col-md-12 text-center">
-                                    <button name="submitBtn" type="submit" class="btn btn-custom btn-light"><span class="pe-2" aria-hidden="true">📩</span><?= __('send_us_the_message') ?></button>
+                                    <button name="submitBtn" type="submit" class="btn btn-light"><span class="pe-2" aria-hidden="true">📩</span><?= __('send_us_the_message') ?></button>
                                 </div>
                             </fieldset>
                             <!-- End Fields -->
@@ -80,7 +80,7 @@ View::partial('breadcrumb', [
         </div>
     </div>
     <!-- End Contact -->
-<?php View::partial('testimonial', ['testimonial' => $testimonial]); ?>
+<?php View::partial('testimonial', ['testimonial' => $testimonial]) ?>
     <!-- Data contact -->
     <div class="container py-4">
         <div class="row">
@@ -93,8 +93,8 @@ View::partial('breadcrumb', [
                     <p><strong><?= $config['company']['name'] ?></strong></p>
                     <address>
                         <ul class="list-unstyled">
-                            <li><strong><span class="pe-2" aria-hidden="true">✉️</span><?= __('email') ?>: </strong> <a href="mailto:<?= $config['email']['to'] ?>" aria-label="<?= __('email_label') . $config['company']['name'] ?>"><?= $config['email']['to'] ?></a></li>
-                            <li><strong><span class="pe-2" aria-hidden="true">☎️</span><?= __('phone') ?>: </strong> <a href="tel:<?= $config['company']['phone'] ?>" aria-label="<?= __('phone_label') . $config['company']['name'] ?>"><?= $config['company']['phone_a11y'] ?></a></li>
+                            <li><strong><span class="pe-2" aria-hidden="true">✉️</span><?= __('email') ?>: </strong> <a href="mailto:<?= $config['email']['to'] ?>" aria-label="<?= __('email_a') . $config['company']['name'] ?>"><?= $config['email']['to'] ?></a></li>
+                            <li><strong><span class="pe-2" aria-hidden="true">☎️</span><?= __('phone') ?>: </strong> <a href="tel:<?= $config['company']['phone'] ?>" aria-label="<?= __('phone_a') . $config['company']['name'] ?>"><?= $config['company']['phone_a11y'] ?></a></li>
                             <li><strong><span class="pe-2" aria-hidden="true">📍</span><?= __('address') ?>: </strong><?= $config['company']['address'] ?></li>
                             <li><strong><span class="pe-2" aria-hidden="true">🪪</span><?= __('nif') ?>: </strong><?= $config['company']['nif'] ?></li>
                         </ul>

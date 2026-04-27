@@ -9,7 +9,7 @@
             <!-- End Title -->
             <!-- Section content -->
             <img class="logo d-block mx-auto my-4" src="<?= $config['company']['logo'] ?>" alt="<?= __('alt') . $config['company']['name'] ?>" decoding="async" style="max-width: 300px;">
-            <a href="<?= url('home') ?>" class="btn btn-custom btn-light"><span class="pe-2" aria-hidden="true">🏠</span><?= __('back_to_home') ?></a>
+            <a href="<?= url('home') ?>" class="btn btn-light"><span class="pe-2" aria-hidden="true">🏠</span><?= __('back_to_home') ?></a>
             <!-- End Section content -->
         </div>
     </section>

@@ -1,19 +1,15 @@
-<?php
-
-use App\Core\Config;
-?>
     <!-- Navbar -->
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-light fixed-top" aria-label="<?= __('nav.nav_top_home') ?>">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-light shadow-sm fixed-top" aria-label="<?= __('nav.nav_top_home') ?>">
         <div class="container">
                 <!-- Logo -->
                  <div class="d-flex align-items-center flex-nowrap gap-2">
                      <a href="<?= url('home') ?>" title="<?= $config['company']['name'] ?>"><img class="logo" src="<?= $config['company']['icon'] ?>" alt="Logo de <?= $config['company']['name'] ?>" width="80" height="80" decoding="async"></a>
                      <!-- End Logo -->
                      <!-- Phone -->
-                     <a href="tel:<?= $config['company']['phone'] ?>" class="btn btn-custom btn-light" title="<?= __('contact_us') ?>" aria-label="Llamar al <?= $config['company']['phone_a11y'] ?>"><span class="pe-2" aria-hidden="true">☎️</span><span><?= $config['company']['phone_a11y'] ?></span></a>
+                     <a href="tel:<?= $config['company']['phone'] ?>" class="btn btn-light" title="<?= __('contact_us') ?>" aria-label="Llamar al <?= $config['company']['phone_a11y'] ?>"><span class="pe-2" aria-hidden="true">☎️</span><span><?= $config['company']['phone_a11y'] ?></span></a>
                      <!-- End Phone -->
                      <!-- Language -->
-                     <a href="<?= switch_lang_code_url() ?>" class="btn btn-custom bg-light" aria-label="<?= app_lang_code() === 'en' ? 'Cambiar idioma a español' : 'Switch language to English' ?>"><span class="pe-2" aria-hidden="true">🌐</span><span><?= app_lang_code() === 'en' ? 'ES' : 'EN' ?></span></a>
+                     <a href="<?= switch_lang_code_url() ?>" class="btn btn-light" aria-label="<?= app_lang_code() === 'en' ? 'Cambiar idioma a español' : 'Switch language to English' ?>"><span class="pe-2" aria-hidden="true">🌐</span><span><?= app_lang_code() === 'en' ? 'ES' : 'EN' ?></span></a>
                      <!-- End Language -->
                  </div>
                 <!-- Navigation menu -->

@@ -66,8 +66,7 @@ button[type="button"] {
     border-color 0.15s ease-out;
 }
 
-a.btn,
-a.btn-custom {
+a.btn {
   text-decoration: none;
 }
 
