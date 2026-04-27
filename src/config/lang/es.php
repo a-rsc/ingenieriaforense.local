@@ -60,7 +60,7 @@ return [
         'check_label' => 'He leído y acepto la <a href="/politica-de-privacidad.php" title="Política de Privacidad">Política de Privacidad</a>.',
         'check_message' => 'No compartiremos tu información con terceros sin tu consentimiento.',
         'accept' => 'Aceptar',
-        'decline' => 'Rechazar',
+        'reject' => 'Rechazar',
     ],
 
     'partners_title' => 'Entidades y colaboradores',

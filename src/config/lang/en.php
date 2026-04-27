@@ -60,7 +60,7 @@ return [
         'check_label' => 'He leído y acepto la <a href="' . lang_prefix() . '/privacy-policy" title="Privacy policy">Privacy policy</a>.',
         'check_message' => 'No compartiremos tu información con terceros sin tu consentimiento.',
         'accept' => 'Accept',
-        'decline' => 'Decline',
+        'reject' => 'Reject',
     ],
 
     'partners_title' => 'Entities and Collaborators',
